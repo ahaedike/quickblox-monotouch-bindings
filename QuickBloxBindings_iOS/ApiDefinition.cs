@@ -145,7 +145,7 @@ namespace QuickBlox
 		NSObject UsersWithPagedRequest (PagedRequest pagedRequest, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithPagedRequest:delegate:context:")]
-		NSObject UsersWithPagedRequest (PagedRequest pagedRequest, NSObject del, QBActionStatusDelegate context);
+		NSObject UsersWithPagedRequest (PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("signUp:delegate:")]
 		NSObject SignUp (QBUUser user, QBActionStatusDelegate del);

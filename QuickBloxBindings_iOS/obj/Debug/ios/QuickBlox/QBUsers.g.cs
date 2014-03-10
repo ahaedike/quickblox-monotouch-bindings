@@ -513,7 +513,7 @@ namespace QuickBlox {
 		
 		[Export ("usersWithPagedRequest:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject UsersWithPagedRequest (PagedRequest pagedRequest, NSObject del, QBActionStatusDelegate context)
+		public static NSObject UsersWithPagedRequest (PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context)
 		{
 			if (pagedRequest == null)
 				throw new ArgumentNullException ("pagedRequest");
