@@ -12,3 +12,5 @@ There is a file in the repo called: ObjectiveSharpieOutput.cs.  This is the raw 
 
 If there is a binding that is missing, you will probably find it in ObjectiveSharpieOutput.cs.  Feel free to fork and use what you need.  Please do not send me a request to do your work for you.  That is weak and puny.  Be strong and smart.
 
+I will continue to update this project as we implement features.
+
