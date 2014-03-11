@@ -178,16 +178,16 @@ namespace QuickBlox
 		NSObject UserWithLogin (string userLogin, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithLogins:delegate:")]
-		NSObject UsersWithLogins (NSObject [] logins, QBActionStatusDelegate del);
+		NSObject UsersWithLogins (string[] logins, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithLogins:delegate:context:")]
-		NSObject UsersWithLogins (NSObject [] logins, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithLogins (string[] logins, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithLogins:pagedRequest:delegate:")]
-		NSObject UsersWithLogins (NSObject [] logins, PagedRequest pagedRequest, QBActionStatusDelegate del);
+		NSObject UsersWithLogins (string[] logins, PagedRequest pagedRequest, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithLogins:pagedRequest:delegate:context:")]
-		NSObject UsersWithLogins (NSObject [] logins, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithLogins (string[] logins, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithFullName:delegate:")]
 		NSObject UsersWithFullName (string userFullName, QBActionStatusDelegate del);
@@ -202,28 +202,28 @@ namespace QuickBlox
 		NSObject UsersWithFullName (string userFullName, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithTags:delegate:")]
-		NSObject UsersWithTags (NSObject [] tags, QBActionStatusDelegate del);
+		NSObject UsersWithTags (string[] tags, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithTags:delegate:context:")]
-		NSObject UsersWithTags (NSObject [] tags, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithTags (string[] tags, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithTags:pagedRequest:delegate:")]
-		NSObject UsersWithTags (NSObject [] tags, PagedRequest pagedRequest, QBActionStatusDelegate del);
+		NSObject UsersWithTags (string[] tags, PagedRequest pagedRequest, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithTags:pagedRequest:delegate:context:")]
-		NSObject UsersWithTags (NSObject [] tags, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithTags (string[] tags, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithPhoneNumbers:delegate:")]
-		NSObject UsersWithPhoneNumbers (NSObject [] phoneNumbers, QBActionStatusDelegate del);
+		NSObject UsersWithPhoneNumbers (string[] tags, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithPhoneNumbers:delegate:context:")]
-		NSObject UsersWithPhoneNumbers (NSObject [] phoneNumbers, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithPhoneNumbers (string[] tags, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithPhoneNumbers:pagedRequest:delegate:")]
-		NSObject UsersWithPhoneNumbers (NSObject [] phoneNumbers, PagedRequest pagedRequest, QBActionStatusDelegate del);
+		NSObject UsersWithPhoneNumbers (string[] tags, PagedRequest pagedRequest, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithPhoneNumbers:pagedRequest:delegate:context:")]
-		NSObject UsersWithPhoneNumbers (NSObject [] phoneNumbers, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithPhoneNumbers (string[] tags, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("userWithFacebookID:delegate:")]
 		NSObject UserWithFacebookID (string userFacebookID, QBActionStatusDelegate del);
@@ -232,16 +232,16 @@ namespace QuickBlox
 		NSObject UserWithFacebookID (string userFacebookID, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithFacebookIDs:delegate:")]
-		NSObject UsersWithFacebookIDs (NSObject [] facebookIDs, QBActionStatusDelegate del);
+		NSObject UsersWithFacebookIDs (string[] facebookIDs, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithFacebookIDs:delegate:context:")]
-		NSObject UsersWithFacebookIDs (NSObject [] facebookIDs, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithFacebookIDs (string[] facebookIDs, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithFacebookIDs:pagedRequest:delegate:")]
-		NSObject UsersWithFacebookIDs (NSObject [] facebookIDs, PagedRequest pagedRequest, QBActionStatusDelegate del);
+		NSObject UsersWithFacebookIDs (string[] facebookIDs, PagedRequest pagedRequest, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithFacebookIDs:pagedRequest:delegate:context:")]
-		NSObject UsersWithFacebookIDs (NSObject [] facebookIDs, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithFacebookIDs (string[] facebookIDs, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("userWithTwitterID:delegate:")]
 		NSObject UserWithTwitterID (string userTwitterID, QBActionStatusDelegate del);
@@ -250,16 +250,16 @@ namespace QuickBlox
 		NSObject UserWithTwitterID (string userTwitterID, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithTwitterIDs:delegate:")]
-		NSObject UsersWithTwitterIDs (NSObject [] twitterIDs, QBActionStatusDelegate del);
+		NSObject UsersWithTwitterIDs (string[] twitterIDs, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithTwitterIDs:delegate:context:")]
-		NSObject UsersWithTwitterIDs (NSObject [] twitterIDs, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithTwitterIDs (string[] twitterIDs, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithTwitterIDs:pagedRequest:delegate:")]
-		NSObject UsersWithTwitterIDs (NSObject [] twitterIDs, PagedRequest pagedRequest, QBActionStatusDelegate del);
+		NSObject UsersWithTwitterIDs (string[] twitterIDs, PagedRequest pagedRequest, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithTwitterIDs:pagedRequest:delegate:context:")]
-		NSObject UsersWithTwitterIDs (NSObject [] twitterIDs, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithTwitterIDs (string[] twitterIDs, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("userWithEmail:delegate:")]
 		NSObject UserWithEmail (string userEmail, QBActionStatusDelegate del);
@@ -268,16 +268,16 @@ namespace QuickBlox
 		NSObject UserWithEmail (string userEmail, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithEmails:delegate:")]
-		NSObject UsersWithEmails (NSObject [] emails, QBActionStatusDelegate del);
+		NSObject UsersWithEmails (string[] emails, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithEmails:delegate:context:")]
-		NSObject UsersWithEmails (NSObject [] emails, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithEmails (string[] emails, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("usersWithEmails:pagedRequest:delegate:")]
-		NSObject UsersWithEmails (NSObject [] emails, PagedRequest pagedRequest, QBActionStatusDelegate del);
+		NSObject UsersWithEmails (string[] emails, PagedRequest pagedRequest, QBActionStatusDelegate del);
 
 		[Static, Export ("usersWithEmails:pagedRequest:delegate:context:")]
-		NSObject UsersWithEmails (NSObject [] emails, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
+		NSObject UsersWithEmails (string[] emails, PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context);
 
 		[Static, Export ("userWithExternalID:delegate:")]
 		NSObject UserWithExternalID (uint userExternalID, QBActionStatusDelegate del);
