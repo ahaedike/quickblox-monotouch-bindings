@@ -82,5 +82,19 @@ namespace QuickBlox
 		Debug
 	}
 	
+	public enum QBCOPermissionsAccess {
+		Open,
+		Owner,
+		NotAllowed,
+		OpenForUsersIDs,
+		OpenForGroups
+	}
+	
+	public enum QBSessionType  {
+		ApplicationOnly,
+		User,
+		SocialUser
+	}
+	
 }
 

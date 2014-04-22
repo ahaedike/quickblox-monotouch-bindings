@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="QuickBloxBindings_iOS/ApiDefinition.cs">
+    <Files>
+      <File FileName="QuickBloxBindings_iOS/StructsAndEnums.cs" Line="61" Column="11" />
+      <File FileName="QuickBloxBindings_iOS/ApiDefinition.cs" Line="106" Column="34" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

@@ -30,7 +30,7 @@ using OpenTK;
 
 namespace QuickBlox {
 	[Register("QBAAuthSessionCreationResult", true)]
-	public unsafe partial class QBAAuthSessionCreationResult : NSObject {
+	public unsafe partial class QBAAuthSessionCreationResult : Result {
 		[CompilerGenerated]
 		const string selSession = "session";
 		static readonly IntPtr selSessionHandle = Selector.GetHandle ("session");

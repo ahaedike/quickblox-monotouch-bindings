@@ -1240,6 +1240,439 @@ namespace QuickBlox
 		[Export ("charsLeft")]
 		int CharsLeft { get; }
 	}
+	
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOCustomObject {
+
+		[Export ("ID", ArgumentSemantic.Retain)]
+		string ID { get; set; }
+
+		[Export ("parentID", ArgumentSemantic.Retain)]
+		string ParentID { get; set; }
+
+		[Export ("createdAt", ArgumentSemantic.Retain)]
+		NSDate CreatedAt { get; set; }
+
+		[Export ("updatedAt", ArgumentSemantic.Retain)]
+		NSDate UpdatedAt { get; set; }
+
+		[Export ("className", ArgumentSemantic.Retain)]
+		string ClassName { get; set; }
+
+		[Export ("userID")]
+		uint UserID { get; set; }
+
+		[Export ("fields", ArgumentSemantic.Retain)]
+		NSMutableDictionary Fields { get; set; }
+
+		[Export ("permissions", ArgumentSemantic.Retain)]
+		QBCOPermissions Permissions { get; set; }
+
+		[Static, Export ("customObject")]
+		QBCOCustomObject CustomObject ();
+	}
+	
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOCustomObjectCreateQuery {
+
+		[Export ("object")]
+		QBCOCustomObject Object { get; }
+
+		[Export ("initWithObject:")]
+		IntPtr Constructor (QBCOCustomObject _object);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOCustomObjectsCreateQuery {
+
+		[Export ("objects")]
+		NSObject [] Objects { get; }
+
+		[Export ("className")]
+		string ClassName { get; }
+
+		[Export ("initWithObjects:className:")]
+		IntPtr Constructor (NSObject [] objects, string className);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOCustomObjectUpdateQuery {
+
+		[Export ("object")]
+		QBCOCustomObject Object { get; }
+
+		[Export ("specialUpdateOperators")]
+		NSMutableDictionary SpecialUpdateOperators { get; }
+
+		[Export ("initWithObject:specialUpdateOperators:")]
+		IntPtr Constructor (QBCOCustomObject _object, NSMutableDictionary specialUpdateOperators);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOCustomObjectsUpdateQuery {
+
+		[Export ("objects")]
+		NSObject [] Objects { get; }
+
+		[Export ("className")]
+		string ClassName { get; }
+
+		[Export ("specialUpdateOperators")]
+		NSObject [] SpecialUpdateOperators { get; }
+
+		[Export ("initWithObjects:className:specialUpdateOperators:")]
+		IntPtr Constructor (NSObject [] objects, string className, NSObject [] specialUpdateOperators);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOCustomObjectDeleteQuery {
+
+		[Export ("object")]
+		QBCOCustomObject Object { get; }
+
+		[Export ("initWithObject:")]
+		IntPtr Constructor (QBCOCustomObject _object);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOMultiDeleteQuery {
+
+		[Export ("className")]
+		string ClassName { get; }
+
+		[Export ("objectsIDs")]
+		NSObject [] ObjectsIDs { get; }
+
+		[Export ("initWithClassName:objectsIDs:")]
+		IntPtr Constructor (string className, NSObject [] objectsIDs);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOCustomObjectGetQuery {
+
+		[Export ("getRequest")]
+		NSMutableDictionary GetRequest { get; }
+
+		[Export ("className")]
+		string ClassName { get; }
+
+		[Export ("ID")]
+		string ID { get; }
+
+		[Export ("IDs")]
+		NSObject [] IDs { get; }
+
+		[Export ("initWithClassName:request:")]
+		IntPtr Constructor (string _className, NSMutableDictionary _getRequest);
+
+		[Export ("initWithClassName:ID:")]
+		IntPtr Constructor (string _className, string _ID);
+
+		[Export ("initWithClassName:IDs:")]
+		IntPtr Constructor (string _className, NSObject [] _IDs);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOFileQuery {
+
+		[Export ("className")]
+		string ClassName { get; }
+
+		[Export ("objectID")]
+		string ObjectID { get; }
+
+		[Export ("fileFieldName")]
+		string FileFieldName { get; }
+
+		[Export ("initWithClassName:objectID:fileFieldName:")]
+		IntPtr Constructor (string className, string objectID, string fileFieldName);
+	}
+
+	[BaseType (typeof (QBCOFileQuery))]
+	public partial interface QBCOFileUploadQuery {
+
+		[Export ("file", ArgumentSemantic.Retain)]
+		QBCOFile File { get; set; }
+	}
+
+	[BaseType (typeof (Result))]
+	public partial interface QBCOCustomObjectResult {
+
+		[Export ("object")]
+		QBCOCustomObject Object { get; }
+	}
+
+	[BaseType (typeof (Result))]
+	public partial interface QBCOMultiDeleteResult {
+
+		[Export ("deletedObjectsIDs")]
+		NSObject [] DeletedObjectsIDs { get; }
+
+		[Export ("notFoundObjectsIDs")]
+		NSObject [] NotFoundObjectsIDs { get; }
+
+		[Export ("wrongPermissionsObjectsIDs")]
+		NSObject [] WrongPermissionsObjectsIDs { get; }
+	}
+
+	[BaseType (typeof (Result))]
+	public partial interface QBCOCustomObjectPagedResult {
+
+		[Export ("objects")]
+		NSObject [] Objects { get; }
+
+		[Export ("count")]
+		uint Count { get; }
+
+		[Export ("skip")]
+		uint Skip { get; }
+
+		[Export ("limit")]
+		uint Limit { get; }
+
+		[Export ("notFoundObjectsIDs")]
+		NSObject [] NotFoundObjectsIDs { get; }
+	}
+
+	[BaseType (typeof (Result))]
+	public partial interface QBCOPermissionsResult {
+
+		[Export ("permissions")]
+		QBCOPermissions Permissions { get; }
+	}
+
+	[BaseType (typeof (Result))]
+	public partial interface QBCOFileResult {
+
+		[Export ("data")]
+		NSData Data { get; }
+	}
+
+	[BaseType (typeof (QBBaseModule))]
+	public partial interface QBCustomObjects {
+
+		[Static, Export ("objectWithClassName:ID:delegate:")]
+		NSObject ObjectWithClassName (string className, string ID, NSObject del);
+
+		[Static, Export ("objectWithClassName:ID:delegate:context:")]
+		NSObject ObjectWithClassName (string className, string ID, NSObject del, NSObject context);
+
+		[Static, Export ("objectsWithClassName:IDs:delegate:")]
+		NSObject ObjectsWithClassName (string className, NSObject [] IDs, NSObject del);
+
+		[Static, Export ("objectsWithClassName:IDs:delegate:context:")]
+		NSObject ObjectsWithClassName (string className, NSObject [] IDs, NSObject del, NSObject context);
+
+		[Static, Export ("objectsWithClassName:delegate:")]
+		NSObject ObjectsWithClassName (string className, NSObject del);
+
+		[Static, Export ("objectsWithClassName:delegate:context:")]
+		NSObject ObjectsWithClassName (string className, NSObject del, NSObject context);
+
+		[Static, Export ("objectsWithClassName:extendedRequest:delegate:")]
+		NSObject ObjectsWithClassName (string className, NSMutableDictionary extendedRequest, NSObject del);
+
+		[Static, Export ("objectsWithClassName:extendedRequest:delegate:context:")]
+		NSObject ObjectsWithClassName (string className, NSMutableDictionary extendedRequest, NSObject del, NSObject context);
+
+		[Static, Export ("createObject:delegate:")]
+		NSObject CreateObject (QBCOCustomObject obj, NSObject del);
+
+		[Static, Export ("createObject:delegate:context:")]
+		NSObject CreateObject (QBCOCustomObject obj, NSObject del, NSObject context);
+
+		[Static, Export ("createObjects:className:delegate:")]
+		NSObject CreateObjects (NSObject [] objects, string className, NSObject del);
+
+		[Static, Export ("createObjects:className:delegate:context:")]
+		NSObject CreateObjects (NSObject [] objects, string className, NSObject del, NSObject context);
+
+		[Static, Export ("updateObject:delegate:")]
+		NSObject UpdateObject (QBCOCustomObject obj, NSObject del);
+
+		[Static, Export ("updateObject:delegate:context:")]
+		NSObject UpdateObject (QBCOCustomObject obj, NSObject del, NSObject context);
+
+		[Static, Export ("updateObject:specialUpdateOperators:delegate:")]
+		NSObject UpdateObject (QBCOCustomObject obj, NSMutableDictionary specialUpdateOperators, NSObject del);
+
+		[Static, Export ("updateObject:specialUpdateOperators:delegate:context:")]
+		NSObject UpdateObject (QBCOCustomObject obj, NSMutableDictionary specialUpdateOperators, NSObject del, NSObject context);
+
+		[Static, Export ("updateObjects:className:delegate:")]
+		NSObject UpdateObjects (NSObject [] objects, string className, NSObject del);
+
+		[Static, Export ("updateObjects:className:delegate:context:")]
+		NSObject UpdateObjects (NSObject [] objects, string className, NSObject del, NSObject context);
+
+		[Static, Export ("deleteObjectWithID:className:delegate:")]
+		NSObject DeleteObjectWithID (string objectID, string className, NSObject del);
+
+		[Static, Export ("deleteObjectWithID:className:delegate:context:")]
+		NSObject DeleteObjectWithID (string objectID, string className, NSObject del, NSObject context);
+
+		[Static, Export ("deleteObjectsWithIDs:className:delegate:")]
+		NSObject DeleteObjectsWithIDs (NSObject [] objectsIDs, string className, NSObject del);
+
+		[Static, Export ("deleteObjectsWithIDs:className:delegate:context:")]
+		NSObject DeleteObjectsWithIDs (NSObject [] objectsIDs, string className, NSObject del, NSObject context);
+
+		[Static, Export ("permissionsForObjectWithClassName:ID:delegate:")]
+		NSObject PermissionsForObjectWithClassName (string className, string ID, NSObject del);
+
+		[Static, Export ("permissionsForObjectWithClassName:ID:delegate:context:")]
+		NSObject PermissionsForObjectWithClassName (string className, string ID, NSObject del, NSObject context);
+
+		[Static, Export ("uploadFile:className:objectID:fileFieldName:delegate:")]
+		NSObject UploadFile (QBCOFile file, string className, string objectID, string fileFieldName, NSObject del);
+
+		[Static, Export ("uploadFile:className:objectID:fileFieldName:delegate:context:")]
+		NSObject UploadFile (QBCOFile file, string className, string objectID, string fileFieldName, NSObject del, NSObject context);
+
+		[Static, Export ("downloadFileFromClassName:objectID:fileFieldName:delegate:")]
+		NSObject DownloadFileFromClassName (string className, string objectID, string fileFieldName, NSObject del);
+
+		[Static, Export ("downloadFileFromClassName:objectID:fileFieldName:delegate:context:")]
+		NSObject DownloadFileFromClassName (string className, string objectID, string fileFieldName, NSObject del, NSObject context);
+
+		[Static, Export ("deleteFileFromClassName:objectID:fileFieldName:delegate:")]
+		NSObject DeleteFileFromClassName (string className, string objectID, string fileFieldName, NSObject del);
+
+		[Static, Export ("deleteFileFromClassName:objectID:fileFieldName:delegate:context:")]
+		NSObject DeleteFileFromClassName (string className, string objectID, string fileFieldName, NSObject del, NSObject context);
+	}
+	
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOPermissions {
+
+		[Export ("recordID", ArgumentSemantic.Retain)]
+		string RecordID { get; set; }
+
+		[Export ("readAccess")]
+		QBCOPermissionsAccess ReadAccess { get; set; }
+
+		[Export ("updateAccess")]
+		QBCOPermissionsAccess UpdateAccess { get; set; }
+
+		[Export ("deleteAccess")]
+		QBCOPermissionsAccess DeleteAccess { get; set; }
+
+		[Export ("usersIDsForReadAccess", ArgumentSemantic.Retain)]
+		NSMutableArray UsersIDsForReadAccess { get; set; }
+
+		[Export ("usersGroupsForReadAccess", ArgumentSemantic.Retain)]
+		NSMutableArray UsersGroupsForReadAccess { get; set; }
+
+		[Export ("usersIDsForUpdateAccess", ArgumentSemantic.Retain)]
+		NSMutableArray UsersIDsForUpdateAccess { get; set; }
+
+		[Export ("usersGroupsForUpdateAccess", ArgumentSemantic.Retain)]
+		NSMutableArray UsersGroupsForUpdateAccess { get; set; }
+
+		[Export ("usersIDsForDeleteAccess", ArgumentSemantic.Retain)]
+		NSMutableArray UsersIDsForDeleteAccess { get; set; }
+
+		[Export ("usersGroupsForDeleteAccess", ArgumentSemantic.Retain)]
+		NSMutableArray UsersGroupsForDeleteAccess { get; set; }
+
+		[Static, Export ("permissions")]
+		QBCOPermissions Permissions ();
+
+		[Static, Export ("permissionsAccessFromString:")]
+		QBCOPermissionsAccess PermissionsAccessFromString (string permissionsAccess);
+
+		[Static, Export ("permissionsAccessToString:")]
+		string PermissionsAccessToString (QBCOPermissionsAccess permissionsAccess);
+	}
+
+	[BaseType (typeof (NSObject))]
+	public partial interface QBCOFile {
+
+		[Export ("name", ArgumentSemantic.Retain)]
+		string Name { get; set; }
+
+		[Export ("contentType", ArgumentSemantic.Retain)]
+		string ContentType { get; set; }
+
+		[Export ("data", ArgumentSemantic.Retain)]
+		NSData Data { get; set; }
+
+		[Static, Export ("file")]
+		QBCOFile File ();
+	}
+	
+	[BaseType (typeof (NSObject))]
+	public partial interface QBBaseModule {
+
+		[Export ("token", ArgumentSemantic.Retain)]
+		string Token { get; set; }
+
+		[Export ("tokenExpirationDate", ArgumentSemantic.Retain)]
+		NSDate TokenExpirationDate { get; set; }
+
+		[Export ("sessionType")]
+		QBSessionType SessionType { get; set; }
+
+		[Export ("sessionCreationRequest", ArgumentSemantic.Retain)]
+		QBASessionCreationRequest SessionCreationRequest { get; set; }
+
+		[Static, Export ("createSharedModule")]
+		void CreateSharedModule ();
+
+		[Static, Export ("sharedModule")]
+		QBBaseModule SharedModule { get; }
+
+		[Export ("reset")]
+		void Reset ();
+
+		[Static, Export ("serverEndpointURL")]
+		string ServerEndpointURL { get; }
+
+		[Static, Export ("chatServerEndpointURL")]
+		string ChatServerEndpointURL { get; }
+
+		[Static, Export ("chatMUCServerEndpointURL")]
+		string ChatMUCServerEndpointURL { get; }
+	}
+
+	[BaseType (typeof (Result))]
+	public partial interface QBAAuthSessionCreationResult {
+
+		[Export ("session")]
+		QBASession Session { get; }
+
+		[Export ("token")]
+		string Token { get; }
+
+		[Export ("socialProviderToken")]
+		string SocialProviderToken { get; }
+
+		[Export ("socialProviderTokenExpiresAt")]
+		NSDate SocialProviderTokenExpiresAt { get; }
+	}
+	
+	[BaseType (typeof (Entity))]
+	public partial interface QBASession {
+
+		[Export ("token", ArgumentSemantic.Retain)]
+		string Token { get; set; }
+
+		[Export ("applicationID")]
+		uint ApplicationID { get; set; }
+
+		[Export ("userID")]
+		uint UserID { get; set; }
+
+		[Export ("deviceID")]
+		uint DeviceID { get; set; }
+
+		[Export ("timestamp")]
+		uint Timestamp { get; set; }
+
+		[Export ("nonce")]
+		int Nonce { get; set; }
+	}
+
 }
 
 
