@@ -7,81 +7,82 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOCustomObject", true)]
 	public unsafe partial class QBCOCustomObject : NSObject {
 		[CompilerGenerated]
-		const string selID = "ID";
-		static readonly IntPtr selIDHandle = Selector.GetHandle ("ID");
-		[CompilerGenerated]
-		const string selSetID_ = "setID:";
-		static readonly IntPtr selSetID_Handle = Selector.GetHandle ("setID:");
-		[CompilerGenerated]
-		const string selParentID = "parentID";
-		static readonly IntPtr selParentIDHandle = Selector.GetHandle ("parentID");
-		[CompilerGenerated]
-		const string selSetParentID_ = "setParentID:";
-		static readonly IntPtr selSetParentID_Handle = Selector.GetHandle ("setParentID:");
+		const string selClassName = "className";
+		static readonly IntPtr selClassNameHandle = Selector.GetHandle ("className");
 		[CompilerGenerated]
 		const string selCreatedAt = "createdAt";
 		static readonly IntPtr selCreatedAtHandle = Selector.GetHandle ("createdAt");
 		[CompilerGenerated]
-		const string selSetCreatedAt_ = "setCreatedAt:";
-		static readonly IntPtr selSetCreatedAt_Handle = Selector.GetHandle ("setCreatedAt:");
-		[CompilerGenerated]
-		const string selUpdatedAt = "updatedAt";
-		static readonly IntPtr selUpdatedAtHandle = Selector.GetHandle ("updatedAt");
-		[CompilerGenerated]
-		const string selSetUpdatedAt_ = "setUpdatedAt:";
-		static readonly IntPtr selSetUpdatedAt_Handle = Selector.GetHandle ("setUpdatedAt:");
-		[CompilerGenerated]
-		const string selClassName = "className";
-		static readonly IntPtr selClassNameHandle = Selector.GetHandle ("className");
-		[CompilerGenerated]
-		const string selSetClassName_ = "setClassName:";
-		static readonly IntPtr selSetClassName_Handle = Selector.GetHandle ("setClassName:");
-		[CompilerGenerated]
-		const string selUserID = "userID";
-		static readonly IntPtr selUserIDHandle = Selector.GetHandle ("userID");
-		[CompilerGenerated]
-		const string selSetUserID_ = "setUserID:";
-		static readonly IntPtr selSetUserID_Handle = Selector.GetHandle ("setUserID:");
+		const string selCustomObject = "customObject";
+		static readonly IntPtr selCustomObjectHandle = Selector.GetHandle ("customObject");
 		[CompilerGenerated]
 		const string selFields = "fields";
 		static readonly IntPtr selFieldsHandle = Selector.GetHandle ("fields");
 		[CompilerGenerated]
-		const string selSetFields_ = "setFields:";
-		static readonly IntPtr selSetFields_Handle = Selector.GetHandle ("setFields:");
+		const string selID = "ID";
+		static readonly IntPtr selIDHandle = Selector.GetHandle ("ID");
+		[CompilerGenerated]
+		const string selParentID = "parentID";
+		static readonly IntPtr selParentIDHandle = Selector.GetHandle ("parentID");
 		[CompilerGenerated]
 		const string selPermissions = "permissions";
 		static readonly IntPtr selPermissionsHandle = Selector.GetHandle ("permissions");
 		[CompilerGenerated]
+		const string selSetClassName_ = "setClassName:";
+		static readonly IntPtr selSetClassName_Handle = Selector.GetHandle ("setClassName:");
+		[CompilerGenerated]
+		const string selSetCreatedAt_ = "setCreatedAt:";
+		static readonly IntPtr selSetCreatedAt_Handle = Selector.GetHandle ("setCreatedAt:");
+		[CompilerGenerated]
+		const string selSetFields_ = "setFields:";
+		static readonly IntPtr selSetFields_Handle = Selector.GetHandle ("setFields:");
+		[CompilerGenerated]
+		const string selSetID_ = "setID:";
+		static readonly IntPtr selSetID_Handle = Selector.GetHandle ("setID:");
+		[CompilerGenerated]
+		const string selSetParentID_ = "setParentID:";
+		static readonly IntPtr selSetParentID_Handle = Selector.GetHandle ("setParentID:");
+		[CompilerGenerated]
 		const string selSetPermissions_ = "setPermissions:";
 		static readonly IntPtr selSetPermissions_Handle = Selector.GetHandle ("setPermissions:");
 		[CompilerGenerated]
-		const string selCustomObject = "customObject";
-		static readonly IntPtr selCustomObjectHandle = Selector.GetHandle ("customObject");
+		const string selSetUpdatedAt_ = "setUpdatedAt:";
+		static readonly IntPtr selSetUpdatedAt_Handle = Selector.GetHandle ("setUpdatedAt:");
+		[CompilerGenerated]
+		const string selSetUserID_ = "setUserID:";
+		static readonly IntPtr selSetUserID_Handle = Selector.GetHandle ("setUserID:");
+		[CompilerGenerated]
+		const string selUpdatedAt = "updatedAt";
+		static readonly IntPtr selUpdatedAtHandle = Selector.GetHandle ("updatedAt");
+		[CompilerGenerated]
+		const string selUserID = "userID";
+		static readonly IntPtr selUserIDHandle = Selector.GetHandle ("userID");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBCOCustomObject");
@@ -128,6 +129,95 @@ namespace QuickBlox {
 		public static QBCOCustomObject CustomObject ()
 		{
 			return  Runtime.GetNSObject<QBCOCustomObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selCustomObjectHandle));
+		}
+		
+		[CompilerGenerated]
+		public virtual string ClassName {
+			[Export ("className", ArgumentSemantic.Retain)]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selClassNameHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selClassNameHandle));
+				}
+			}
+			
+			[Export ("setClassName:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetClassName_Handle, nsvalue);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetClassName_Handle, nsvalue);
+				}
+				NSString.ReleaseNative (nsvalue);
+				
+			}
+		}
+		
+		[CompilerGenerated]
+		object __mt_CreatedAt_var;
+		[CompilerGenerated]
+		public virtual NSDate CreatedAt {
+			[Export ("createdAt", ArgumentSemantic.Retain)]
+			get {
+				NSDate ret;
+				if (IsDirectBinding) {
+					ret =  Runtime.GetNSObject<NSDate> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selCreatedAtHandle));
+				} else {
+					ret =  Runtime.GetNSObject<NSDate> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selCreatedAtHandle));
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_CreatedAt_var = ret;
+				return ret;
+			}
+			
+			[Export ("setCreatedAt:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetCreatedAt_Handle, value.Handle);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetCreatedAt_Handle, value.Handle);
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_CreatedAt_var = value;
+			}
+		}
+		
+		[CompilerGenerated]
+		object __mt_Fields_var;
+		[CompilerGenerated]
+		public virtual NSMutableDictionary Fields {
+			[Export ("fields", ArgumentSemantic.Retain)]
+			get {
+				NSMutableDictionary ret;
+				if (IsDirectBinding) {
+					ret =  Runtime.GetNSObject<NSMutableDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selFieldsHandle));
+				} else {
+					ret =  Runtime.GetNSObject<NSMutableDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selFieldsHandle));
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_Fields_var = ret;
+				return ret;
+			}
+			
+			[Export ("setFields:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetFields_Handle, value.Handle);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetFields_Handle, value.Handle);
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_Fields_var = value;
+			}
 		}
 		
 		[CompilerGenerated]
@@ -185,33 +275,33 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		object __mt_CreatedAt_var;
+		object __mt_Permissions_var;
 		[CompilerGenerated]
-		public virtual NSDate CreatedAt {
-			[Export ("createdAt", ArgumentSemantic.Retain)]
+		public virtual QBCOPermissions Permissions {
+			[Export ("permissions", ArgumentSemantic.Retain)]
 			get {
-				NSDate ret;
+				QBCOPermissions ret;
 				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<NSDate> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selCreatedAtHandle));
+					ret =  Runtime.GetNSObject<QBCOPermissions> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selPermissionsHandle));
 				} else {
-					ret =  Runtime.GetNSObject<NSDate> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selCreatedAtHandle));
+					ret =  Runtime.GetNSObject<QBCOPermissions> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selPermissionsHandle));
 				}
 				if (!IsNewRefcountEnabled ())
-					__mt_CreatedAt_var = ret;
+					__mt_Permissions_var = ret;
 				return ret;
 			}
 			
-			[Export ("setCreatedAt:", ArgumentSemantic.Retain)]
+			[Export ("setPermissions:", ArgumentSemantic.Retain)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetCreatedAt_Handle, value.Handle);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetPermissions_Handle, value.Handle);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetCreatedAt_Handle, value.Handle);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetPermissions_Handle, value.Handle);
 				}
 				if (!IsNewRefcountEnabled ())
-					__mt_CreatedAt_var = value;
+					__mt_Permissions_var = value;
 			}
 		}
 		
@@ -247,33 +337,6 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual string ClassName {
-			[Export ("className", ArgumentSemantic.Retain)]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selClassNameHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selClassNameHandle));
-				}
-			}
-			
-			[Export ("setClassName:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				var nsvalue = NSString.CreateNative (value);
-				
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetClassName_Handle, nsvalue);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetClassName_Handle, nsvalue);
-				}
-				NSString.ReleaseNative (nsvalue);
-				
-			}
-		}
-		
-		[CompilerGenerated]
 		public virtual global::System.UInt32 UserID {
 			[Export ("userID")]
 			get {
@@ -295,76 +358,14 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		object __mt_Fields_var;
-		[CompilerGenerated]
-		public virtual NSMutableDictionary Fields {
-			[Export ("fields", ArgumentSemantic.Retain)]
-			get {
-				NSMutableDictionary ret;
-				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<NSMutableDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selFieldsHandle));
-				} else {
-					ret =  Runtime.GetNSObject<NSMutableDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selFieldsHandle));
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Fields_var = ret;
-				return ret;
-			}
-			
-			[Export ("setFields:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetFields_Handle, value.Handle);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetFields_Handle, value.Handle);
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Fields_var = value;
-			}
-		}
-		
-		[CompilerGenerated]
-		object __mt_Permissions_var;
-		[CompilerGenerated]
-		public virtual QBCOPermissions Permissions {
-			[Export ("permissions", ArgumentSemantic.Retain)]
-			get {
-				QBCOPermissions ret;
-				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<QBCOPermissions> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selPermissionsHandle));
-				} else {
-					ret =  Runtime.GetNSObject<QBCOPermissions> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selPermissionsHandle));
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Permissions_var = ret;
-				return ret;
-			}
-			
-			[Export ("setPermissions:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetPermissions_Handle, value.Handle);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetPermissions_Handle, value.Handle);
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Permissions_var = value;
-			}
-		}
-		
-		[CompilerGenerated]
 		protected override void Dispose (bool disposing)
 		{
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
 				__mt_CreatedAt_var = null;
-				__mt_UpdatedAt_var = null;
 				__mt_Fields_var = null;
 				__mt_Permissions_var = null;
+				__mt_UpdatedAt_var = null;
 			}
 		}
 	} /* class QBCOCustomObject */

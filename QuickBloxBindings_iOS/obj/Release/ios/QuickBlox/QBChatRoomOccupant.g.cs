@@ -7,42 +7,43 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBChatRoomOccupant", true)]
 	public unsafe partial class QBChatRoomOccupant : NSObject {
 		[CompilerGenerated]
+		const string selInitWithUserNicknameParameters_ = "initWithUserNickname:parameters:";
+		static readonly IntPtr selInitWithUserNicknameParameters_Handle = Selector.GetHandle ("initWithUserNickname:parameters:");
+		[CompilerGenerated]
 		const string selNickname = "nickname";
 		static readonly IntPtr selNicknameHandle = Selector.GetHandle ("nickname");
-		[CompilerGenerated]
-		const string selParameters = "parameters";
-		static readonly IntPtr selParametersHandle = Selector.GetHandle ("parameters");
 		[CompilerGenerated]
 		const string selOccupantWithUserNicknameParameters_ = "occupantWithUserNickname:parameters:";
 		static readonly IntPtr selOccupantWithUserNicknameParameters_Handle = Selector.GetHandle ("occupantWithUserNickname:parameters:");
 		[CompilerGenerated]
-		const string selInitWithUserNicknameParameters_ = "initWithUserNickname:parameters:";
-		static readonly IntPtr selInitWithUserNicknameParameters_Handle = Selector.GetHandle ("initWithUserNickname:parameters:");
+		const string selParameters = "parameters";
+		static readonly IntPtr selParametersHandle = Selector.GetHandle ("parameters");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBChatRoomOccupant");
@@ -84,23 +85,6 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
-		[Export ("occupantWithUserNickname:parameters:")]
-		[CompilerGenerated]
-		public static QBChatRoomOccupant OccupantWithUserNickname (string aNickname, NSDictionary parameters)
-		{
-			if (aNickname == null)
-				throw new ArgumentNullException ("aNickname");
-			if (parameters == null)
-				throw new ArgumentNullException ("parameters");
-			var nsaNickname = NSString.CreateNative (aNickname);
-			
-			QBChatRoomOccupant ret;
-			ret =  Runtime.GetNSObject<QBChatRoomOccupant> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selOccupantWithUserNicknameParameters_Handle, nsaNickname, parameters.Handle));
-			NSString.ReleaseNative (nsaNickname);
-			
-			return ret;
-		}
-		
 		[Export ("initWithUserNickname:parameters:")]
 		[CompilerGenerated]
 		public QBChatRoomOccupant (string aNickname, NSDictionary parameters)
@@ -120,6 +104,23 @@ namespace QuickBlox {
 			}
 			NSString.ReleaseNative (nsaNickname);
 			
+		}
+		
+		[Export ("occupantWithUserNickname:parameters:")]
+		[CompilerGenerated]
+		public static QBChatRoomOccupant OccupantWithUserNickname (string aNickname, NSDictionary parameters)
+		{
+			if (aNickname == null)
+				throw new ArgumentNullException ("aNickname");
+			if (parameters == null)
+				throw new ArgumentNullException ("parameters");
+			var nsaNickname = NSString.CreateNative (aNickname);
+			
+			QBChatRoomOccupant ret;
+			ret =  Runtime.GetNSObject<QBChatRoomOccupant> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selOccupantWithUserNicknameParameters_Handle, nsaNickname, parameters.Handle));
+			NSString.ReleaseNative (nsaNickname);
+			
+			return ret;
 		}
 		
 		[CompilerGenerated]
@@ -147,8 +148,8 @@ namespace QuickBlox {
 				} else {
 					ret =  Runtime.GetNSObject<NSDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selParametersHandle));
 				}
-				MarkDirty ();
-				__mt_Parameters_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_Parameters_var = ret;
 				return ret;
 			}
 			

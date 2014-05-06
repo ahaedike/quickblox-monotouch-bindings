@@ -379,7 +379,7 @@ namespace QuickBlox
 	
 	
 	[BaseType (typeof (NSObject))]
-	[Model]
+	[Model, Protocol]
 	public interface QBActionStatusDelegate {
 		
 		[Export ("completedWithResult:")]
@@ -636,7 +636,8 @@ namespace QuickBlox
 		void SendGetIQWithXmlns (string xmlns, string node);
 	}
 
-	[Model, BaseType (typeof (NSObject))]
+	[BaseType (typeof (NSObject))]
+	[Model, Protocol]
 	public partial interface QBChatDelegate {
 		
 		[Export ("chatDidLogin")]

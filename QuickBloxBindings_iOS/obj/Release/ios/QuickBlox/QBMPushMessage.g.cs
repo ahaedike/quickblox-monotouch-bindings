@@ -7,75 +7,76 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBMPushMessage", true)]
 	public unsafe partial class QBMPushMessage : QBMPushMessageBase {
 		[CompilerGenerated]
+		const string selAdditionalInfo = "additionalInfo";
+		static readonly IntPtr selAdditionalInfoHandle = Selector.GetHandle ("additionalInfo");
+		[CompilerGenerated]
 		const string selAlertBody = "alertBody";
 		static readonly IntPtr selAlertBodyHandle = Selector.GetHandle ("alertBody");
-		[CompilerGenerated]
-		const string selSetAlertBody_ = "setAlertBody:";
-		static readonly IntPtr selSetAlertBody_Handle = Selector.GetHandle ("setAlertBody:");
 		[CompilerGenerated]
 		const string selBadge = "badge";
 		static readonly IntPtr selBadgeHandle = Selector.GetHandle ("badge");
 		[CompilerGenerated]
-		const string selSetBadge_ = "setBadge:";
-		static readonly IntPtr selSetBadge_Handle = Selector.GetHandle ("setBadge:");
-		[CompilerGenerated]
-		const string selSoundFile = "soundFile";
-		static readonly IntPtr selSoundFileHandle = Selector.GetHandle ("soundFile");
-		[CompilerGenerated]
-		const string selSetSoundFile_ = "setSoundFile:";
-		static readonly IntPtr selSetSoundFile_Handle = Selector.GetHandle ("setSoundFile:");
-		[CompilerGenerated]
-		const string selLocalizedBodyKey = "localizedBodyKey";
-		static readonly IntPtr selLocalizedBodyKeyHandle = Selector.GetHandle ("localizedBodyKey");
-		[CompilerGenerated]
-		const string selSetLocalizedBodyKey_ = "setLocalizedBodyKey:";
-		static readonly IntPtr selSetLocalizedBodyKey_Handle = Selector.GetHandle ("setLocalizedBodyKey:");
+		const string selLocalizedActionKey = "localizedActionKey";
+		static readonly IntPtr selLocalizedActionKeyHandle = Selector.GetHandle ("localizedActionKey");
 		[CompilerGenerated]
 		const string selLocalizedBodyArguments = "localizedBodyArguments";
 		static readonly IntPtr selLocalizedBodyArgumentsHandle = Selector.GetHandle ("localizedBodyArguments");
 		[CompilerGenerated]
-		const string selSetLocalizedBodyArguments_ = "setLocalizedBodyArguments:";
-		static readonly IntPtr selSetLocalizedBodyArguments_Handle = Selector.GetHandle ("setLocalizedBodyArguments:");
+		const string selLocalizedBodyKey = "localizedBodyKey";
+		static readonly IntPtr selLocalizedBodyKeyHandle = Selector.GetHandle ("localizedBodyKey");
 		[CompilerGenerated]
-		const string selLocalizedActionKey = "localizedActionKey";
-		static readonly IntPtr selLocalizedActionKeyHandle = Selector.GetHandle ("localizedActionKey");
-		[CompilerGenerated]
-		const string selSetLocalizedActionKey_ = "setLocalizedActionKey:";
-		static readonly IntPtr selSetLocalizedActionKey_Handle = Selector.GetHandle ("setLocalizedActionKey:");
-		[CompilerGenerated]
-		const string selAdditionalInfo = "additionalInfo";
-		static readonly IntPtr selAdditionalInfoHandle = Selector.GetHandle ("additionalInfo");
+		const string selPushMessage = "pushMessage";
+		static readonly IntPtr selPushMessageHandle = Selector.GetHandle ("pushMessage");
 		[CompilerGenerated]
 		const string selSetAdditionalInfo_ = "setAdditionalInfo:";
 		static readonly IntPtr selSetAdditionalInfo_Handle = Selector.GetHandle ("setAdditionalInfo:");
 		[CompilerGenerated]
-		const string selPushMessage = "pushMessage";
-		static readonly IntPtr selPushMessageHandle = Selector.GetHandle ("pushMessage");
+		const string selSetAlertBody_ = "setAlertBody:";
+		static readonly IntPtr selSetAlertBody_Handle = Selector.GetHandle ("setAlertBody:");
+		[CompilerGenerated]
+		const string selSetBadge_ = "setBadge:";
+		static readonly IntPtr selSetBadge_Handle = Selector.GetHandle ("setBadge:");
+		[CompilerGenerated]
+		const string selSetLocalizedActionKey_ = "setLocalizedActionKey:";
+		static readonly IntPtr selSetLocalizedActionKey_Handle = Selector.GetHandle ("setLocalizedActionKey:");
+		[CompilerGenerated]
+		const string selSetLocalizedBodyArguments_ = "setLocalizedBodyArguments:";
+		static readonly IntPtr selSetLocalizedBodyArguments_Handle = Selector.GetHandle ("setLocalizedBodyArguments:");
+		[CompilerGenerated]
+		const string selSetLocalizedBodyKey_ = "setLocalizedBodyKey:";
+		static readonly IntPtr selSetLocalizedBodyKey_Handle = Selector.GetHandle ("setLocalizedBodyKey:");
+		[CompilerGenerated]
+		const string selSetSoundFile_ = "setSoundFile:";
+		static readonly IntPtr selSetSoundFile_Handle = Selector.GetHandle ("setSoundFile:");
+		[CompilerGenerated]
+		const string selSoundFile = "soundFile";
+		static readonly IntPtr selSoundFileHandle = Selector.GetHandle ("soundFile");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBMPushMessage");
@@ -122,6 +123,37 @@ namespace QuickBlox {
 		public static QBMPushMessage PushMessage ()
 		{
 			return  Runtime.GetNSObject<QBMPushMessage> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selPushMessageHandle));
+		}
+		
+		[CompilerGenerated]
+		object __mt_AdditionalInfo_var;
+		[CompilerGenerated]
+		public virtual NSDictionary AdditionalInfo {
+			[Export ("additionalInfo", ArgumentSemantic.Retain)]
+			get {
+				NSDictionary ret;
+				if (IsDirectBinding) {
+					ret =  Runtime.GetNSObject<NSDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selAdditionalInfoHandle));
+				} else {
+					ret =  Runtime.GetNSObject<NSDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selAdditionalInfoHandle));
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_AdditionalInfo_var = ret;
+				return ret;
+			}
+			
+			[Export ("setAdditionalInfo:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetAdditionalInfo_Handle, value.Handle);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetAdditionalInfo_Handle, value.Handle);
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_AdditionalInfo_var = value;
+			}
 		}
 		
 		[CompilerGenerated]
@@ -183,53 +215,26 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual string SoundFile {
-			[Export ("soundFile", ArgumentSemantic.Retain)]
+		public virtual string LocalizedActionKey {
+			[Export ("localizedActionKey", ArgumentSemantic.Retain)]
 			get {
 				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selSoundFileHandle));
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selLocalizedActionKeyHandle));
 				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSoundFileHandle));
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selLocalizedActionKeyHandle));
 				}
 			}
 			
-			[Export ("setSoundFile:", ArgumentSemantic.Retain)]
+			[Export ("setLocalizedActionKey:", ArgumentSemantic.Retain)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");
 				var nsvalue = NSString.CreateNative (value);
 				
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetSoundFile_Handle, nsvalue);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetLocalizedActionKey_Handle, nsvalue);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetSoundFile_Handle, nsvalue);
-				}
-				NSString.ReleaseNative (nsvalue);
-				
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual string LocalizedBodyKey {
-			[Export ("localizedBodyKey", ArgumentSemantic.Retain)]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selLocalizedBodyKeyHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selLocalizedBodyKeyHandle));
-				}
-			}
-			
-			[Export ("setLocalizedBodyKey:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				var nsvalue = NSString.CreateNative (value);
-				
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetLocalizedBodyKey_Handle, nsvalue);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetLocalizedBodyKey_Handle, nsvalue);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetLocalizedActionKey_Handle, nsvalue);
 				}
 				NSString.ReleaseNative (nsvalue);
 				
@@ -272,26 +277,26 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual string LocalizedActionKey {
-			[Export ("localizedActionKey", ArgumentSemantic.Retain)]
+		public virtual string LocalizedBodyKey {
+			[Export ("localizedBodyKey", ArgumentSemantic.Retain)]
 			get {
 				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selLocalizedActionKeyHandle));
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selLocalizedBodyKeyHandle));
 				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selLocalizedActionKeyHandle));
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selLocalizedBodyKeyHandle));
 				}
 			}
 			
-			[Export ("setLocalizedActionKey:", ArgumentSemantic.Retain)]
+			[Export ("setLocalizedBodyKey:", ArgumentSemantic.Retain)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");
 				var nsvalue = NSString.CreateNative (value);
 				
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetLocalizedActionKey_Handle, nsvalue);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetLocalizedBodyKey_Handle, nsvalue);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetLocalizedActionKey_Handle, nsvalue);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetLocalizedBodyKey_Handle, nsvalue);
 				}
 				NSString.ReleaseNative (nsvalue);
 				
@@ -299,33 +304,29 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		object __mt_AdditionalInfo_var;
-		[CompilerGenerated]
-		public virtual NSDictionary AdditionalInfo {
-			[Export ("additionalInfo", ArgumentSemantic.Retain)]
+		public virtual string SoundFile {
+			[Export ("soundFile", ArgumentSemantic.Retain)]
 			get {
-				NSDictionary ret;
 				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<NSDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selAdditionalInfoHandle));
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selSoundFileHandle));
 				} else {
-					ret =  Runtime.GetNSObject<NSDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selAdditionalInfoHandle));
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSoundFileHandle));
 				}
-				if (!IsNewRefcountEnabled ())
-					__mt_AdditionalInfo_var = ret;
-				return ret;
 			}
 			
-			[Export ("setAdditionalInfo:", ArgumentSemantic.Retain)]
+			[Export ("setSoundFile:", ArgumentSemantic.Retain)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetAdditionalInfo_Handle, value.Handle);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetSoundFile_Handle, nsvalue);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetAdditionalInfo_Handle, value.Handle);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetSoundFile_Handle, nsvalue);
 				}
-				if (!IsNewRefcountEnabled ())
-					__mt_AdditionalInfo_var = value;
+				NSString.ReleaseNative (nsvalue);
+				
 			}
 		}
 		
@@ -334,9 +335,9 @@ namespace QuickBlox {
 		{
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
+				__mt_AdditionalInfo_var = null;
 				__mt_Badge_var = null;
 				__mt_LocalizedBodyArguments_var = null;
-				__mt_AdditionalInfo_var = null;
 			}
 		}
 	} /* class QBMPushMessage */

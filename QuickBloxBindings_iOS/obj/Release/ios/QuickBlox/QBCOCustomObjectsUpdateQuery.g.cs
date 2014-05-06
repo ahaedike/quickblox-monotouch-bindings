@@ -7,42 +7,43 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOCustomObjectsUpdateQuery", true)]
 	public unsafe partial class QBCOCustomObjectsUpdateQuery : NSObject {
 		[CompilerGenerated]
-		const string selObjects = "objects";
-		static readonly IntPtr selObjectsHandle = Selector.GetHandle ("objects");
-		[CompilerGenerated]
 		const string selClassName = "className";
 		static readonly IntPtr selClassNameHandle = Selector.GetHandle ("className");
 		[CompilerGenerated]
-		const string selSpecialUpdateOperators = "specialUpdateOperators";
-		static readonly IntPtr selSpecialUpdateOperatorsHandle = Selector.GetHandle ("specialUpdateOperators");
-		[CompilerGenerated]
 		const string selInitWithObjectsClassNameSpecialUpdateOperators_ = "initWithObjects:className:specialUpdateOperators:";
 		static readonly IntPtr selInitWithObjectsClassNameSpecialUpdateOperators_Handle = Selector.GetHandle ("initWithObjects:className:specialUpdateOperators:");
+		[CompilerGenerated]
+		const string selObjects = "objects";
+		static readonly IntPtr selObjectsHandle = Selector.GetHandle ("objects");
+		[CompilerGenerated]
+		const string selSpecialUpdateOperators = "specialUpdateOperators";
+		static readonly IntPtr selSpecialUpdateOperatorsHandle = Selector.GetHandle ("specialUpdateOperators");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBCOCustomObjectsUpdateQuery");
@@ -112,6 +113,19 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
+		public virtual string ClassName {
+			[Export ("className")]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selClassNameHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selClassNameHandle));
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
 		object __mt_Objects_var;
 		[CompilerGenerated]
 		public virtual NSObject[] Objects {
@@ -123,22 +137,9 @@ namespace QuickBlox {
 				} else {
 					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selObjectsHandle));
 				}
-				MarkDirty ();
-				__mt_Objects_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_Objects_var = ret;
 				return ret;
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual string ClassName {
-			[Export ("className")]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selClassNameHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selClassNameHandle));
-				}
 			}
 			
 		}
@@ -155,8 +156,8 @@ namespace QuickBlox {
 				} else {
 					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSpecialUpdateOperatorsHandle));
 				}
-				MarkDirty ();
-				__mt_SpecialUpdateOperators_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_SpecialUpdateOperators_var = ret;
 				return ret;
 			}
 			

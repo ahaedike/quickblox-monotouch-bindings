@@ -7,26 +7,27 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBAAuthSessionCreationResult", true)]
@@ -35,14 +36,14 @@ namespace QuickBlox {
 		const string selSession = "session";
 		static readonly IntPtr selSessionHandle = Selector.GetHandle ("session");
 		[CompilerGenerated]
-		const string selToken = "token";
-		static readonly IntPtr selTokenHandle = Selector.GetHandle ("token");
-		[CompilerGenerated]
 		const string selSocialProviderToken = "socialProviderToken";
 		static readonly IntPtr selSocialProviderTokenHandle = Selector.GetHandle ("socialProviderToken");
 		[CompilerGenerated]
 		const string selSocialProviderTokenExpiresAt = "socialProviderTokenExpiresAt";
 		static readonly IntPtr selSocialProviderTokenExpiresAtHandle = Selector.GetHandle ("socialProviderTokenExpiresAt");
+		[CompilerGenerated]
+		const string selToken = "token";
+		static readonly IntPtr selTokenHandle = Selector.GetHandle ("token");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBAAuthSessionCreationResult");
@@ -96,22 +97,9 @@ namespace QuickBlox {
 				} else {
 					ret =  Runtime.GetNSObject<QBASession> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSessionHandle));
 				}
-				MarkDirty ();
-				__mt_Session_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_Session_var = ret;
 				return ret;
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual string Token {
-			[Export ("token")]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selTokenHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selTokenHandle));
-				}
 			}
 			
 		}
@@ -141,9 +129,22 @@ namespace QuickBlox {
 				} else {
 					ret =  Runtime.GetNSObject<NSDate> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSocialProviderTokenExpiresAtHandle));
 				}
-				MarkDirty ();
-				__mt_SocialProviderTokenExpiresAt_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_SocialProviderTokenExpiresAt_var = ret;
 				return ret;
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public virtual string Token {
+			[Export ("token")]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selTokenHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selTokenHandle));
+				}
 			}
 			
 		}

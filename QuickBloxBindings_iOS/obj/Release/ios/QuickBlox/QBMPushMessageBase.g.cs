@@ -7,45 +7,46 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBMPushMessageBase", true)]
 	public unsafe partial class QBMPushMessageBase : NSObject {
-		[CompilerGenerated]
-		const string selPayloadDict = "payloadDict";
-		static readonly IntPtr selPayloadDictHandle = Selector.GetHandle ("payloadDict");
-		[CompilerGenerated]
-		const string selSetPayloadDict_ = "setPayloadDict:";
-		static readonly IntPtr selSetPayloadDict_Handle = Selector.GetHandle ("setPayloadDict:");
-		[CompilerGenerated]
-		const string selJson = "json";
-		static readonly IntPtr selJsonHandle = Selector.GetHandle ("json");
 		[CompilerGenerated]
 		const string selCharsLeft = "charsLeft";
 		static readonly IntPtr selCharsLeftHandle = Selector.GetHandle ("charsLeft");
 		[CompilerGenerated]
 		const string selInitWithPayload_ = "initWithPayload:";
 		static readonly IntPtr selInitWithPayload_Handle = Selector.GetHandle ("initWithPayload:");
+		[CompilerGenerated]
+		const string selJson = "json";
+		static readonly IntPtr selJsonHandle = Selector.GetHandle ("json");
+		[CompilerGenerated]
+		const string selPayloadDict = "payloadDict";
+		static readonly IntPtr selPayloadDictHandle = Selector.GetHandle ("payloadDict");
+		[CompilerGenerated]
+		const string selSetPayloadDict_ = "setPayloadDict:";
+		static readonly IntPtr selSetPayloadDict_Handle = Selector.GetHandle ("setPayloadDict:");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBMPushMessageBase");
@@ -103,6 +104,32 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
+		public virtual int CharsLeft {
+			[Export ("charsLeft")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selCharsLeftHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selCharsLeftHandle);
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public virtual string Json {
+			[Export ("json")]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selJsonHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selJsonHandle));
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
 		object __mt_PayloadDict_var;
 		[CompilerGenerated]
 		public virtual NSMutableDictionary PayloadDict {
@@ -131,32 +158,6 @@ namespace QuickBlox {
 				if (!IsNewRefcountEnabled ())
 					__mt_PayloadDict_var = value;
 			}
-		}
-		
-		[CompilerGenerated]
-		public virtual string Json {
-			[Export ("json")]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selJsonHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selJsonHandle));
-				}
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual int CharsLeft {
-			[Export ("charsLeft")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selCharsLeftHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selCharsLeftHandle);
-				}
-			}
-			
 		}
 		
 		[CompilerGenerated]

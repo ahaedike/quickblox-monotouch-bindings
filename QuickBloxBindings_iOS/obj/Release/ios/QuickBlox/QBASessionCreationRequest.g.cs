@@ -7,36 +7,31 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBASessionCreationRequest", true)]
 	public unsafe partial class QBASessionCreationRequest : Request {
-		[CompilerGenerated]
-		const string selSocialProvider = "socialProvider";
-		static readonly IntPtr selSocialProviderHandle = Selector.GetHandle ("socialProvider");
-		[CompilerGenerated]
-		const string selSetSocialProvider_ = "setSocialProvider:";
-		static readonly IntPtr selSetSocialProvider_Handle = Selector.GetHandle ("setSocialProvider:");
 		[CompilerGenerated]
 		const string selScope = "scope";
 		static readonly IntPtr selScopeHandle = Selector.GetHandle ("scope");
@@ -44,35 +39,41 @@ namespace QuickBlox {
 		const string selSetScope_ = "setScope:";
 		static readonly IntPtr selSetScope_Handle = Selector.GetHandle ("setScope:");
 		[CompilerGenerated]
-		const string selSocialProviderAccessToken = "socialProviderAccessToken";
-		static readonly IntPtr selSocialProviderAccessTokenHandle = Selector.GetHandle ("socialProviderAccessToken");
+		const string selSetSocialProvider_ = "setSocialProvider:";
+		static readonly IntPtr selSetSocialProvider_Handle = Selector.GetHandle ("setSocialProvider:");
 		[CompilerGenerated]
 		const string selSetSocialProviderAccessToken_ = "setSocialProviderAccessToken:";
 		static readonly IntPtr selSetSocialProviderAccessToken_Handle = Selector.GetHandle ("setSocialProviderAccessToken:");
 		[CompilerGenerated]
-		const string selSocialProviderAccessTokenSecret = "socialProviderAccessTokenSecret";
-		static readonly IntPtr selSocialProviderAccessTokenSecretHandle = Selector.GetHandle ("socialProviderAccessTokenSecret");
-		[CompilerGenerated]
 		const string selSetSocialProviderAccessTokenSecret_ = "setSocialProviderAccessTokenSecret:";
 		static readonly IntPtr selSetSocialProviderAccessTokenSecret_Handle = Selector.GetHandle ("setSocialProviderAccessTokenSecret:");
-		[CompilerGenerated]
-		const string selUserLogin = "userLogin";
-		static readonly IntPtr selUserLoginHandle = Selector.GetHandle ("userLogin");
-		[CompilerGenerated]
-		const string selSetUserLogin_ = "setUserLogin:";
-		static readonly IntPtr selSetUserLogin_Handle = Selector.GetHandle ("setUserLogin:");
-		[CompilerGenerated]
-		const string selUserEmail = "userEmail";
-		static readonly IntPtr selUserEmailHandle = Selector.GetHandle ("userEmail");
 		[CompilerGenerated]
 		const string selSetUserEmail_ = "setUserEmail:";
 		static readonly IntPtr selSetUserEmail_Handle = Selector.GetHandle ("setUserEmail:");
 		[CompilerGenerated]
-		const string selUserPassword = "userPassword";
-		static readonly IntPtr selUserPasswordHandle = Selector.GetHandle ("userPassword");
+		const string selSetUserLogin_ = "setUserLogin:";
+		static readonly IntPtr selSetUserLogin_Handle = Selector.GetHandle ("setUserLogin:");
 		[CompilerGenerated]
 		const string selSetUserPassword_ = "setUserPassword:";
 		static readonly IntPtr selSetUserPassword_Handle = Selector.GetHandle ("setUserPassword:");
+		[CompilerGenerated]
+		const string selSocialProvider = "socialProvider";
+		static readonly IntPtr selSocialProviderHandle = Selector.GetHandle ("socialProvider");
+		[CompilerGenerated]
+		const string selSocialProviderAccessToken = "socialProviderAccessToken";
+		static readonly IntPtr selSocialProviderAccessTokenHandle = Selector.GetHandle ("socialProviderAccessToken");
+		[CompilerGenerated]
+		const string selSocialProviderAccessTokenSecret = "socialProviderAccessTokenSecret";
+		static readonly IntPtr selSocialProviderAccessTokenSecretHandle = Selector.GetHandle ("socialProviderAccessTokenSecret");
+		[CompilerGenerated]
+		const string selUserEmail = "userEmail";
+		static readonly IntPtr selUserEmailHandle = Selector.GetHandle ("userEmail");
+		[CompilerGenerated]
+		const string selUserLogin = "userLogin";
+		static readonly IntPtr selUserLoginHandle = Selector.GetHandle ("userLogin");
+		[CompilerGenerated]
+		const string selUserPassword = "userPassword";
+		static readonly IntPtr selUserPasswordHandle = Selector.GetHandle ("userPassword");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBASessionCreationRequest");
@@ -115,33 +116,6 @@ namespace QuickBlox {
 		}
 
 		[CompilerGenerated]
-		public virtual string SocialProvider {
-			[Export ("socialProvider", ArgumentSemantic.Retain)]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selSocialProviderHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSocialProviderHandle));
-				}
-			}
-			
-			[Export ("setSocialProvider:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				var nsvalue = NSString.CreateNative (value);
-				
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetSocialProvider_Handle, nsvalue);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetSocialProvider_Handle, nsvalue);
-				}
-				NSString.ReleaseNative (nsvalue);
-				
-			}
-		}
-		
-		[CompilerGenerated]
 		object __mt_Scope_var;
 		[CompilerGenerated]
 		public virtual NSObject[] Scope {
@@ -173,6 +147,33 @@ namespace QuickBlox {
 				
 				if (!IsNewRefcountEnabled ())
 					__mt_Scope_var = value;
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual string SocialProvider {
+			[Export ("socialProvider", ArgumentSemantic.Retain)]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selSocialProviderHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSocialProviderHandle));
+				}
+			}
+			
+			[Export ("setSocialProvider:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetSocialProvider_Handle, nsvalue);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetSocialProvider_Handle, nsvalue);
+				}
+				NSString.ReleaseNative (nsvalue);
+				
 			}
 		}
 		
@@ -231,33 +232,6 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual string UserLogin {
-			[Export ("userLogin", ArgumentSemantic.Retain)]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selUserLoginHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selUserLoginHandle));
-				}
-			}
-			
-			[Export ("setUserLogin:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				var nsvalue = NSString.CreateNative (value);
-				
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetUserLogin_Handle, nsvalue);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetUserLogin_Handle, nsvalue);
-				}
-				NSString.ReleaseNative (nsvalue);
-				
-			}
-		}
-		
-		[CompilerGenerated]
 		public virtual string UserEmail {
 			[Export ("userEmail", ArgumentSemantic.Retain)]
 			get {
@@ -278,6 +252,33 @@ namespace QuickBlox {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetUserEmail_Handle, nsvalue);
 				} else {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetUserEmail_Handle, nsvalue);
+				}
+				NSString.ReleaseNative (nsvalue);
+				
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual string UserLogin {
+			[Export ("userLogin", ArgumentSemantic.Retain)]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selUserLoginHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selUserLoginHandle));
+				}
+			}
+			
+			[Export ("setUserLogin:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetUserLogin_Handle, nsvalue);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetUserLogin_Handle, nsvalue);
 				}
 				NSString.ReleaseNative (nsvalue);
 				

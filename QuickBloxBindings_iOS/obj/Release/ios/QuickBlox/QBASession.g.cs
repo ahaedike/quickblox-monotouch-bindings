@@ -7,66 +7,67 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBASession", true)]
 	public unsafe partial class QBASession : Entity {
 		[CompilerGenerated]
-		const string selToken = "token";
-		static readonly IntPtr selTokenHandle = Selector.GetHandle ("token");
-		[CompilerGenerated]
-		const string selSetToken_ = "setToken:";
-		static readonly IntPtr selSetToken_Handle = Selector.GetHandle ("setToken:");
-		[CompilerGenerated]
 		const string selApplicationID = "applicationID";
 		static readonly IntPtr selApplicationIDHandle = Selector.GetHandle ("applicationID");
-		[CompilerGenerated]
-		const string selSetApplicationID_ = "setApplicationID:";
-		static readonly IntPtr selSetApplicationID_Handle = Selector.GetHandle ("setApplicationID:");
-		[CompilerGenerated]
-		const string selUserID = "userID";
-		static readonly IntPtr selUserIDHandle = Selector.GetHandle ("userID");
-		[CompilerGenerated]
-		const string selSetUserID_ = "setUserID:";
-		static readonly IntPtr selSetUserID_Handle = Selector.GetHandle ("setUserID:");
 		[CompilerGenerated]
 		const string selDeviceID = "deviceID";
 		static readonly IntPtr selDeviceIDHandle = Selector.GetHandle ("deviceID");
 		[CompilerGenerated]
+		const string selNonce = "nonce";
+		static readonly IntPtr selNonceHandle = Selector.GetHandle ("nonce");
+		[CompilerGenerated]
+		const string selSetApplicationID_ = "setApplicationID:";
+		static readonly IntPtr selSetApplicationID_Handle = Selector.GetHandle ("setApplicationID:");
+		[CompilerGenerated]
 		const string selSetDeviceID_ = "setDeviceID:";
 		static readonly IntPtr selSetDeviceID_Handle = Selector.GetHandle ("setDeviceID:");
 		[CompilerGenerated]
-		const string selTimestamp = "timestamp";
-		static readonly IntPtr selTimestampHandle = Selector.GetHandle ("timestamp");
+		const string selSetNonce_ = "setNonce:";
+		static readonly IntPtr selSetNonce_Handle = Selector.GetHandle ("setNonce:");
 		[CompilerGenerated]
 		const string selSetTimestamp_ = "setTimestamp:";
 		static readonly IntPtr selSetTimestamp_Handle = Selector.GetHandle ("setTimestamp:");
 		[CompilerGenerated]
-		const string selNonce = "nonce";
-		static readonly IntPtr selNonceHandle = Selector.GetHandle ("nonce");
+		const string selSetToken_ = "setToken:";
+		static readonly IntPtr selSetToken_Handle = Selector.GetHandle ("setToken:");
 		[CompilerGenerated]
-		const string selSetNonce_ = "setNonce:";
-		static readonly IntPtr selSetNonce_Handle = Selector.GetHandle ("setNonce:");
+		const string selSetUserID_ = "setUserID:";
+		static readonly IntPtr selSetUserID_Handle = Selector.GetHandle ("setUserID:");
+		[CompilerGenerated]
+		const string selTimestamp = "timestamp";
+		static readonly IntPtr selTimestampHandle = Selector.GetHandle ("timestamp");
+		[CompilerGenerated]
+		const string selToken = "token";
+		static readonly IntPtr selTokenHandle = Selector.GetHandle ("token");
+		[CompilerGenerated]
+		const string selUserID = "userID";
+		static readonly IntPtr selUserIDHandle = Selector.GetHandle ("userID");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBASession");
@@ -109,6 +110,90 @@ namespace QuickBlox {
 		}
 
 		[CompilerGenerated]
+		public virtual global::System.UInt32 ApplicationID {
+			[Export ("applicationID")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selApplicationIDHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selApplicationIDHandle);
+				}
+			}
+			
+			[Export ("setApplicationID:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetApplicationID_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetApplicationID_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual global::System.UInt32 DeviceID {
+			[Export ("deviceID")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selDeviceIDHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selDeviceIDHandle);
+				}
+			}
+			
+			[Export ("setDeviceID:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetDeviceID_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetDeviceID_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual int Nonce {
+			[Export ("nonce")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selNonceHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selNonceHandle);
+				}
+			}
+			
+			[Export ("setNonce:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (this.Handle, selSetNonce_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_int (this.SuperHandle, selSetNonce_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual global::System.UInt32 Timestamp {
+			[Export ("timestamp")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selTimestampHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selTimestampHandle);
+				}
+			}
+			
+			[Export ("setTimestamp:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetTimestamp_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetTimestamp_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
 		public virtual string Token {
 			[Export ("token", ArgumentSemantic.Retain)]
 			get {
@@ -136,27 +221,6 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual global::System.UInt32 ApplicationID {
-			[Export ("applicationID")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selApplicationIDHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selApplicationIDHandle);
-				}
-			}
-			
-			[Export ("setApplicationID:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetApplicationID_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetApplicationID_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
 		public virtual global::System.UInt32 UserID {
 			[Export ("userID")]
 			get {
@@ -173,69 +237,6 @@ namespace QuickBlox {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetUserID_Handle, value);
 				} else {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetUserID_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual global::System.UInt32 DeviceID {
-			[Export ("deviceID")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selDeviceIDHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selDeviceIDHandle);
-				}
-			}
-			
-			[Export ("setDeviceID:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetDeviceID_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetDeviceID_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual global::System.UInt32 Timestamp {
-			[Export ("timestamp")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selTimestampHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selTimestampHandle);
-				}
-			}
-			
-			[Export ("setTimestamp:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetTimestamp_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetTimestamp_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual int Nonce {
-			[Export ("nonce")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selNonceHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selNonceHandle);
-				}
-			}
-			
-			[Export ("setNonce:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (this.Handle, selSetNonce_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_int (this.SuperHandle, selSetNonce_Handle, value);
 				}
 			}
 		}

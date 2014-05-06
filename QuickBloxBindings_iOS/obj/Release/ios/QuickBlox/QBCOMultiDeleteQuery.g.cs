@@ -7,26 +7,27 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOMultiDeleteQuery", true)]
@@ -35,11 +36,11 @@ namespace QuickBlox {
 		const string selClassName = "className";
 		static readonly IntPtr selClassNameHandle = Selector.GetHandle ("className");
 		[CompilerGenerated]
-		const string selObjectsIDs = "objectsIDs";
-		static readonly IntPtr selObjectsIDsHandle = Selector.GetHandle ("objectsIDs");
-		[CompilerGenerated]
 		const string selInitWithClassNameObjectsIDs_ = "initWithClassName:objectsIDs:";
 		static readonly IntPtr selInitWithClassNameObjectsIDs_Handle = Selector.GetHandle ("initWithClassName:objectsIDs:");
+		[CompilerGenerated]
+		const string selObjectsIDs = "objectsIDs";
+		static readonly IntPtr selObjectsIDsHandle = Selector.GetHandle ("objectsIDs");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBCOMultiDeleteQuery");
@@ -129,8 +130,8 @@ namespace QuickBlox {
 				} else {
 					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selObjectsIDsHandle));
 				}
-				MarkDirty ();
-				__mt_ObjectsIDs_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_ObjectsIDs_var = ret;
 				return ret;
 			}
 			

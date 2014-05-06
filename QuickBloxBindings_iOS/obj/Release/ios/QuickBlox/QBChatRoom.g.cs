@@ -7,45 +7,31 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBChatRoom", true)]
 	public unsafe partial class QBChatRoom : NSObject {
-		[CompilerGenerated]
-		const string selName = "name";
-		static readonly IntPtr selNameHandle = Selector.GetHandle ("name");
-		[CompilerGenerated]
-		const string selJID = "JID";
-		static readonly IntPtr selJIDHandle = Selector.GetHandle ("JID");
-		[CompilerGenerated]
-		const string selIsJoined = "isJoined";
-		static readonly IntPtr selIsJoinedHandle = Selector.GetHandle ("isJoined");
-		[CompilerGenerated]
-		const string selInitWithRoomName_ = "initWithRoomName:";
-		static readonly IntPtr selInitWithRoomName_Handle = Selector.GetHandle ("initWithRoomName:");
-		[CompilerGenerated]
-		const string selInitWithRoomNameNickname_ = "initWithRoomName:nickname:";
-		static readonly IntPtr selInitWithRoomNameNickname_Handle = Selector.GetHandle ("initWithRoomName:nickname:");
 		[CompilerGenerated]
 		const string selAddUsers_ = "addUsers:";
 		static readonly IntPtr selAddUsers_Handle = Selector.GetHandle ("addUsers:");
@@ -53,8 +39,17 @@ namespace QuickBlox {
 		const string selDeleteUsers_ = "deleteUsers:";
 		static readonly IntPtr selDeleteUsers_Handle = Selector.GetHandle ("deleteUsers:");
 		[CompilerGenerated]
-		const string selSendMessage_ = "sendMessage:";
-		static readonly IntPtr selSendMessage_Handle = Selector.GetHandle ("sendMessage:");
+		const string selInitWithRoomName_ = "initWithRoomName:";
+		static readonly IntPtr selInitWithRoomName_Handle = Selector.GetHandle ("initWithRoomName:");
+		[CompilerGenerated]
+		const string selInitWithRoomNameNickname_ = "initWithRoomName:nickname:";
+		static readonly IntPtr selInitWithRoomNameNickname_Handle = Selector.GetHandle ("initWithRoomName:nickname:");
+		[CompilerGenerated]
+		const string selIsJoined = "isJoined";
+		static readonly IntPtr selIsJoinedHandle = Selector.GetHandle ("isJoined");
+		[CompilerGenerated]
+		const string selJID = "JID";
+		static readonly IntPtr selJIDHandle = Selector.GetHandle ("JID");
 		[CompilerGenerated]
 		const string selJoinRoom = "joinRoom";
 		static readonly IntPtr selJoinRoomHandle = Selector.GetHandle ("joinRoom");
@@ -62,14 +57,20 @@ namespace QuickBlox {
 		const string selLeaveRoom = "leaveRoom";
 		static readonly IntPtr selLeaveRoomHandle = Selector.GetHandle ("leaveRoom");
 		[CompilerGenerated]
-		const string selRequestUsers = "requestUsers";
-		static readonly IntPtr selRequestUsersHandle = Selector.GetHandle ("requestUsers");
+		const string selName = "name";
+		static readonly IntPtr selNameHandle = Selector.GetHandle ("name");
+		[CompilerGenerated]
+		const string selRequestInformation = "requestInformation";
+		static readonly IntPtr selRequestInformationHandle = Selector.GetHandle ("requestInformation");
 		[CompilerGenerated]
 		const string selRequestOnlineUsers = "requestOnlineUsers";
 		static readonly IntPtr selRequestOnlineUsersHandle = Selector.GetHandle ("requestOnlineUsers");
 		[CompilerGenerated]
-		const string selRequestInformation = "requestInformation";
-		static readonly IntPtr selRequestInformationHandle = Selector.GetHandle ("requestInformation");
+		const string selRequestUsers = "requestUsers";
+		static readonly IntPtr selRequestUsersHandle = Selector.GetHandle ("requestUsers");
+		[CompilerGenerated]
+		const string selSendMessage_ = "sendMessage:";
+		static readonly IntPtr selSendMessage_Handle = Selector.GetHandle ("sendMessage:");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBChatRoom");
@@ -187,19 +188,6 @@ namespace QuickBlox {
 			
 		}
 		
-		[Export ("sendMessage:")]
-		[CompilerGenerated]
-		public virtual void SendMessage (QBChatMessage message)
-		{
-			if (message == null)
-				throw new ArgumentNullException ("message");
-			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSendMessage_Handle, message.Handle);
-			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSendMessage_Handle, message.Handle);
-			}
-		}
-		
 		[Export ("joinRoom")]
 		[CompilerGenerated]
 		public virtual void JoinRoom ()
@@ -222,14 +210,14 @@ namespace QuickBlox {
 			}
 		}
 		
-		[Export ("requestUsers")]
+		[Export ("requestInformation")]
 		[CompilerGenerated]
-		public virtual void RequestUsers ()
+		public virtual void RequestInformation ()
 		{
 			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selRequestUsersHandle);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selRequestInformationHandle);
 			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selRequestUsersHandle);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selRequestInformationHandle);
 			}
 		}
 		
@@ -244,25 +232,38 @@ namespace QuickBlox {
 			}
 		}
 		
-		[Export ("requestInformation")]
+		[Export ("requestUsers")]
 		[CompilerGenerated]
-		public virtual void RequestInformation ()
+		public virtual void RequestUsers ()
 		{
 			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selRequestInformationHandle);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selRequestUsersHandle);
 			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selRequestInformationHandle);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selRequestUsersHandle);
+			}
+		}
+		
+		[Export ("sendMessage:")]
+		[CompilerGenerated]
+		public virtual void SendMessage (QBChatMessage message)
+		{
+			if (message == null)
+				throw new ArgumentNullException ("message");
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSendMessage_Handle, message.Handle);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSendMessage_Handle, message.Handle);
 			}
 		}
 		
 		[CompilerGenerated]
-		public virtual string Name {
-			[Export ("name")]
+		public virtual bool IsJoined {
+			[Export ("isJoined")]
 			get {
 				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selNameHandle));
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsJoinedHandle);
 				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selNameHandle));
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsJoinedHandle);
 				}
 			}
 			
@@ -282,13 +283,13 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual bool IsJoined {
-			[Export ("isJoined")]
+		public virtual string Name {
+			[Export ("name")]
 			get {
 				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsJoinedHandle);
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selNameHandle));
 				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsJoinedHandle);
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selNameHandle));
 				}
 			}
 			

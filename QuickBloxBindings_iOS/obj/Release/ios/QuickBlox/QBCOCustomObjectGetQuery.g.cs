@@ -7,36 +7,37 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOCustomObjectGetQuery", true)]
 	public unsafe partial class QBCOCustomObjectGetQuery : NSObject {
 		[CompilerGenerated]
-		const string selGetRequest = "getRequest";
-		static readonly IntPtr selGetRequestHandle = Selector.GetHandle ("getRequest");
-		[CompilerGenerated]
 		const string selClassName = "className";
 		static readonly IntPtr selClassNameHandle = Selector.GetHandle ("className");
+		[CompilerGenerated]
+		const string selGetRequest = "getRequest";
+		static readonly IntPtr selGetRequestHandle = Selector.GetHandle ("getRequest");
 		[CompilerGenerated]
 		const string selID = "ID";
 		static readonly IntPtr selIDHandle = Selector.GetHandle ("ID");
@@ -44,14 +45,14 @@ namespace QuickBlox {
 		const string selIDs = "IDs";
 		static readonly IntPtr selIDsHandle = Selector.GetHandle ("IDs");
 		[CompilerGenerated]
-		const string selInitWithClassNameRequest_ = "initWithClassName:request:";
-		static readonly IntPtr selInitWithClassNameRequest_Handle = Selector.GetHandle ("initWithClassName:request:");
-		[CompilerGenerated]
 		const string selInitWithClassNameID_ = "initWithClassName:ID:";
 		static readonly IntPtr selInitWithClassNameID_Handle = Selector.GetHandle ("initWithClassName:ID:");
 		[CompilerGenerated]
 		const string selInitWithClassNameIDs_ = "initWithClassName:IDs:";
 		static readonly IntPtr selInitWithClassNameIDs_Handle = Selector.GetHandle ("initWithClassName:IDs:");
+		[CompilerGenerated]
+		const string selInitWithClassNameRequest_ = "initWithClassName:request:";
+		static readonly IntPtr selInitWithClassNameRequest_Handle = Selector.GetHandle ("initWithClassName:request:");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBCOCustomObjectGetQuery");
@@ -161,6 +162,19 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
+		public virtual string ClassName {
+			[Export ("className")]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selClassNameHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selClassNameHandle));
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
 		object __mt_GetRequest_var;
 		[CompilerGenerated]
 		public virtual NSMutableDictionary GetRequest {
@@ -172,22 +186,9 @@ namespace QuickBlox {
 				} else {
 					ret =  Runtime.GetNSObject<NSMutableDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selGetRequestHandle));
 				}
-				MarkDirty ();
-				__mt_GetRequest_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_GetRequest_var = ret;
 				return ret;
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual string ClassName {
-			[Export ("className")]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selClassNameHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selClassNameHandle));
-				}
 			}
 			
 		}
@@ -217,8 +218,8 @@ namespace QuickBlox {
 				} else {
 					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selIDsHandle));
 				}
-				MarkDirty ();
-				__mt_IDs_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_IDs_var = ret;
 				return ret;
 			}
 			

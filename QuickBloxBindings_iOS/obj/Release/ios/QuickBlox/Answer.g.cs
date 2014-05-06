@@ -7,45 +7,46 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("Answer", true)]
 	public unsafe partial class Answer : NSObject {
 		[CompilerGenerated]
+		const string selAllocResult = "allocResult";
+		static readonly IntPtr selAllocResultHandle = Selector.GetHandle ("allocResult");
+		[CompilerGenerated]
 		const string selErrors = "errors";
 		static readonly IntPtr selErrorsHandle = Selector.GetHandle ("errors");
-		[CompilerGenerated]
-		const string selSetErrors_ = "setErrors:";
-		static readonly IntPtr selSetErrors_Handle = Selector.GetHandle ("setErrors:");
 		[CompilerGenerated]
 		const string selQuery = "query";
 		static readonly IntPtr selQueryHandle = Selector.GetHandle ("query");
 		[CompilerGenerated]
+		const string selSetErrors_ = "setErrors:";
+		static readonly IntPtr selSetErrors_Handle = Selector.GetHandle ("setErrors:");
+		[CompilerGenerated]
 		const string selSetQuery_ = "setQuery:";
 		static readonly IntPtr selSetQuery_Handle = Selector.GetHandle ("setQuery:");
-		[CompilerGenerated]
-		const string selAllocResult = "allocResult";
-		static readonly IntPtr selAllocResultHandle = Selector.GetHandle ("allocResult");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("Answer");
@@ -133,7 +134,7 @@ namespace QuickBlox {
 		object __mt_Query_var;
 		[CompilerGenerated]
 		public virtual QBQuery Query {
-			[Export ("query", ArgumentSemantic.Assign)]
+			[Export ("query", ArgumentSemantic.UnsafeUnretained)]
 			get {
 				QBQuery ret;
 				if (IsDirectBinding) {
@@ -146,7 +147,7 @@ namespace QuickBlox {
 				return ret;
 			}
 			
-			[Export ("setQuery:", ArgumentSemantic.Assign)]
+			[Export ("setQuery:", ArgumentSemantic.UnsafeUnretained)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");

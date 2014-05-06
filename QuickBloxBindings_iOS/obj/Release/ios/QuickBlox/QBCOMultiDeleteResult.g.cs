@@ -7,26 +7,27 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOMultiDeleteResult", true)]
@@ -93,8 +94,8 @@ namespace QuickBlox {
 				} else {
 					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selDeletedObjectsIDsHandle));
 				}
-				MarkDirty ();
-				__mt_DeletedObjectsIDs_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_DeletedObjectsIDs_var = ret;
 				return ret;
 			}
 			
@@ -112,8 +113,8 @@ namespace QuickBlox {
 				} else {
 					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selNotFoundObjectsIDsHandle));
 				}
-				MarkDirty ();
-				__mt_NotFoundObjectsIDs_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_NotFoundObjectsIDs_var = ret;
 				return ret;
 			}
 			
@@ -131,8 +132,8 @@ namespace QuickBlox {
 				} else {
 					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selWrongPermissionsObjectsIDsHandle));
 				}
-				MarkDirty ();
-				__mt_WrongPermissionsObjectsIDs_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_WrongPermissionsObjectsIDs_var = ret;
 				return ret;
 			}
 			

@@ -7,31 +7,92 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
+	[Protocol (Name = "QBActionStatusDelegate", WrapperType = typeof (QBActionStatusDelegateWrapper))]
+	public interface IQBActionStatusDelegate : INativeObject, IDisposable
+	{
+	}
+	
+	public static class QBActionStatusDelegate_Extensions {
+		[CompilerGenerated]
+		public static void CompletedWithResult (this IQBActionStatusDelegate This, Result result)
+		{
+			if (result == null)
+				throw new ArgumentNullException ("result");
+			MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (This.Handle, Selector.GetHandle ("completedWithResult:"), result.Handle);
+		}
+		
+		[CompilerGenerated]
+		public static void Context (this IQBActionStatusDelegate This, Result result, NSObject contextInfo)
+		{
+			if (result == null)
+				throw new ArgumentNullException ("result");
+			if (contextInfo == null)
+				throw new ArgumentNullException ("contextInfo");
+			MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr_IntPtr (This.Handle, Selector.GetHandle ("completedWithResult:context:"), result.Handle, contextInfo.Handle);
+		}
+		
+	}
+	
+	internal sealed class QBActionStatusDelegateWrapper : IQBActionStatusDelegate {
+		public IntPtr Handle { get; set; }
+		
+		public QBActionStatusDelegateWrapper (IntPtr handle)
+			: this (handle, false)
+		{
+		}
+		
+		[Preserve (Conditional = true)]
+		public QBActionStatusDelegateWrapper (IntPtr handle, bool owns)
+		{
+			Handle = handle;
+			if (!owns)
+			    global::MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (Handle, Selector.GetHandle ("retain"));
+		}
+		
+		~QBActionStatusDelegateWrapper ()
+		{
+			Dispose ();
+		}
+		
+		public void Dispose ()
+		{
+			if (Handle != IntPtr.Zero) {
+				global::MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (Handle, Selector.GetHandle ("release"));
+				Handle = IntPtr.Zero;
+			}
+			GC.SuppressFinalize (this);
+		}
+		
+	}
+}
+namespace QuickBlox {
+	[Protocol]
 	[Register("QBActionStatusDelegate", true)]
 	[Model]
-	public unsafe partial class QBActionStatusDelegate : NSObject {
+	public unsafe partial class QBActionStatusDelegate : NSObject, IQBActionStatusDelegate {
 		
 		[CompilerGenerated]
 		[EditorBrowsable (EditorBrowsableState.Advanced)]

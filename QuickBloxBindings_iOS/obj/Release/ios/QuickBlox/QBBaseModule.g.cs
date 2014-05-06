@@ -7,72 +7,73 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBBaseModule", true)]
 	public unsafe partial class QBBaseModule : NSObject {
 		[CompilerGenerated]
-		const string selToken = "token";
-		static readonly IntPtr selTokenHandle = Selector.GetHandle ("token");
-		[CompilerGenerated]
-		const string selSetToken_ = "setToken:";
-		static readonly IntPtr selSetToken_Handle = Selector.GetHandle ("setToken:");
-		[CompilerGenerated]
-		const string selTokenExpirationDate = "tokenExpirationDate";
-		static readonly IntPtr selTokenExpirationDateHandle = Selector.GetHandle ("tokenExpirationDate");
-		[CompilerGenerated]
-		const string selSetTokenExpirationDate_ = "setTokenExpirationDate:";
-		static readonly IntPtr selSetTokenExpirationDate_Handle = Selector.GetHandle ("setTokenExpirationDate:");
-		[CompilerGenerated]
-		const string selSessionType = "sessionType";
-		static readonly IntPtr selSessionTypeHandle = Selector.GetHandle ("sessionType");
-		[CompilerGenerated]
-		const string selSetSessionType_ = "setSessionType:";
-		static readonly IntPtr selSetSessionType_Handle = Selector.GetHandle ("setSessionType:");
-		[CompilerGenerated]
-		const string selSessionCreationRequest = "sessionCreationRequest";
-		static readonly IntPtr selSessionCreationRequestHandle = Selector.GetHandle ("sessionCreationRequest");
-		[CompilerGenerated]
-		const string selSetSessionCreationRequest_ = "setSessionCreationRequest:";
-		static readonly IntPtr selSetSessionCreationRequest_Handle = Selector.GetHandle ("setSessionCreationRequest:");
-		[CompilerGenerated]
-		const string selSharedModule = "sharedModule";
-		static readonly IntPtr selSharedModuleHandle = Selector.GetHandle ("sharedModule");
-		[CompilerGenerated]
-		const string selServerEndpointURL = "serverEndpointURL";
-		static readonly IntPtr selServerEndpointURLHandle = Selector.GetHandle ("serverEndpointURL");
+		const string selChatMUCServerEndpointURL = "chatMUCServerEndpointURL";
+		static readonly IntPtr selChatMUCServerEndpointURLHandle = Selector.GetHandle ("chatMUCServerEndpointURL");
 		[CompilerGenerated]
 		const string selChatServerEndpointURL = "chatServerEndpointURL";
 		static readonly IntPtr selChatServerEndpointURLHandle = Selector.GetHandle ("chatServerEndpointURL");
-		[CompilerGenerated]
-		const string selChatMUCServerEndpointURL = "chatMUCServerEndpointURL";
-		static readonly IntPtr selChatMUCServerEndpointURLHandle = Selector.GetHandle ("chatMUCServerEndpointURL");
 		[CompilerGenerated]
 		const string selCreateSharedModule = "createSharedModule";
 		static readonly IntPtr selCreateSharedModuleHandle = Selector.GetHandle ("createSharedModule");
 		[CompilerGenerated]
 		const string selReset = "reset";
 		static readonly IntPtr selResetHandle = Selector.GetHandle ("reset");
+		[CompilerGenerated]
+		const string selServerEndpointURL = "serverEndpointURL";
+		static readonly IntPtr selServerEndpointURLHandle = Selector.GetHandle ("serverEndpointURL");
+		[CompilerGenerated]
+		const string selSessionCreationRequest = "sessionCreationRequest";
+		static readonly IntPtr selSessionCreationRequestHandle = Selector.GetHandle ("sessionCreationRequest");
+		[CompilerGenerated]
+		const string selSessionType = "sessionType";
+		static readonly IntPtr selSessionTypeHandle = Selector.GetHandle ("sessionType");
+		[CompilerGenerated]
+		const string selSetSessionCreationRequest_ = "setSessionCreationRequest:";
+		static readonly IntPtr selSetSessionCreationRequest_Handle = Selector.GetHandle ("setSessionCreationRequest:");
+		[CompilerGenerated]
+		const string selSetSessionType_ = "setSessionType:";
+		static readonly IntPtr selSetSessionType_Handle = Selector.GetHandle ("setSessionType:");
+		[CompilerGenerated]
+		const string selSetToken_ = "setToken:";
+		static readonly IntPtr selSetToken_Handle = Selector.GetHandle ("setToken:");
+		[CompilerGenerated]
+		const string selSetTokenExpirationDate_ = "setTokenExpirationDate:";
+		static readonly IntPtr selSetTokenExpirationDate_Handle = Selector.GetHandle ("setTokenExpirationDate:");
+		[CompilerGenerated]
+		const string selSharedModule = "sharedModule";
+		static readonly IntPtr selSharedModuleHandle = Selector.GetHandle ("sharedModule");
+		[CompilerGenerated]
+		const string selToken = "token";
+		static readonly IntPtr selTokenHandle = Selector.GetHandle ("token");
+		[CompilerGenerated]
+		const string selTokenExpirationDate = "tokenExpirationDate";
+		static readonly IntPtr selTokenExpirationDateHandle = Selector.GetHandle ("tokenExpirationDate");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBBaseModule");
@@ -130,6 +131,100 @@ namespace QuickBlox {
 			} else {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selResetHandle);
 			}
+		}
+		
+		[CompilerGenerated]
+		public static string ChatMUCServerEndpointURL {
+			[Export ("chatMUCServerEndpointURL")]
+			get {
+				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selChatMUCServerEndpointURLHandle));
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public static string ChatServerEndpointURL {
+			[Export ("chatServerEndpointURL")]
+			get {
+				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selChatServerEndpointURLHandle));
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public static string ServerEndpointURL {
+			[Export ("serverEndpointURL")]
+			get {
+				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selServerEndpointURLHandle));
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		object __mt_SessionCreationRequest_var;
+		[CompilerGenerated]
+		public virtual QBASessionCreationRequest SessionCreationRequest {
+			[Export ("sessionCreationRequest", ArgumentSemantic.Retain)]
+			get {
+				QBASessionCreationRequest ret;
+				if (IsDirectBinding) {
+					ret =  Runtime.GetNSObject<QBASessionCreationRequest> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selSessionCreationRequestHandle));
+				} else {
+					ret =  Runtime.GetNSObject<QBASessionCreationRequest> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSessionCreationRequestHandle));
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_SessionCreationRequest_var = ret;
+				return ret;
+			}
+			
+			[Export ("setSessionCreationRequest:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetSessionCreationRequest_Handle, value.Handle);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetSessionCreationRequest_Handle, value.Handle);
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_SessionCreationRequest_var = value;
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual QBSessionType SessionType {
+			[Export ("sessionType")]
+			get {
+				if (IsDirectBinding) {
+					return (QBSessionType) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selSessionTypeHandle);
+				} else {
+					return (QBSessionType) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selSessionTypeHandle);
+				}
+			}
+			
+			[Export ("setSessionType:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (this.Handle, selSetSessionType_Handle, (int)value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_int (this.SuperHandle, selSetSessionType_Handle, (int)value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		static object __mt_SharedModule_var_static;
+		[CompilerGenerated]
+		public static QBBaseModule SharedModule {
+			[Export ("sharedModule")]
+			get {
+				QBBaseModule ret;
+				ret =  Runtime.GetNSObject<QBBaseModule> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selSharedModuleHandle));
+				if (!NSObject.IsNewRefcountEnabled ())
+					__mt_SharedModule_var_static = ret;
+				return ret;
+			}
+			
 		}
 		
 		[CompilerGenerated]
@@ -191,105 +286,12 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual QBSessionType SessionType {
-			[Export ("sessionType")]
-			get {
-				if (IsDirectBinding) {
-					return (QBSessionType) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selSessionTypeHandle);
-				} else {
-					return (QBSessionType) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selSessionTypeHandle);
-				}
-			}
-			
-			[Export ("setSessionType:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (this.Handle, selSetSessionType_Handle, (int)value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_int (this.SuperHandle, selSetSessionType_Handle, (int)value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		object __mt_SessionCreationRequest_var;
-		[CompilerGenerated]
-		public virtual QBASessionCreationRequest SessionCreationRequest {
-			[Export ("sessionCreationRequest", ArgumentSemantic.Retain)]
-			get {
-				QBASessionCreationRequest ret;
-				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<QBASessionCreationRequest> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selSessionCreationRequestHandle));
-				} else {
-					ret =  Runtime.GetNSObject<QBASessionCreationRequest> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSessionCreationRequestHandle));
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_SessionCreationRequest_var = ret;
-				return ret;
-			}
-			
-			[Export ("setSessionCreationRequest:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetSessionCreationRequest_Handle, value.Handle);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetSessionCreationRequest_Handle, value.Handle);
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_SessionCreationRequest_var = value;
-			}
-		}
-		
-		[CompilerGenerated]
-		static object __mt_SharedModule_var_static;
-		[CompilerGenerated]
-		public static QBBaseModule SharedModule {
-			[Export ("sharedModule")]
-			get {
-				QBBaseModule ret;
-				ret =  Runtime.GetNSObject<QBBaseModule> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selSharedModuleHandle));
-				__mt_SharedModule_var_static = ret;
-				return ret;
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public static string ServerEndpointURL {
-			[Export ("serverEndpointURL")]
-			get {
-				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selServerEndpointURLHandle));
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public static string ChatServerEndpointURL {
-			[Export ("chatServerEndpointURL")]
-			get {
-				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selChatServerEndpointURLHandle));
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public static string ChatMUCServerEndpointURL {
-			[Export ("chatMUCServerEndpointURL")]
-			get {
-				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selChatMUCServerEndpointURLHandle));
-			}
-			
-		}
-		
-		[CompilerGenerated]
 		protected override void Dispose (bool disposing)
 		{
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
-				__mt_TokenExpirationDate_var = null;
 				__mt_SessionCreationRequest_var = null;
+				__mt_TokenExpirationDate_var = null;
 			}
 		}
 	} /* class QBBaseModule */

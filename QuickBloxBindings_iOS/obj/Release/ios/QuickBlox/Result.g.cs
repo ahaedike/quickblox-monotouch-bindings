@@ -7,57 +7,58 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("Result", true)]
 	public unsafe partial class Result : NSObject {
 		[CompilerGenerated]
-		const string selErrors = "errors";
-		static readonly IntPtr selErrorsHandle = Selector.GetHandle ("errors");
-		[CompilerGenerated]
-		const string selSuccess = "success";
-		static readonly IntPtr selSuccessHandle = Selector.GetHandle ("success");
-		[CompilerGenerated]
-		const string selStatus = "status";
-		static readonly IntPtr selStatusHandle = Selector.GetHandle ("status");
-		[CompilerGenerated]
-		const string selRequest = "request";
-		static readonly IntPtr selRequestHandle = Selector.GetHandle ("request");
-		[CompilerGenerated]
-		const string selSetRequest_ = "setRequest:";
-		static readonly IntPtr selSetRequest_Handle = Selector.GetHandle ("setRequest:");
-		[CompilerGenerated]
 		const string selAnswer = "answer";
 		static readonly IntPtr selAnswerHandle = Selector.GetHandle ("answer");
 		[CompilerGenerated]
-		const string selSetAnswer_ = "setAnswer:";
-		static readonly IntPtr selSetAnswer_Handle = Selector.GetHandle ("setAnswer:");
+		const string selErrors = "errors";
+		static readonly IntPtr selErrorsHandle = Selector.GetHandle ("errors");
+		[CompilerGenerated]
+		const string selInitWithAnswer_ = "initWithAnswer:";
+		static readonly IntPtr selInitWithAnswer_Handle = Selector.GetHandle ("initWithAnswer:");
 		[CompilerGenerated]
 		const string selInitWithRequestAnswer_ = "initWithRequest:answer:";
 		static readonly IntPtr selInitWithRequestAnswer_Handle = Selector.GetHandle ("initWithRequest:answer:");
 		[CompilerGenerated]
-		const string selInitWithAnswer_ = "initWithAnswer:";
-		static readonly IntPtr selInitWithAnswer_Handle = Selector.GetHandle ("initWithAnswer:");
+		const string selRequest = "request";
+		static readonly IntPtr selRequestHandle = Selector.GetHandle ("request");
+		[CompilerGenerated]
+		const string selSetAnswer_ = "setAnswer:";
+		static readonly IntPtr selSetAnswer_Handle = Selector.GetHandle ("setAnswer:");
+		[CompilerGenerated]
+		const string selSetRequest_ = "setRequest:";
+		static readonly IntPtr selSetRequest_Handle = Selector.GetHandle ("setRequest:");
+		[CompilerGenerated]
+		const string selStatus = "status";
+		static readonly IntPtr selStatusHandle = Selector.GetHandle ("status");
+		[CompilerGenerated]
+		const string selSuccess = "success";
+		static readonly IntPtr selSuccessHandle = Selector.GetHandle ("success");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("Result");
@@ -132,6 +133,37 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
+		object __mt_Answer_var;
+		[CompilerGenerated]
+		public virtual Answer Answer {
+			[Export ("answer", ArgumentSemantic.Retain)]
+			get {
+				Answer ret;
+				if (IsDirectBinding) {
+					ret =  Runtime.GetNSObject<Answer> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selAnswerHandle));
+				} else {
+					ret =  Runtime.GetNSObject<Answer> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selAnswerHandle));
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_Answer_var = ret;
+				return ret;
+			}
+			
+			[Export ("setAnswer:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetAnswer_Handle, value.Handle);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetAnswer_Handle, value.Handle);
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_Answer_var = value;
+			}
+		}
+		
+		[CompilerGenerated]
 		object __mt_Errors_var;
 		[CompilerGenerated]
 		public virtual NSObject[] Errors {
@@ -143,35 +175,9 @@ namespace QuickBlox {
 				} else {
 					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selErrorsHandle));
 				}
-				MarkDirty ();
-				__mt_Errors_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_Errors_var = ret;
 				return ret;
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual bool Success {
-			[Export ("success")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selSuccessHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selSuccessHandle);
-				}
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual global::System.UInt32 Status {
-			[Export ("status")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selStatusHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selStatusHandle);
-				}
 			}
 			
 		}
@@ -208,34 +214,29 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		object __mt_Answer_var;
-		[CompilerGenerated]
-		public virtual Answer Answer {
-			[Export ("answer", ArgumentSemantic.Retain)]
+		public virtual global::System.UInt32 Status {
+			[Export ("status")]
 			get {
-				Answer ret;
 				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<Answer> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selAnswerHandle));
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selStatusHandle);
 				} else {
-					ret =  Runtime.GetNSObject<Answer> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selAnswerHandle));
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selStatusHandle);
 				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Answer_var = ret;
-				return ret;
 			}
 			
-			[Export ("setAnswer:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
+		}
+		
+		[CompilerGenerated]
+		public virtual bool Success {
+			[Export ("success")]
+			get {
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetAnswer_Handle, value.Handle);
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selSuccessHandle);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetAnswer_Handle, value.Handle);
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selSuccessHandle);
 				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Answer_var = value;
 			}
+			
 		}
 		
 		[CompilerGenerated]
@@ -243,9 +244,9 @@ namespace QuickBlox {
 		{
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
+				__mt_Answer_var = null;
 				__mt_Errors_var = null;
 				__mt_Request_var = null;
-				__mt_Answer_var = null;
 			}
 		}
 	} /* class Result */

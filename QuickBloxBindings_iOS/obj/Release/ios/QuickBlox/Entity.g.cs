@@ -7,48 +7,49 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("Entity", true)]
 	public unsafe partial class Entity : NSObject {
 		[CompilerGenerated]
-		const string selID = "ID";
-		static readonly IntPtr selIDHandle = Selector.GetHandle ("ID");
-		[CompilerGenerated]
-		const string selSetID_ = "setID:";
-		static readonly IntPtr selSetID_Handle = Selector.GetHandle ("setID:");
-		[CompilerGenerated]
 		const string selCreatedAt = "createdAt";
 		static readonly IntPtr selCreatedAtHandle = Selector.GetHandle ("createdAt");
+		[CompilerGenerated]
+		const string selID = "ID";
+		static readonly IntPtr selIDHandle = Selector.GetHandle ("ID");
 		[CompilerGenerated]
 		const string selSetCreatedAt_ = "setCreatedAt:";
 		static readonly IntPtr selSetCreatedAt_Handle = Selector.GetHandle ("setCreatedAt:");
 		[CompilerGenerated]
-		const string selUpdatedAt = "updatedAt";
-		static readonly IntPtr selUpdatedAtHandle = Selector.GetHandle ("updatedAt");
+		const string selSetID_ = "setID:";
+		static readonly IntPtr selSetID_Handle = Selector.GetHandle ("setID:");
 		[CompilerGenerated]
 		const string selSetUpdatedAt_ = "setUpdatedAt:";
 		static readonly IntPtr selSetUpdatedAt_Handle = Selector.GetHandle ("setUpdatedAt:");
+		[CompilerGenerated]
+		const string selUpdatedAt = "updatedAt";
+		static readonly IntPtr selUpdatedAtHandle = Selector.GetHandle ("updatedAt");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("Entity");
@@ -91,27 +92,6 @@ namespace QuickBlox {
 		}
 
 		[CompilerGenerated]
-		public virtual global::System.UInt32 ID {
-			[Export ("ID")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selIDHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selIDHandle);
-				}
-			}
-			
-			[Export ("setID:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetID_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetID_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
 		object __mt_CreatedAt_var;
 		[CompilerGenerated]
 		public virtual NSDate CreatedAt {
@@ -139,6 +119,27 @@ namespace QuickBlox {
 				}
 				if (!IsNewRefcountEnabled ())
 					__mt_CreatedAt_var = value;
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual global::System.UInt32 ID {
+			[Export ("ID")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selIDHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selIDHandle);
+				}
+			}
+			
+			[Export ("setID:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetID_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetID_Handle, value);
+				}
 			}
 		}
 		

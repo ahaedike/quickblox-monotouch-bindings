@@ -7,39 +7,40 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOCustomObjectUpdateQuery", true)]
 	public unsafe partial class QBCOCustomObjectUpdateQuery : NSObject {
+		[CompilerGenerated]
+		const string selInitWithObjectSpecialUpdateOperators_ = "initWithObject:specialUpdateOperators:";
+		static readonly IntPtr selInitWithObjectSpecialUpdateOperators_Handle = Selector.GetHandle ("initWithObject:specialUpdateOperators:");
 		[CompilerGenerated]
 		const string selObject = "object";
 		static readonly IntPtr selObjectHandle = Selector.GetHandle ("object");
 		[CompilerGenerated]
 		const string selSpecialUpdateOperators = "specialUpdateOperators";
 		static readonly IntPtr selSpecialUpdateOperatorsHandle = Selector.GetHandle ("specialUpdateOperators");
-		[CompilerGenerated]
-		const string selInitWithObjectSpecialUpdateOperators_ = "initWithObject:specialUpdateOperators:";
-		static readonly IntPtr selInitWithObjectSpecialUpdateOperators_Handle = Selector.GetHandle ("initWithObject:specialUpdateOperators:");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBCOCustomObjectUpdateQuery");
@@ -110,8 +111,8 @@ namespace QuickBlox {
 				} else {
 					ret =  Runtime.GetNSObject<QBCOCustomObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selObjectHandle));
 				}
-				MarkDirty ();
-				__mt_Object_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_Object_var = ret;
 				return ret;
 			}
 			
@@ -129,8 +130,8 @@ namespace QuickBlox {
 				} else {
 					ret =  Runtime.GetNSObject<NSMutableDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSpecialUpdateOperatorsHandle));
 				}
-				MarkDirty ();
-				__mt_SpecialUpdateOperators_var = ret;
+				if (!IsNewRefcountEnabled ())
+					__mt_SpecialUpdateOperators_var = ret;
 				return ret;
 			}
 			

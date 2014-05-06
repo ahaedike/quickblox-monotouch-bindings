@@ -7,93 +7,37 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBVideoChat", true)]
 	public unsafe partial class QBVideoChat : NSObject {
 		[CompilerGenerated]
-		const string selIsUseCustomVideoChatCaptureSession = "isUseCustomVideoChatCaptureSession";
-		static readonly IntPtr selIsUseCustomVideoChatCaptureSessionHandle = Selector.GetHandle ("isUseCustomVideoChatCaptureSession");
+		const string selAcceptCallWithOpponentIDConferenceType_ = "acceptCallWithOpponentID:conferenceType:";
+		static readonly IntPtr selAcceptCallWithOpponentIDConferenceType_Handle = Selector.GetHandle ("acceptCallWithOpponentID:conferenceType:");
 		[CompilerGenerated]
-		const string selSetIsUseCustomVideoChatCaptureSession_ = "setIsUseCustomVideoChatCaptureSession:";
-		static readonly IntPtr selSetIsUseCustomVideoChatCaptureSession_Handle = Selector.GetHandle ("setIsUseCustomVideoChatCaptureSession:");
-		[CompilerGenerated]
-		const string selIsUseCustomAudioChatSession = "isUseCustomAudioChatSession";
-		static readonly IntPtr selIsUseCustomAudioChatSessionHandle = Selector.GetHandle ("isUseCustomAudioChatSession");
-		[CompilerGenerated]
-		const string selSetIsUseCustomAudioChatSession_ = "setIsUseCustomAudioChatSession:";
-		static readonly IntPtr selSetIsUseCustomAudioChatSession_Handle = Selector.GetHandle ("setIsUseCustomAudioChatSession:");
-		[CompilerGenerated]
-		const string selViewToRenderOpponentVideoStream = "viewToRenderOpponentVideoStream";
-		static readonly IntPtr selViewToRenderOpponentVideoStreamHandle = Selector.GetHandle ("viewToRenderOpponentVideoStream");
-		[CompilerGenerated]
-		const string selSetViewToRenderOpponentVideoStream_ = "setViewToRenderOpponentVideoStream:";
-		static readonly IntPtr selSetViewToRenderOpponentVideoStream_Handle = Selector.GetHandle ("setViewToRenderOpponentVideoStream:");
-		[CompilerGenerated]
-		const string selViewToRenderOwnVideoStream = "viewToRenderOwnVideoStream";
-		static readonly IntPtr selViewToRenderOwnVideoStreamHandle = Selector.GetHandle ("viewToRenderOwnVideoStream");
-		[CompilerGenerated]
-		const string selSetViewToRenderOwnVideoStream_ = "setViewToRenderOwnVideoStream:";
-		static readonly IntPtr selSetViewToRenderOwnVideoStream_Handle = Selector.GetHandle ("setViewToRenderOwnVideoStream:");
-		[CompilerGenerated]
-		const string selVideoChatOpponentID = "videoChatOpponentID";
-		static readonly IntPtr selVideoChatOpponentIDHandle = Selector.GetHandle ("videoChatOpponentID");
-		[CompilerGenerated]
-		const string selIsRelayUsed = "isRelayUsed";
-		static readonly IntPtr selIsRelayUsedHandle = Selector.GetHandle ("isRelayUsed");
-		[CompilerGenerated]
-		const string selUseBackCamera = "useBackCamera";
-		static readonly IntPtr selUseBackCameraHandle = Selector.GetHandle ("useBackCamera");
-		[CompilerGenerated]
-		const string selSetUseBackCamera_ = "setUseBackCamera:";
-		static readonly IntPtr selSetUseBackCamera_Handle = Selector.GetHandle ("setUseBackCamera:");
-		[CompilerGenerated]
-		const string selUseHeadphone = "useHeadphone";
-		static readonly IntPtr selUseHeadphoneHandle = Selector.GetHandle ("useHeadphone");
-		[CompilerGenerated]
-		const string selSetUseHeadphone_ = "setUseHeadphone:";
-		static readonly IntPtr selSetUseHeadphone_Handle = Selector.GetHandle ("setUseHeadphone:");
-		[CompilerGenerated]
-		const string selIsCameraFlashEnabled = "isCameraFlashEnabled";
-		static readonly IntPtr selIsCameraFlashEnabledHandle = Selector.GetHandle ("isCameraFlashEnabled");
-		[CompilerGenerated]
-		const string selSetCameraFlashEnabled_ = "setCameraFlashEnabled:";
-		static readonly IntPtr selSetCameraFlashEnabled_Handle = Selector.GetHandle ("setCameraFlashEnabled:");
-		[CompilerGenerated]
-		const string selIsMicrophoneEnabled = "isMicrophoneEnabled";
-		static readonly IntPtr selIsMicrophoneEnabledHandle = Selector.GetHandle ("isMicrophoneEnabled");
-		[CompilerGenerated]
-		const string selSetMicrophoneEnabled_ = "setMicrophoneEnabled:";
-		static readonly IntPtr selSetMicrophoneEnabled_Handle = Selector.GetHandle ("setMicrophoneEnabled:");
-		[CompilerGenerated]
-		const string selSessionID = "sessionID";
-		static readonly IntPtr selSessionIDHandle = Selector.GetHandle ("sessionID");
-		[CompilerGenerated]
-		const string selState = "state";
-		static readonly IntPtr selStateHandle = Selector.GetHandle ("state");
-		[CompilerGenerated]
-		const string selSetVideoOutputPreset_ = "setVideoOutputPreset:";
-		static readonly IntPtr selSetVideoOutputPreset_Handle = Selector.GetHandle ("setVideoOutputPreset:");
+		const string selAcceptCallWithOpponentIDConferenceTypeCustomParameters_ = "acceptCallWithOpponentID:conferenceType:customParameters:";
+		static readonly IntPtr selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle = Selector.GetHandle ("acceptCallWithOpponentID:conferenceType:customParameters:");
 		[CompilerGenerated]
 		const string selCallUserConferenceType_ = "callUser:conferenceType:";
 		static readonly IntPtr selCallUserConferenceType_Handle = Selector.GetHandle ("callUser:conferenceType:");
@@ -104,14 +48,14 @@ namespace QuickBlox {
 		const string selCancelCall = "cancelCall";
 		static readonly IntPtr selCancelCallHandle = Selector.GetHandle ("cancelCall");
 		[CompilerGenerated]
-		const string selAcceptCallWithOpponentIDConferenceType_ = "acceptCallWithOpponentID:conferenceType:";
-		static readonly IntPtr selAcceptCallWithOpponentIDConferenceType_Handle = Selector.GetHandle ("acceptCallWithOpponentID:conferenceType:");
+		const string selCanSetVideoOutputPreset_ = "canSetVideoOutputPreset:";
+		static readonly IntPtr selCanSetVideoOutputPreset_Handle = Selector.GetHandle ("canSetVideoOutputPreset:");
 		[CompilerGenerated]
-		const string selAcceptCallWithOpponentIDConferenceTypeCustomParameters_ = "acceptCallWithOpponentID:conferenceType:customParameters:";
-		static readonly IntPtr selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle = Selector.GetHandle ("acceptCallWithOpponentID:conferenceType:customParameters:");
+		const string selDrainWriteAudioQueue = "drainWriteAudioQueue";
+		static readonly IntPtr selDrainWriteAudioQueueHandle = Selector.GetHandle ("drainWriteAudioQueue");
 		[CompilerGenerated]
-		const string selRejectCallWithOpponentID_ = "rejectCallWithOpponentID:";
-		static readonly IntPtr selRejectCallWithOpponentID_Handle = Selector.GetHandle ("rejectCallWithOpponentID:");
+		const string selDrainWriteVideoQueue = "drainWriteVideoQueue";
+		static readonly IntPtr selDrainWriteVideoQueueHandle = Selector.GetHandle ("drainWriteVideoQueue");
 		[CompilerGenerated]
 		const string selFinishCall = "finishCall";
 		static readonly IntPtr selFinishCallHandle = Selector.GetHandle ("finishCall");
@@ -119,17 +63,74 @@ namespace QuickBlox {
 		const string selFinishCallWithCustomParameters_ = "finishCallWithCustomParameters:";
 		static readonly IntPtr selFinishCallWithCustomParameters_Handle = Selector.GetHandle ("finishCallWithCustomParameters:");
 		[CompilerGenerated]
-		const string selCanSetVideoOutputPreset_ = "canSetVideoOutputPreset:";
-		static readonly IntPtr selCanSetVideoOutputPreset_Handle = Selector.GetHandle ("canSetVideoOutputPreset:");
+		const string selIsCameraFlashEnabled = "isCameraFlashEnabled";
+		static readonly IntPtr selIsCameraFlashEnabledHandle = Selector.GetHandle ("isCameraFlashEnabled");
 		[CompilerGenerated]
-		const string selDrainWriteVideoQueue = "drainWriteVideoQueue";
-		static readonly IntPtr selDrainWriteVideoQueueHandle = Selector.GetHandle ("drainWriteVideoQueue");
+		const string selIsMicrophoneEnabled = "isMicrophoneEnabled";
+		static readonly IntPtr selIsMicrophoneEnabledHandle = Selector.GetHandle ("isMicrophoneEnabled");
 		[CompilerGenerated]
-		const string selDrainWriteAudioQueue = "drainWriteAudioQueue";
-		static readonly IntPtr selDrainWriteAudioQueueHandle = Selector.GetHandle ("drainWriteAudioQueue");
+		const string selIsRelayUsed = "isRelayUsed";
+		static readonly IntPtr selIsRelayUsedHandle = Selector.GetHandle ("isRelayUsed");
+		[CompilerGenerated]
+		const string selIsUseCustomAudioChatSession = "isUseCustomAudioChatSession";
+		static readonly IntPtr selIsUseCustomAudioChatSessionHandle = Selector.GetHandle ("isUseCustomAudioChatSession");
+		[CompilerGenerated]
+		const string selIsUseCustomVideoChatCaptureSession = "isUseCustomVideoChatCaptureSession";
+		static readonly IntPtr selIsUseCustomVideoChatCaptureSessionHandle = Selector.GetHandle ("isUseCustomVideoChatCaptureSession");
+		[CompilerGenerated]
+		const string selRejectCallWithOpponentID_ = "rejectCallWithOpponentID:";
+		static readonly IntPtr selRejectCallWithOpponentID_Handle = Selector.GetHandle ("rejectCallWithOpponentID:");
+		[CompilerGenerated]
+		const string selSessionID = "sessionID";
+		static readonly IntPtr selSessionIDHandle = Selector.GetHandle ("sessionID");
+		[CompilerGenerated]
+		const string selSetCameraFlashEnabled_ = "setCameraFlashEnabled:";
+		static readonly IntPtr selSetCameraFlashEnabled_Handle = Selector.GetHandle ("setCameraFlashEnabled:");
+		[CompilerGenerated]
+		const string selSetIsUseCustomAudioChatSession_ = "setIsUseCustomAudioChatSession:";
+		static readonly IntPtr selSetIsUseCustomAudioChatSession_Handle = Selector.GetHandle ("setIsUseCustomAudioChatSession:");
+		[CompilerGenerated]
+		const string selSetIsUseCustomVideoChatCaptureSession_ = "setIsUseCustomVideoChatCaptureSession:";
+		static readonly IntPtr selSetIsUseCustomVideoChatCaptureSession_Handle = Selector.GetHandle ("setIsUseCustomVideoChatCaptureSession:");
+		[CompilerGenerated]
+		const string selSetMicrophoneEnabled_ = "setMicrophoneEnabled:";
+		static readonly IntPtr selSetMicrophoneEnabled_Handle = Selector.GetHandle ("setMicrophoneEnabled:");
+		[CompilerGenerated]
+		const string selSetUseBackCamera_ = "setUseBackCamera:";
+		static readonly IntPtr selSetUseBackCamera_Handle = Selector.GetHandle ("setUseBackCamera:");
+		[CompilerGenerated]
+		const string selSetUseHeadphone_ = "setUseHeadphone:";
+		static readonly IntPtr selSetUseHeadphone_Handle = Selector.GetHandle ("setUseHeadphone:");
+		[CompilerGenerated]
+		const string selSetVideoOutputPreset_ = "setVideoOutputPreset:";
+		static readonly IntPtr selSetVideoOutputPreset_Handle = Selector.GetHandle ("setVideoOutputPreset:");
+		[CompilerGenerated]
+		const string selSetViewToRenderOpponentVideoStream_ = "setViewToRenderOpponentVideoStream:";
+		static readonly IntPtr selSetViewToRenderOpponentVideoStream_Handle = Selector.GetHandle ("setViewToRenderOpponentVideoStream:");
+		[CompilerGenerated]
+		const string selSetViewToRenderOwnVideoStream_ = "setViewToRenderOwnVideoStream:";
+		static readonly IntPtr selSetViewToRenderOwnVideoStream_Handle = Selector.GetHandle ("setViewToRenderOwnVideoStream:");
+		[CompilerGenerated]
+		const string selState = "state";
+		static readonly IntPtr selStateHandle = Selector.GetHandle ("state");
 		[CompilerGenerated]
 		const string selSuspendStream_ = "suspendStream:";
 		static readonly IntPtr selSuspendStream_Handle = Selector.GetHandle ("suspendStream:");
+		[CompilerGenerated]
+		const string selUseBackCamera = "useBackCamera";
+		static readonly IntPtr selUseBackCameraHandle = Selector.GetHandle ("useBackCamera");
+		[CompilerGenerated]
+		const string selUseHeadphone = "useHeadphone";
+		static readonly IntPtr selUseHeadphoneHandle = Selector.GetHandle ("useHeadphone");
+		[CompilerGenerated]
+		const string selVideoChatOpponentID = "videoChatOpponentID";
+		static readonly IntPtr selVideoChatOpponentIDHandle = Selector.GetHandle ("videoChatOpponentID");
+		[CompilerGenerated]
+		const string selViewToRenderOpponentVideoStream = "viewToRenderOpponentVideoStream";
+		static readonly IntPtr selViewToRenderOpponentVideoStreamHandle = Selector.GetHandle ("viewToRenderOpponentVideoStream");
+		[CompilerGenerated]
+		const string selViewToRenderOwnVideoStream = "viewToRenderOwnVideoStream";
+		static readonly IntPtr selViewToRenderOwnVideoStreamHandle = Selector.GetHandle ("viewToRenderOwnVideoStream");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBVideoChat");
@@ -171,6 +172,30 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
+		[Export ("acceptCallWithOpponentID:conferenceType:")]
+		[CompilerGenerated]
+		public virtual void AcceptCallWithOpponentID (global::System.UInt32 userID, QBVideoChatConferenceType conferenceType)
+		{
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32_int (this.Handle, selAcceptCallWithOpponentIDConferenceType_Handle, userID, (int)conferenceType);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32_int (this.SuperHandle, selAcceptCallWithOpponentIDConferenceType_Handle, userID, (int)conferenceType);
+			}
+		}
+		
+		[Export ("acceptCallWithOpponentID:conferenceType:customParameters:")]
+		[CompilerGenerated]
+		public virtual void AcceptCallWithOpponentID (global::System.UInt32 userID, QBVideoChatConferenceType conferenceType, NSDictionary customParameters)
+		{
+			if (customParameters == null)
+				throw new ArgumentNullException ("customParameters");
+			if (IsDirectBinding) {
+				ApiDefinition.Messaging.void_objc_msgSend_UInt32_int_IntPtr (this.Handle, selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle, userID, (int)conferenceType, customParameters.Handle);
+			} else {
+				ApiDefinition.Messaging.void_objc_msgSendSuper_UInt32_int_IntPtr (this.SuperHandle, selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle, userID, (int)conferenceType, customParameters.Handle);
+			}
+		}
+		
 		[Export ("callUser:conferenceType:")]
 		[CompilerGenerated]
 		public virtual void CallUser (global::System.UInt32 userID, QBVideoChatConferenceType conferenceType)
@@ -206,38 +231,44 @@ namespace QuickBlox {
 			}
 		}
 		
-		[Export ("acceptCallWithOpponentID:conferenceType:")]
+		[Export ("canSetVideoOutputPreset:")]
 		[CompilerGenerated]
-		public virtual void AcceptCallWithOpponentID (global::System.UInt32 userID, QBVideoChatConferenceType conferenceType)
+		public virtual bool CanSetVideoOutputPreset (string preset)
+		{
+			if (preset == null)
+				throw new ArgumentNullException ("preset");
+			var nspreset = NSString.CreateNative (preset);
+			
+			bool ret;
+			if (IsDirectBinding) {
+				ret = MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend_IntPtr (this.Handle, selCanSetVideoOutputPreset_Handle, nspreset);
+			} else {
+				ret = MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_IntPtr (this.SuperHandle, selCanSetVideoOutputPreset_Handle, nspreset);
+			}
+			NSString.ReleaseNative (nspreset);
+			
+			return ret;
+		}
+		
+		[Export ("drainWriteAudioQueue")]
+		[CompilerGenerated]
+		public virtual void DrainWriteAudioQueue ()
 		{
 			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32_int (this.Handle, selAcceptCallWithOpponentIDConferenceType_Handle, userID, (int)conferenceType);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selDrainWriteAudioQueueHandle);
 			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32_int (this.SuperHandle, selAcceptCallWithOpponentIDConferenceType_Handle, userID, (int)conferenceType);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selDrainWriteAudioQueueHandle);
 			}
 		}
 		
-		[Export ("acceptCallWithOpponentID:conferenceType:customParameters:")]
+		[Export ("drainWriteVideoQueue")]
 		[CompilerGenerated]
-		public virtual void AcceptCallWithOpponentID (global::System.UInt32 userID, QBVideoChatConferenceType conferenceType, NSDictionary customParameters)
-		{
-			if (customParameters == null)
-				throw new ArgumentNullException ("customParameters");
-			if (IsDirectBinding) {
-				ApiDefinition.Messaging.void_objc_msgSend_UInt32_int_IntPtr (this.Handle, selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle, userID, (int)conferenceType, customParameters.Handle);
-			} else {
-				ApiDefinition.Messaging.void_objc_msgSendSuper_UInt32_int_IntPtr (this.SuperHandle, selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle, userID, (int)conferenceType, customParameters.Handle);
-			}
-		}
-		
-		[Export ("rejectCallWithOpponentID:")]
-		[CompilerGenerated]
-		public virtual void RejectCallWithOpponentID (global::System.UInt32 userID)
+		public virtual void DrainWriteVideoQueue ()
 		{
 			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selRejectCallWithOpponentID_Handle, userID);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selDrainWriteVideoQueueHandle);
 			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selRejectCallWithOpponentID_Handle, userID);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selDrainWriteVideoQueueHandle);
 			}
 		}
 		
@@ -265,44 +296,14 @@ namespace QuickBlox {
 			}
 		}
 		
-		[Export ("canSetVideoOutputPreset:")]
+		[Export ("rejectCallWithOpponentID:")]
 		[CompilerGenerated]
-		public virtual bool CanSetVideoOutputPreset (string preset)
-		{
-			if (preset == null)
-				throw new ArgumentNullException ("preset");
-			var nspreset = NSString.CreateNative (preset);
-			
-			bool ret;
-			if (IsDirectBinding) {
-				ret = MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend_IntPtr (this.Handle, selCanSetVideoOutputPreset_Handle, nspreset);
-			} else {
-				ret = MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_IntPtr (this.SuperHandle, selCanSetVideoOutputPreset_Handle, nspreset);
-			}
-			NSString.ReleaseNative (nspreset);
-			
-			return ret;
-		}
-		
-		[Export ("drainWriteVideoQueue")]
-		[CompilerGenerated]
-		public virtual void DrainWriteVideoQueue ()
+		public virtual void RejectCallWithOpponentID (global::System.UInt32 userID)
 		{
 			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selDrainWriteVideoQueueHandle);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selRejectCallWithOpponentID_Handle, userID);
 			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selDrainWriteVideoQueueHandle);
-			}
-		}
-		
-		[Export ("drainWriteAudioQueue")]
-		[CompilerGenerated]
-		public virtual void DrainWriteAudioQueue ()
-		{
-			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selDrainWriteAudioQueueHandle);
-			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selDrainWriteAudioQueueHandle);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selRejectCallWithOpponentID_Handle, userID);
 			}
 		}
 		
@@ -314,6 +315,48 @@ namespace QuickBlox {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSuspendStream_Handle, isSuspend);
 			} else {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSuspendStream_Handle, isSuspend);
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual bool CameraFlashEnabled {
+			[Export ("isCameraFlashEnabled")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsCameraFlashEnabledHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsCameraFlashEnabledHandle);
+				}
+			}
+			
+			[Export ("setCameraFlashEnabled:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetCameraFlashEnabled_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetCameraFlashEnabled_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual bool IsUseCustomAudioChatSession {
+			[Export ("isUseCustomAudioChatSession")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsUseCustomAudioChatSessionHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsUseCustomAudioChatSessionHandle);
+				}
+			}
+			
+			[Export ("setIsUseCustomAudioChatSession:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetIsUseCustomAudioChatSession_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetIsUseCustomAudioChatSession_Handle, value);
+				}
 			}
 		}
 		
@@ -339,23 +382,135 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual bool IsUseCustomAudioChatSession {
-			[Export ("isUseCustomAudioChatSession")]
+		public virtual bool MicrophoneEnabled {
+			[Export ("isMicrophoneEnabled")]
 			get {
 				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsUseCustomAudioChatSessionHandle);
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsMicrophoneEnabledHandle);
 				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsUseCustomAudioChatSessionHandle);
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsMicrophoneEnabledHandle);
 				}
 			}
 			
-			[Export ("setIsUseCustomAudioChatSession:")]
+			[Export ("setMicrophoneEnabled:")]
 			set {
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetIsUseCustomAudioChatSession_Handle, value);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetMicrophoneEnabled_Handle, value);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetIsUseCustomAudioChatSession_Handle, value);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetMicrophoneEnabled_Handle, value);
 				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual bool RelayUsed {
+			[Export ("isRelayUsed")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsRelayUsedHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsRelayUsedHandle);
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public virtual string SessionID {
+			[Export ("sessionID", ArgumentSemantic.Retain)]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selSessionIDHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSessionIDHandle));
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public virtual QBVideoChatState State {
+			[Export ("state")]
+			get {
+				if (IsDirectBinding) {
+					return (QBVideoChatState) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selStateHandle);
+				} else {
+					return (QBVideoChatState) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selStateHandle);
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public virtual bool UseBackCamera {
+			[Export ("useBackCamera")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selUseBackCameraHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selUseBackCameraHandle);
+				}
+			}
+			
+			[Export ("setUseBackCamera:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetUseBackCamera_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetUseBackCamera_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual bool UseHeadphone {
+			[Export ("useHeadphone")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selUseHeadphoneHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selUseHeadphoneHandle);
+				}
+			}
+			
+			[Export ("setUseHeadphone:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetUseHeadphone_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetUseHeadphone_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual global::System.UInt32 VideoChatOpponentID {
+			[Export ("videoChatOpponentID")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selVideoChatOpponentIDHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selVideoChatOpponentIDHandle);
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public virtual string VideoOutputPreset {
+			[Export ("setVideoOutputPreset:")]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetVideoOutputPreset_Handle, nsvalue);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetVideoOutputPreset_Handle, nsvalue);
+				}
+				NSString.ReleaseNative (nsvalue);
+				
 			}
 		}
 		
@@ -418,160 +573,6 @@ namespace QuickBlox {
 				}
 				if (!IsNewRefcountEnabled ())
 					__mt_ViewToRenderOwnVideoStream_var = value;
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual global::System.UInt32 VideoChatOpponentID {
-			[Export ("videoChatOpponentID")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selVideoChatOpponentIDHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selVideoChatOpponentIDHandle);
-				}
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual bool RelayUsed {
-			[Export ("isRelayUsed")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsRelayUsedHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsRelayUsedHandle);
-				}
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual bool UseBackCamera {
-			[Export ("useBackCamera")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selUseBackCameraHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selUseBackCameraHandle);
-				}
-			}
-			
-			[Export ("setUseBackCamera:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetUseBackCamera_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetUseBackCamera_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual bool UseHeadphone {
-			[Export ("useHeadphone")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selUseHeadphoneHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selUseHeadphoneHandle);
-				}
-			}
-			
-			[Export ("setUseHeadphone:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetUseHeadphone_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetUseHeadphone_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual bool CameraFlashEnabled {
-			[Export ("isCameraFlashEnabled")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsCameraFlashEnabledHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsCameraFlashEnabledHandle);
-				}
-			}
-			
-			[Export ("setCameraFlashEnabled:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetCameraFlashEnabled_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetCameraFlashEnabled_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual bool MicrophoneEnabled {
-			[Export ("isMicrophoneEnabled")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selIsMicrophoneEnabledHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selIsMicrophoneEnabledHandle);
-				}
-			}
-			
-			[Export ("setMicrophoneEnabled:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetMicrophoneEnabled_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetMicrophoneEnabled_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual string SessionID {
-			[Export ("sessionID", ArgumentSemantic.Retain)]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selSessionIDHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selSessionIDHandle));
-				}
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual QBVideoChatState State {
-			[Export ("state")]
-			get {
-				if (IsDirectBinding) {
-					return (QBVideoChatState) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selStateHandle);
-				} else {
-					return (QBVideoChatState) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selStateHandle);
-				}
-			}
-			
-		}
-		
-		[CompilerGenerated]
-		public virtual string VideoOutputPreset {
-			[Export ("setVideoOutputPreset:")]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				var nsvalue = NSString.CreateNative (value);
-				
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetVideoOutputPreset_Handle, nsvalue);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetVideoOutputPreset_Handle, nsvalue);
-				}
-				NSString.ReleaseNative (nsvalue);
-				
 			}
 		}
 		

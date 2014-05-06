@@ -7,26 +7,27 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("PagedResult", true)]
@@ -35,14 +36,14 @@ namespace QuickBlox {
 		const string selCurrentPage = "currentPage";
 		static readonly IntPtr selCurrentPageHandle = Selector.GetHandle ("currentPage");
 		[CompilerGenerated]
-		const string selTotalPages = "totalPages";
-		static readonly IntPtr selTotalPagesHandle = Selector.GetHandle ("totalPages");
-		[CompilerGenerated]
 		const string selPerPage = "perPage";
 		static readonly IntPtr selPerPageHandle = Selector.GetHandle ("perPage");
 		[CompilerGenerated]
 		const string selTotalEntries = "totalEntries";
 		static readonly IntPtr selTotalEntriesHandle = Selector.GetHandle ("totalEntries");
+		[CompilerGenerated]
+		const string selTotalPages = "totalPages";
+		static readonly IntPtr selTotalPagesHandle = Selector.GetHandle ("totalPages");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("PagedResult");
@@ -98,19 +99,6 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual global::System.UInt32 TotalPages {
-			[Export ("totalPages")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selTotalPagesHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selTotalPagesHandle);
-				}
-			}
-			
-		}
-		
-		[CompilerGenerated]
 		public virtual global::System.UInt32 PerPage {
 			[Export ("perPage")]
 			get {
@@ -131,6 +119,19 @@ namespace QuickBlox {
 					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selTotalEntriesHandle);
 				} else {
 					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selTotalEntriesHandle);
+				}
+			}
+			
+		}
+		
+		[CompilerGenerated]
+		public virtual global::System.UInt32 TotalPages {
+			[Export ("totalPages")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selTotalPagesHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selTotalPagesHandle);
 				}
 			}
 			

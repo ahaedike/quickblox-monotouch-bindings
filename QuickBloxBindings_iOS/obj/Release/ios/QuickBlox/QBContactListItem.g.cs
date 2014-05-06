@@ -7,42 +7,43 @@
 
 using System;
 using System.Drawing;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using MonoTouch;
-using MonoTouch.CoreFoundation;
-using MonoTouch.CoreMedia;
-using MonoTouch.CoreMotion;
-using MonoTouch.Foundation;
-using MonoTouch.ObjCRuntime;
-using MonoTouch.CoreAnimation;
-using MonoTouch.CoreLocation;
-using MonoTouch.MapKit;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using MonoTouch.UIKit;
-using MonoTouch.CoreGraphics;
-using MonoTouch.NewsstandKit;
 using MonoTouch.GLKit;
+using MonoTouch.MapKit;
+using MonoTouch.Security;
 using MonoTouch.CoreVideo;
-using OpenTK;
+using MonoTouch.CoreMedia;
+using MonoTouch.QuickLook;
+using MonoTouch.Foundation;
+using MonoTouch.CoreMotion;
+using MonoTouch.ObjCRuntime;
+using MonoTouch.CoreGraphics;
+using MonoTouch.CoreLocation;
+using MonoTouch.NewsstandKit;
+using MonoTouch.AVFoundation;
+using MonoTouch.CoreAnimation;
+using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBContactListItem", true)]
 	public unsafe partial class QBContactListItem : NSObject {
-		[CompilerGenerated]
-		const string selUserID = "userID";
-		static readonly IntPtr selUserIDHandle = Selector.GetHandle ("userID");
-		[CompilerGenerated]
-		const string selSetUserID_ = "setUserID:";
-		static readonly IntPtr selSetUserID_Handle = Selector.GetHandle ("setUserID:");
 		[CompilerGenerated]
 		const string selIsOnline = "isOnline";
 		static readonly IntPtr selIsOnlineHandle = Selector.GetHandle ("isOnline");
 		[CompilerGenerated]
 		const string selSetOnline_ = "setOnline:";
 		static readonly IntPtr selSetOnline_Handle = Selector.GetHandle ("setOnline:");
+		[CompilerGenerated]
+		const string selSetUserID_ = "setUserID:";
+		static readonly IntPtr selSetUserID_Handle = Selector.GetHandle ("setUserID:");
+		[CompilerGenerated]
+		const string selUserID = "userID";
+		static readonly IntPtr selUserIDHandle = Selector.GetHandle ("userID");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBContactListItem");
@@ -85,27 +86,6 @@ namespace QuickBlox {
 		}
 
 		[CompilerGenerated]
-		public virtual global::System.UInt32 UserID {
-			[Export ("userID")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selUserIDHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selUserIDHandle);
-				}
-			}
-			
-			[Export ("setUserID:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetUserID_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetUserID_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
 		public virtual bool Online {
 			[Export ("isOnline")]
 			get {
@@ -122,6 +102,27 @@ namespace QuickBlox {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetOnline_Handle, value);
 				} else {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetOnline_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual global::System.UInt32 UserID {
+			[Export ("userID")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selUserIDHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selUserIDHandle);
+				}
+			}
+			
+			[Export ("setUserID:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetUserID_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetUserID_Handle, value);
 				}
 			}
 		}
