@@ -39,6 +39,9 @@ namespace QuickBlox {
 		const string selChatServerEndpointURL = "chatServerEndpointURL";
 		static readonly IntPtr selChatServerEndpointURLHandle = Selector.GetHandle ("chatServerEndpointURL");
 		[CompilerGenerated]
+		const string selContentBucketName = "contentBucketName";
+		static readonly IntPtr selContentBucketNameHandle = Selector.GetHandle ("contentBucketName");
+		[CompilerGenerated]
 		const string selCreateSharedModule = "createSharedModule";
 		static readonly IntPtr selCreateSharedModuleHandle = Selector.GetHandle ("createSharedModule");
 		[CompilerGenerated]
@@ -74,6 +77,9 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selTokenExpirationDate = "tokenExpirationDate";
 		static readonly IntPtr selTokenExpirationDateHandle = Selector.GetHandle ("tokenExpirationDate");
+		[CompilerGenerated]
+		const string selTurnServerEndpointURL = "turnServerEndpointURL";
+		static readonly IntPtr selTurnServerEndpointURLHandle = Selector.GetHandle ("turnServerEndpointURL");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBBaseModule");
@@ -152,6 +158,15 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
+		public static string ContentBucketName {
+			[Export ("contentBucketName")]
+			get {
+				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selContentBucketNameHandle));
+			}
+			
+		}
+		
+		[CompilerGenerated]
 		public static string ServerEndpointURL {
 			[Export ("serverEndpointURL")]
 			get {
@@ -196,18 +211,18 @@ namespace QuickBlox {
 			[Export ("sessionType")]
 			get {
 				if (IsDirectBinding) {
-					return (QBSessionType) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selSessionTypeHandle);
+					return (QBSessionType) MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selSessionTypeHandle);
 				} else {
-					return (QBSessionType) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selSessionTypeHandle);
+					return (QBSessionType) MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selSessionTypeHandle);
 				}
 			}
 			
 			[Export ("setSessionType:")]
 			set {
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (this.Handle, selSetSessionType_Handle, (int)value);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetSessionType_Handle, (UInt32)value);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_int (this.SuperHandle, selSetSessionType_Handle, (int)value);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetSessionType_Handle, (UInt32)value);
 				}
 			}
 		}
@@ -283,6 +298,15 @@ namespace QuickBlox {
 				if (!IsNewRefcountEnabled ())
 					__mt_TokenExpirationDate_var = value;
 			}
+		}
+		
+		[CompilerGenerated]
+		public static string TurnServerEndpointURL {
+			[Export ("turnServerEndpointURL")]
+			get {
+				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selTurnServerEndpointURLHandle));
+			}
+			
 		}
 		
 		[CompilerGenerated]

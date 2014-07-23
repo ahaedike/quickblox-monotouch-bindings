@@ -39,6 +39,12 @@ namespace QuickBlox {
 		const string selDeleteUsers_ = "deleteUsers:";
 		static readonly IntPtr selDeleteUsers_Handle = Selector.GetHandle ("deleteUsers:");
 		[CompilerGenerated]
+		const string selInitWithRoomJID_ = "initWithRoomJID:";
+		static readonly IntPtr selInitWithRoomJID_Handle = Selector.GetHandle ("initWithRoomJID:");
+		[CompilerGenerated]
+		const string selInitWithRoomJIDNickname_ = "initWithRoomJID:nickname:";
+		static readonly IntPtr selInitWithRoomJIDNickname_Handle = Selector.GetHandle ("initWithRoomJID:nickname:");
+		[CompilerGenerated]
 		const string selInitWithRoomName_ = "initWithRoomName:";
 		static readonly IntPtr selInitWithRoomName_Handle = Selector.GetHandle ("initWithRoomName:");
 		[CompilerGenerated]
@@ -53,6 +59,9 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selJoinRoom = "joinRoom";
 		static readonly IntPtr selJoinRoomHandle = Selector.GetHandle ("joinRoom");
+		[CompilerGenerated]
+		const string selJoinRoomWithHistoryAttribute_ = "joinRoomWithHistoryAttribute:";
+		static readonly IntPtr selJoinRoomWithHistoryAttribute_Handle = Selector.GetHandle ("joinRoomWithHistoryAttribute:");
 		[CompilerGenerated]
 		const string selLeaveRoom = "leaveRoom";
 		static readonly IntPtr selLeaveRoomHandle = Selector.GetHandle ("leaveRoom");
@@ -188,6 +197,48 @@ namespace QuickBlox {
 			
 		}
 		
+		[Export ("initWithRoomJID:")]
+		[CompilerGenerated]
+		public virtual global::System.IntPtr InitWithRoomJID (string roomJID)
+		{
+			if (roomJID == null)
+				throw new ArgumentNullException ("roomJID");
+			var nsroomJID = NSString.CreateNative (roomJID);
+			
+			global::System.IntPtr ret;
+			if (IsDirectBinding) {
+				ret = MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (this.Handle, selInitWithRoomJID_Handle, nsroomJID);
+			} else {
+				ret = MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper_IntPtr (this.SuperHandle, selInitWithRoomJID_Handle, nsroomJID);
+			}
+			NSString.ReleaseNative (nsroomJID);
+			
+			return ret;
+		}
+		
+		[Export ("initWithRoomJID:nickname:")]
+		[CompilerGenerated]
+		public virtual global::System.IntPtr InitWithRoomJIDAndNickname (string roomJID, string nickname)
+		{
+			if (roomJID == null)
+				throw new ArgumentNullException ("roomJID");
+			if (nickname == null)
+				throw new ArgumentNullException ("nickname");
+			var nsroomJID = NSString.CreateNative (roomJID);
+			var nsnickname = NSString.CreateNative (nickname);
+			
+			global::System.IntPtr ret;
+			if (IsDirectBinding) {
+				ret = MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (this.Handle, selInitWithRoomJIDNickname_Handle, nsroomJID, nsnickname);
+			} else {
+				ret = MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper_IntPtr_IntPtr (this.SuperHandle, selInitWithRoomJIDNickname_Handle, nsroomJID, nsnickname);
+			}
+			NSString.ReleaseNative (nsroomJID);
+			NSString.ReleaseNative (nsnickname);
+			
+			return ret;
+		}
+		
 		[Export ("joinRoom")]
 		[CompilerGenerated]
 		public virtual void JoinRoom ()
@@ -196,6 +247,19 @@ namespace QuickBlox {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selJoinRoomHandle);
 			} else {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selJoinRoomHandle);
+			}
+		}
+		
+		[Export ("joinRoomWithHistoryAttribute:")]
+		[CompilerGenerated]
+		public virtual void JoinRoomWithHistoryAttribute (NSDictionary historyAttribute)
+		{
+			if (historyAttribute == null)
+				throw new ArgumentNullException ("historyAttribute");
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selJoinRoomWithHistoryAttribute_Handle, historyAttribute.Handle);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selJoinRoomWithHistoryAttribute_Handle, historyAttribute.Handle);
 			}
 		}
 		

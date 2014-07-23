@@ -31,7 +31,7 @@ using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBChatMessage", true)]
-	public unsafe partial class QBChatMessage : NSObject {
+	public unsafe partial class QBChatMessage : QBChatAbstractMessage {
 		[CompilerGenerated]
 		const string selCustomObjectsAdditionalParameters = "customObjectsAdditionalParameters";
 		static readonly IntPtr selCustomObjectsAdditionalParametersHandle = Selector.GetHandle ("customObjectsAdditionalParameters");
@@ -39,59 +39,29 @@ namespace QuickBlox {
 		const string selCustomObjectsClassName = "customObjectsClassName";
 		static readonly IntPtr selCustomObjectsClassNameHandle = Selector.GetHandle ("customObjectsClassName");
 		[CompilerGenerated]
-		const string selCustomParameters = "customParameters";
-		static readonly IntPtr selCustomParametersHandle = Selector.GetHandle ("customParameters");
-		[CompilerGenerated]
-		const string selDatetime = "datetime";
-		static readonly IntPtr selDatetimeHandle = Selector.GetHandle ("datetime");
-		[CompilerGenerated]
 		const string selDelayed = "delayed";
 		static readonly IntPtr selDelayedHandle = Selector.GetHandle ("delayed");
-		[CompilerGenerated]
-		const string selID = "ID";
-		static readonly IntPtr selIDHandle = Selector.GetHandle ("ID");
 		[CompilerGenerated]
 		const string selMessage = "message";
 		static readonly IntPtr selMessageHandle = Selector.GetHandle ("message");
 		[CompilerGenerated]
-		const string selRecipientID = "recipientID";
-		static readonly IntPtr selRecipientIDHandle = Selector.GetHandle ("recipientID");
-		[CompilerGenerated]
 		const string selSaveWhenDeliveredToCustomObjectsWithClassNameAdditionalParameters_ = "saveWhenDeliveredToCustomObjectsWithClassName:additionalParameters:";
 		static readonly IntPtr selSaveWhenDeliveredToCustomObjectsWithClassNameAdditionalParameters_Handle = Selector.GetHandle ("saveWhenDeliveredToCustomObjectsWithClassName:additionalParameters:");
-		[CompilerGenerated]
-		const string selSenderID = "senderID";
-		static readonly IntPtr selSenderIDHandle = Selector.GetHandle ("senderID");
 		[CompilerGenerated]
 		const string selSenderNick = "senderNick";
 		static readonly IntPtr selSenderNickHandle = Selector.GetHandle ("senderNick");
 		[CompilerGenerated]
-		const string selSetCustomParameters_ = "setCustomParameters:";
-		static readonly IntPtr selSetCustomParameters_Handle = Selector.GetHandle ("setCustomParameters:");
+		const string selSetCustomObjectsAdditionalParameters_ = "setCustomObjectsAdditionalParameters:";
+		static readonly IntPtr selSetCustomObjectsAdditionalParameters_Handle = Selector.GetHandle ("setCustomObjectsAdditionalParameters:");
 		[CompilerGenerated]
-		const string selSetDatetime_ = "setDatetime:";
-		static readonly IntPtr selSetDatetime_Handle = Selector.GetHandle ("setDatetime:");
+		const string selSetCustomObjectsClassName_ = "setCustomObjectsClassName:";
+		static readonly IntPtr selSetCustomObjectsClassName_Handle = Selector.GetHandle ("setCustomObjectsClassName:");
 		[CompilerGenerated]
 		const string selSetDelayed_ = "setDelayed:";
 		static readonly IntPtr selSetDelayed_Handle = Selector.GetHandle ("setDelayed:");
 		[CompilerGenerated]
-		const string selSetID_ = "setID:";
-		static readonly IntPtr selSetID_Handle = Selector.GetHandle ("setID:");
-		[CompilerGenerated]
-		const string selSetRecipientID_ = "setRecipientID:";
-		static readonly IntPtr selSetRecipientID_Handle = Selector.GetHandle ("setRecipientID:");
-		[CompilerGenerated]
-		const string selSetSenderID_ = "setSenderID:";
-		static readonly IntPtr selSetSenderID_Handle = Selector.GetHandle ("setSenderID:");
-		[CompilerGenerated]
 		const string selSetSenderNick_ = "setSenderNick:";
 		static readonly IntPtr selSetSenderNick_Handle = Selector.GetHandle ("setSenderNick:");
-		[CompilerGenerated]
-		const string selSetText_ = "setText:";
-		static readonly IntPtr selSetText_Handle = Selector.GetHandle ("setText:");
-		[CompilerGenerated]
-		const string selText = "text";
-		static readonly IntPtr selTextHandle = Selector.GetHandle ("text");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBChatMessage");
@@ -156,7 +126,7 @@ namespace QuickBlox {
 		object __mt_CustomObjectsAdditionalParameters_var;
 		[CompilerGenerated]
 		public virtual NSDictionary CustomObjectsAdditionalParameters {
-			[Export ("customObjectsAdditionalParameters")]
+			[Export ("customObjectsAdditionalParameters", ArgumentSemantic.Copy)]
 			get {
 				NSDictionary ret;
 				if (IsDirectBinding) {
@@ -169,11 +139,23 @@ namespace QuickBlox {
 				return ret;
 			}
 			
+			[Export ("setCustomObjectsAdditionalParameters:", ArgumentSemantic.Copy)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetCustomObjectsAdditionalParameters_Handle, value.Handle);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetCustomObjectsAdditionalParameters_Handle, value.Handle);
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_CustomObjectsAdditionalParameters_var = value;
+			}
 		}
 		
 		[CompilerGenerated]
 		public virtual string CustomObjectsClassName {
-			[Export ("customObjectsClassName")]
+			[Export ("customObjectsClassName", ArgumentSemantic.Copy)]
 			get {
 				if (IsDirectBinding) {
 					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selCustomObjectsClassNameHandle));
@@ -182,67 +164,19 @@ namespace QuickBlox {
 				}
 			}
 			
-		}
-		
-		[CompilerGenerated]
-		object __mt_CustomParameters_var;
-		[CompilerGenerated]
-		public virtual NSMutableDictionary CustomParameters {
-			[Export ("customParameters", ArgumentSemantic.Retain)]
-			get {
-				NSMutableDictionary ret;
-				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<NSMutableDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selCustomParametersHandle));
-				} else {
-					ret =  Runtime.GetNSObject<NSMutableDictionary> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selCustomParametersHandle));
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_CustomParameters_var = ret;
-				return ret;
-			}
-			
-			[Export ("setCustomParameters:", ArgumentSemantic.Retain)]
+			[Export ("setCustomObjectsClassName:", ArgumentSemantic.Copy)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetCustomParameters_Handle, value.Handle);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetCustomObjectsClassName_Handle, nsvalue);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetCustomParameters_Handle, value.Handle);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetCustomObjectsClassName_Handle, nsvalue);
 				}
-				if (!IsNewRefcountEnabled ())
-					__mt_CustomParameters_var = value;
-			}
-		}
-		
-		[CompilerGenerated]
-		object __mt_Datetime_var;
-		[CompilerGenerated]
-		public virtual NSDate Datetime {
-			[Export ("datetime", ArgumentSemantic.Copy)]
-			get {
-				NSDate ret;
-				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<NSDate> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selDatetimeHandle));
-				} else {
-					ret =  Runtime.GetNSObject<NSDate> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selDatetimeHandle));
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Datetime_var = ret;
-				return ret;
-			}
-			
-			[Export ("setDatetime:", ArgumentSemantic.Copy)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetDatetime_Handle, value.Handle);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetDatetime_Handle, value.Handle);
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Datetime_var = value;
+				NSString.ReleaseNative (nsvalue);
+				
 			}
 		}
 		
@@ -268,33 +202,6 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual string ID {
-			[Export ("ID", ArgumentSemantic.Copy)]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selIDHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selIDHandle));
-				}
-			}
-			
-			[Export ("setID:", ArgumentSemantic.Copy)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				var nsvalue = NSString.CreateNative (value);
-				
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetID_Handle, nsvalue);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetID_Handle, nsvalue);
-				}
-				NSString.ReleaseNative (nsvalue);
-				
-			}
-		}
-		
-		[CompilerGenerated]
 		static object __mt_Message_var_static;
 		[CompilerGenerated]
 		public static QBChatMessage Message {
@@ -307,48 +214,6 @@ namespace QuickBlox {
 				return ret;
 			}
 			
-		}
-		
-		[CompilerGenerated]
-		public virtual global::System.UInt32 RecipientID {
-			[Export ("recipientID")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selRecipientIDHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selRecipientIDHandle);
-				}
-			}
-			
-			[Export ("setRecipientID:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetRecipientID_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetRecipientID_Handle, value);
-				}
-			}
-		}
-		
-		[CompilerGenerated]
-		public virtual global::System.UInt32 SenderID {
-			[Export ("senderID")]
-			get {
-				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selSenderIDHandle);
-				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selSenderIDHandle);
-				}
-			}
-			
-			[Export ("setSenderID:")]
-			set {
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetSenderID_Handle, value);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetSenderID_Handle, value);
-				}
-			}
 		}
 		
 		[CompilerGenerated]
@@ -379,40 +244,11 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual string Text {
-			[Export ("text", ArgumentSemantic.Copy)]
-			get {
-				if (IsDirectBinding) {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selTextHandle));
-				} else {
-					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selTextHandle));
-				}
-			}
-			
-			[Export ("setText:", ArgumentSemantic.Copy)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				var nsvalue = NSString.CreateNative (value);
-				
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetText_Handle, nsvalue);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetText_Handle, nsvalue);
-				}
-				NSString.ReleaseNative (nsvalue);
-				
-			}
-		}
-		
-		[CompilerGenerated]
 		protected override void Dispose (bool disposing)
 		{
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
 				__mt_CustomObjectsAdditionalParameters_var = null;
-				__mt_CustomParameters_var = null;
-				__mt_Datetime_var = null;
 			}
 		}
 	} /* class QBChatMessage */

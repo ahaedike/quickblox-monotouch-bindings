@@ -165,43 +165,43 @@ namespace QuickBlox {
 
 		[Export ("createObject:delegate:")]
 		[CompilerGenerated]
-		public static NSObject CreateObject (QBCOCustomObject obj, NSObject del)
+		public static NSObject CreateObject (QBCOCustomObject _object, NSObject _delegate)
 		{
-			if (obj == null)
-				throw new ArgumentNullException ("obj");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateObjectDelegate_Handle, obj.Handle, del.Handle));
+			if (_object == null)
+				throw new ArgumentNullException ("_object");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateObjectDelegate_Handle, _object.Handle, _delegate.Handle));
 		}
 		
 		[Export ("createObject:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreateObject (QBCOCustomObject obj, NSObject del, NSObject context)
+		public static NSObject CreateObject (QBCOCustomObject _object, NSObject _delegate, NSObject context)
 		{
-			if (obj == null)
-				throw new ArgumentNullException ("obj");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_object == null)
+				throw new ArgumentNullException ("_object");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateObjectDelegateContext_Handle, obj.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateObjectDelegateContext_Handle, _object.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("createObjects:className:delegate:")]
 		[CompilerGenerated]
-		public static NSObject CreateObjects (NSObject[] objects, string className, NSObject del)
+		public static NSObject CreateObjects (NSObject[] objects, string className, NSObject _delegate)
 		{
 			if (objects == null)
 				throw new ArgumentNullException ("objects");
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsa_objects = NSArray.FromNSObjects (objects);
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateObjectsClassNameDelegate_Handle, nsa_objects.Handle, nsclassName, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateObjectsClassNameDelegate_Handle, nsa_objects.Handle, nsclassName, _delegate.Handle));
 			nsa_objects.Dispose ();
 			NSString.ReleaseNative (nsclassName);
 			
@@ -210,21 +210,21 @@ namespace QuickBlox {
 		
 		[Export ("createObjects:className:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreateObjects (NSObject[] objects, string className, NSObject del, NSObject context)
+		public static NSObject CreateObjects (NSObject[] objects, string className, NSObject _delegate, NSObject context)
 		{
 			if (objects == null)
 				throw new ArgumentNullException ("objects");
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsa_objects = NSArray.FromNSObjects (objects);
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selCreateObjectsClassNameDelegateContext_Handle, nsa_objects.Handle, nsclassName, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selCreateObjectsClassNameDelegateContext_Handle, nsa_objects.Handle, nsclassName, _delegate.Handle, context.Handle));
 			nsa_objects.Dispose ();
 			NSString.ReleaseNative (nsclassName);
 			
@@ -233,7 +233,7 @@ namespace QuickBlox {
 		
 		[Export ("deleteFileFromClassName:objectID:fileFieldName:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DeleteFileFromClassName (string className, string objectID, string fileFieldName, NSObject del)
+		public static NSObject DeleteFileFromClassName (string className, string objectID, string fileFieldName, NSObject _delegate)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
@@ -241,14 +241,14 @@ namespace QuickBlox {
 				throw new ArgumentNullException ("objectID");
 			if (fileFieldName == null)
 				throw new ArgumentNullException ("fileFieldName");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsclassName = NSString.CreateNative (className);
 			var nsobjectID = NSString.CreateNative (objectID);
 			var nsfileFieldName = NSString.CreateNative (fileFieldName);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteFileFromClassNameObjectIDFileFieldNameDelegate_Handle, nsclassName, nsobjectID, nsfileFieldName, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteFileFromClassNameObjectIDFileFieldNameDelegate_Handle, nsclassName, nsobjectID, nsfileFieldName, _delegate.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsobjectID);
 			NSString.ReleaseNative (nsfileFieldName);
@@ -258,7 +258,7 @@ namespace QuickBlox {
 		
 		[Export ("deleteFileFromClassName:objectID:fileFieldName:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DeleteFileFromClassName (string className, string objectID, string fileFieldName, NSObject del, NSObject context)
+		public static NSObject DeleteFileFromClassName (string className, string objectID, string fileFieldName, NSObject _delegate, NSObject context)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
@@ -266,8 +266,8 @@ namespace QuickBlox {
 				throw new ArgumentNullException ("objectID");
 			if (fileFieldName == null)
 				throw new ArgumentNullException ("fileFieldName");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsclassName = NSString.CreateNative (className);
@@ -275,7 +275,7 @@ namespace QuickBlox {
 			var nsfileFieldName = NSString.CreateNative (fileFieldName);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteFileFromClassNameObjectIDFileFieldNameDelegateContext_Handle, nsclassName, nsobjectID, nsfileFieldName, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteFileFromClassNameObjectIDFileFieldNameDelegateContext_Handle, nsclassName, nsobjectID, nsfileFieldName, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsobjectID);
 			NSString.ReleaseNative (nsfileFieldName);
@@ -285,19 +285,19 @@ namespace QuickBlox {
 		
 		[Export ("deleteObjectsWithIDs:className:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DeleteObjectsWithIDs (NSObject[] objectsIDs, string className, NSObject del)
+		public static NSObject DeleteObjectsWithIDs (NSObject[] objectsIDs, string className, NSObject _delegate)
 		{
 			if (objectsIDs == null)
 				throw new ArgumentNullException ("objectsIDs");
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsa_objectsIDs = NSArray.FromNSObjects (objectsIDs);
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteObjectsWithIDsClassNameDelegate_Handle, nsa_objectsIDs.Handle, nsclassName, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteObjectsWithIDsClassNameDelegate_Handle, nsa_objectsIDs.Handle, nsclassName, _delegate.Handle));
 			nsa_objectsIDs.Dispose ();
 			NSString.ReleaseNative (nsclassName);
 			
@@ -306,21 +306,21 @@ namespace QuickBlox {
 		
 		[Export ("deleteObjectsWithIDs:className:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DeleteObjectsWithIDs (NSObject[] objectsIDs, string className, NSObject del, NSObject context)
+		public static NSObject DeleteObjectsWithIDs (NSObject[] objectsIDs, string className, NSObject _delegate, NSObject context)
 		{
 			if (objectsIDs == null)
 				throw new ArgumentNullException ("objectsIDs");
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsa_objectsIDs = NSArray.FromNSObjects (objectsIDs);
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteObjectsWithIDsClassNameDelegateContext_Handle, nsa_objectsIDs.Handle, nsclassName, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteObjectsWithIDsClassNameDelegateContext_Handle, nsa_objectsIDs.Handle, nsclassName, _delegate.Handle, context.Handle));
 			nsa_objectsIDs.Dispose ();
 			NSString.ReleaseNative (nsclassName);
 			
@@ -329,19 +329,19 @@ namespace QuickBlox {
 		
 		[Export ("deleteObjectWithID:className:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DeleteObjectWithID (string objectID, string className, NSObject del)
+		public static NSObject DeleteObjectWithID (string objectID, string className, NSObject _delegate)
 		{
 			if (objectID == null)
 				throw new ArgumentNullException ("objectID");
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsobjectID = NSString.CreateNative (objectID);
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteObjectWithIDClassNameDelegate_Handle, nsobjectID, nsclassName, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteObjectWithIDClassNameDelegate_Handle, nsobjectID, nsclassName, _delegate.Handle));
 			NSString.ReleaseNative (nsobjectID);
 			NSString.ReleaseNative (nsclassName);
 			
@@ -350,21 +350,21 @@ namespace QuickBlox {
 		
 		[Export ("deleteObjectWithID:className:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DeleteObjectWithID (string objectID, string className, NSObject del, NSObject context)
+		public static NSObject DeleteObjectWithID (string objectID, string className, NSObject _delegate, NSObject context)
 		{
 			if (objectID == null)
 				throw new ArgumentNullException ("objectID");
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsobjectID = NSString.CreateNative (objectID);
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteObjectWithIDClassNameDelegateContext_Handle, nsobjectID, nsclassName, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteObjectWithIDClassNameDelegateContext_Handle, nsobjectID, nsclassName, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsobjectID);
 			NSString.ReleaseNative (nsclassName);
 			
@@ -373,7 +373,7 @@ namespace QuickBlox {
 		
 		[Export ("downloadFileFromClassName:objectID:fileFieldName:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DownloadFileFromClassName (string className, string objectID, string fileFieldName, NSObject del)
+		public static NSObject DownloadFileFromClassName (string className, string objectID, string fileFieldName, NSObject _delegate)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
@@ -381,14 +381,14 @@ namespace QuickBlox {
 				throw new ArgumentNullException ("objectID");
 			if (fileFieldName == null)
 				throw new ArgumentNullException ("fileFieldName");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsclassName = NSString.CreateNative (className);
 			var nsobjectID = NSString.CreateNative (objectID);
 			var nsfileFieldName = NSString.CreateNative (fileFieldName);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDownloadFileFromClassNameObjectIDFileFieldNameDelegate_Handle, nsclassName, nsobjectID, nsfileFieldName, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDownloadFileFromClassNameObjectIDFileFieldNameDelegate_Handle, nsclassName, nsobjectID, nsfileFieldName, _delegate.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsobjectID);
 			NSString.ReleaseNative (nsfileFieldName);
@@ -398,7 +398,7 @@ namespace QuickBlox {
 		
 		[Export ("downloadFileFromClassName:objectID:fileFieldName:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DownloadFileFromClassName (string className, string objectID, string fileFieldName, NSObject del, NSObject context)
+		public static NSObject DownloadFileFromClassName (string className, string objectID, string fileFieldName, NSObject _delegate, NSObject context)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
@@ -406,8 +406,8 @@ namespace QuickBlox {
 				throw new ArgumentNullException ("objectID");
 			if (fileFieldName == null)
 				throw new ArgumentNullException ("fileFieldName");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsclassName = NSString.CreateNative (className);
@@ -415,7 +415,7 @@ namespace QuickBlox {
 			var nsfileFieldName = NSString.CreateNative (fileFieldName);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDownloadFileFromClassNameObjectIDFileFieldNameDelegateContext_Handle, nsclassName, nsobjectID, nsfileFieldName, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selDownloadFileFromClassNameObjectIDFileFieldNameDelegateContext_Handle, nsclassName, nsobjectID, nsfileFieldName, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsobjectID);
 			NSString.ReleaseNative (nsfileFieldName);
@@ -425,19 +425,19 @@ namespace QuickBlox {
 		
 		[Export ("objectsWithClassName:IDs:delegate:")]
 		[CompilerGenerated]
-		public static NSObject ObjectsWithClassName (string className, NSObject[] IDs, NSObject del)
+		public static NSObject ObjectsWithClassName (string className, NSObject[] IDs, NSObject _delegate)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
 			if (IDs == null)
 				throw new ArgumentNullException ("IDs");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsclassName = NSString.CreateNative (className);
 			var nsa_IDs = NSArray.FromNSObjects (IDs);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameIDsDelegate_Handle, nsclassName, nsa_IDs.Handle, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameIDsDelegate_Handle, nsclassName, nsa_IDs.Handle, _delegate.Handle));
 			NSString.ReleaseNative (nsclassName);
 			nsa_IDs.Dispose ();
 			
@@ -446,21 +446,21 @@ namespace QuickBlox {
 		
 		[Export ("objectsWithClassName:IDs:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject ObjectsWithClassName (string className, NSObject[] IDs, NSObject del, NSObject context)
+		public static NSObject ObjectsWithClassName (string className, NSObject[] IDs, NSObject _delegate, NSObject context)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
 			if (IDs == null)
 				throw new ArgumentNullException ("IDs");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsclassName = NSString.CreateNative (className);
 			var nsa_IDs = NSArray.FromNSObjects (IDs);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameIDsDelegateContext_Handle, nsclassName, nsa_IDs.Handle, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameIDsDelegateContext_Handle, nsclassName, nsa_IDs.Handle, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsclassName);
 			nsa_IDs.Dispose ();
 			
@@ -469,16 +469,16 @@ namespace QuickBlox {
 		
 		[Export ("objectsWithClassName:delegate:")]
 		[CompilerGenerated]
-		public static NSObject ObjectsWithClassName (string className, NSObject del)
+		public static NSObject ObjectsWithClassName (string className, NSObject _delegate)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameDelegate_Handle, nsclassName, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameDelegate_Handle, nsclassName, _delegate.Handle));
 			NSString.ReleaseNative (nsclassName);
 			
 			return ret;
@@ -486,18 +486,18 @@ namespace QuickBlox {
 		
 		[Export ("objectsWithClassName:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject ObjectsWithClassName (string className, NSObject del, NSObject context)
+		public static NSObject ObjectsWithClassName (string className, NSObject _delegate, NSObject context)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameDelegateContext_Handle, nsclassName, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameDelegateContext_Handle, nsclassName, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsclassName);
 			
 			return ret;
@@ -505,18 +505,18 @@ namespace QuickBlox {
 		
 		[Export ("objectsWithClassName:extendedRequest:delegate:")]
 		[CompilerGenerated]
-		public static NSObject ObjectsWithClassName (string className, NSMutableDictionary extendedRequest, NSObject del)
+		public static NSObject ObjectsWithClassName (string className, NSMutableDictionary extendedRequest, NSObject _delegate)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameExtendedRequestDelegate_Handle, nsclassName, extendedRequest.Handle, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameExtendedRequestDelegate_Handle, nsclassName, extendedRequest.Handle, _delegate.Handle));
 			NSString.ReleaseNative (nsclassName);
 			
 			return ret;
@@ -524,20 +524,20 @@ namespace QuickBlox {
 		
 		[Export ("objectsWithClassName:extendedRequest:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject ObjectsWithClassName (string className, NSMutableDictionary extendedRequest, NSObject del, NSObject context)
+		public static NSObject ObjectsWithClassName (string className, NSMutableDictionary extendedRequest, NSObject _delegate, NSObject context)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameExtendedRequestDelegateContext_Handle, nsclassName, extendedRequest.Handle, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selObjectsWithClassNameExtendedRequestDelegateContext_Handle, nsclassName, extendedRequest.Handle, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsclassName);
 			
 			return ret;
@@ -545,19 +545,19 @@ namespace QuickBlox {
 		
 		[Export ("objectWithClassName:ID:delegate:")]
 		[CompilerGenerated]
-		public static NSObject ObjectWithClassName (string className, string ID, NSObject del)
+		public static NSObject ObjectWithClassName (string className, string ID, NSObject _delegate)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
 			if (ID == null)
 				throw new ArgumentNullException ("ID");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsclassName = NSString.CreateNative (className);
 			var nsID = NSString.CreateNative (ID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selObjectWithClassNameIDDelegate_Handle, nsclassName, nsID, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selObjectWithClassNameIDDelegate_Handle, nsclassName, nsID, _delegate.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsID);
 			
@@ -566,21 +566,21 @@ namespace QuickBlox {
 		
 		[Export ("objectWithClassName:ID:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject ObjectWithClassName (string className, string ID, NSObject del, NSObject context)
+		public static NSObject ObjectWithClassName (string className, string ID, NSObject _delegate, NSObject context)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
 			if (ID == null)
 				throw new ArgumentNullException ("ID");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsclassName = NSString.CreateNative (className);
 			var nsID = NSString.CreateNative (ID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selObjectWithClassNameIDDelegateContext_Handle, nsclassName, nsID, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selObjectWithClassNameIDDelegateContext_Handle, nsclassName, nsID, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsID);
 			
@@ -589,19 +589,19 @@ namespace QuickBlox {
 		
 		[Export ("permissionsForObjectWithClassName:ID:delegate:")]
 		[CompilerGenerated]
-		public static NSObject PermissionsForObjectWithClassName (string className, string ID, NSObject del)
+		public static NSObject PermissionsForObjectWithClassName (string className, string ID, NSObject _delegate)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
 			if (ID == null)
 				throw new ArgumentNullException ("ID");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsclassName = NSString.CreateNative (className);
 			var nsID = NSString.CreateNative (ID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selPermissionsForObjectWithClassNameIDDelegate_Handle, nsclassName, nsID, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selPermissionsForObjectWithClassNameIDDelegate_Handle, nsclassName, nsID, _delegate.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsID);
 			
@@ -610,21 +610,21 @@ namespace QuickBlox {
 		
 		[Export ("permissionsForObjectWithClassName:ID:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject PermissionsForObjectWithClassName (string className, string ID, NSObject del, NSObject context)
+		public static NSObject PermissionsForObjectWithClassName (string className, string ID, NSObject _delegate, NSObject context)
 		{
 			if (className == null)
 				throw new ArgumentNullException ("className");
 			if (ID == null)
 				throw new ArgumentNullException ("ID");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsclassName = NSString.CreateNative (className);
 			var nsID = NSString.CreateNative (ID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selPermissionsForObjectWithClassNameIDDelegateContext_Handle, nsclassName, nsID, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selPermissionsForObjectWithClassNameIDDelegateContext_Handle, nsclassName, nsID, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsID);
 			
@@ -633,71 +633,71 @@ namespace QuickBlox {
 		
 		[Export ("updateObject:delegate:")]
 		[CompilerGenerated]
-		public static NSObject UpdateObject (QBCOCustomObject obj, NSObject del)
+		public static NSObject UpdateObject (QBCOCustomObject _object, NSObject _delegate)
 		{
-			if (obj == null)
-				throw new ArgumentNullException ("obj");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selUpdateObjectDelegate_Handle, obj.Handle, del.Handle));
+			if (_object == null)
+				throw new ArgumentNullException ("_object");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selUpdateObjectDelegate_Handle, _object.Handle, _delegate.Handle));
 		}
 		
 		[Export ("updateObject:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject UpdateObject (QBCOCustomObject obj, NSObject del, NSObject context)
+		public static NSObject UpdateObject (QBCOCustomObject _object, NSObject _delegate, NSObject context)
 		{
-			if (obj == null)
-				throw new ArgumentNullException ("obj");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_object == null)
+				throw new ArgumentNullException ("_object");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectDelegateContext_Handle, obj.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectDelegateContext_Handle, _object.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("updateObject:specialUpdateOperators:delegate:")]
 		[CompilerGenerated]
-		public static NSObject UpdateObject (QBCOCustomObject obj, NSMutableDictionary specialUpdateOperators, NSObject del)
+		public static NSObject UpdateObject (QBCOCustomObject _object, NSMutableDictionary specialUpdateOperators, NSObject _delegate)
 		{
-			if (obj == null)
-				throw new ArgumentNullException ("obj");
+			if (_object == null)
+				throw new ArgumentNullException ("_object");
 			if (specialUpdateOperators == null)
 				throw new ArgumentNullException ("specialUpdateOperators");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectSpecialUpdateOperatorsDelegate_Handle, obj.Handle, specialUpdateOperators.Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectSpecialUpdateOperatorsDelegate_Handle, _object.Handle, specialUpdateOperators.Handle, _delegate.Handle));
 		}
 		
 		[Export ("updateObject:specialUpdateOperators:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject UpdateObject (QBCOCustomObject obj, NSMutableDictionary specialUpdateOperators, NSObject del, NSObject context)
+		public static NSObject UpdateObject (QBCOCustomObject _object, NSMutableDictionary specialUpdateOperators, NSObject _delegate, NSObject context)
 		{
-			if (obj == null)
-				throw new ArgumentNullException ("obj");
+			if (_object == null)
+				throw new ArgumentNullException ("_object");
 			if (specialUpdateOperators == null)
 				throw new ArgumentNullException ("specialUpdateOperators");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectSpecialUpdateOperatorsDelegateContext_Handle, obj.Handle, specialUpdateOperators.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectSpecialUpdateOperatorsDelegateContext_Handle, _object.Handle, specialUpdateOperators.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("updateObjects:className:delegate:")]
 		[CompilerGenerated]
-		public static NSObject UpdateObjects (NSObject[] objects, string className, NSObject del)
+		public static NSObject UpdateObjects (NSObject[] objects, string className, NSObject _delegate)
 		{
 			if (objects == null)
 				throw new ArgumentNullException ("objects");
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsa_objects = NSArray.FromNSObjects (objects);
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectsClassNameDelegate_Handle, nsa_objects.Handle, nsclassName, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectsClassNameDelegate_Handle, nsa_objects.Handle, nsclassName, _delegate.Handle));
 			nsa_objects.Dispose ();
 			NSString.ReleaseNative (nsclassName);
 			
@@ -706,21 +706,21 @@ namespace QuickBlox {
 		
 		[Export ("updateObjects:className:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject UpdateObjects (NSObject[] objects, string className, NSObject del, NSObject context)
+		public static NSObject UpdateObjects (NSObject[] objects, string className, NSObject _delegate, NSObject context)
 		{
 			if (objects == null)
 				throw new ArgumentNullException ("objects");
 			if (className == null)
 				throw new ArgumentNullException ("className");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsa_objects = NSArray.FromNSObjects (objects);
 			var nsclassName = NSString.CreateNative (className);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectsClassNameDelegateContext_Handle, nsa_objects.Handle, nsclassName, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateObjectsClassNameDelegateContext_Handle, nsa_objects.Handle, nsclassName, _delegate.Handle, context.Handle));
 			nsa_objects.Dispose ();
 			NSString.ReleaseNative (nsclassName);
 			
@@ -729,7 +729,7 @@ namespace QuickBlox {
 		
 		[Export ("uploadFile:className:objectID:fileFieldName:delegate:")]
 		[CompilerGenerated]
-		public static NSObject UploadFile (QBCOFile file, string className, string objectID, string fileFieldName, NSObject del)
+		public static NSObject UploadFile (QBCOFile file, string className, string objectID, string fileFieldName, NSObject _delegate)
 		{
 			if (file == null)
 				throw new ArgumentNullException ("file");
@@ -739,14 +739,14 @@ namespace QuickBlox {
 				throw new ArgumentNullException ("objectID");
 			if (fileFieldName == null)
 				throw new ArgumentNullException ("fileFieldName");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsclassName = NSString.CreateNative (className);
 			var nsobjectID = NSString.CreateNative (objectID);
 			var nsfileFieldName = NSString.CreateNative (fileFieldName);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUploadFileClassNameObjectIDFileFieldNameDelegate_Handle, file.Handle, nsclassName, nsobjectID, nsfileFieldName, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUploadFileClassNameObjectIDFileFieldNameDelegate_Handle, file.Handle, nsclassName, nsobjectID, nsfileFieldName, _delegate.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsobjectID);
 			NSString.ReleaseNative (nsfileFieldName);
@@ -756,7 +756,7 @@ namespace QuickBlox {
 		
 		[Export ("uploadFile:className:objectID:fileFieldName:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject UploadFile (QBCOFile file, string className, string objectID, string fileFieldName, NSObject del, NSObject context)
+		public static NSObject UploadFile (QBCOFile file, string className, string objectID, string fileFieldName, NSObject _delegate, NSObject context)
 		{
 			if (file == null)
 				throw new ArgumentNullException ("file");
@@ -766,8 +766,8 @@ namespace QuickBlox {
 				throw new ArgumentNullException ("objectID");
 			if (fileFieldName == null)
 				throw new ArgumentNullException ("fileFieldName");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsclassName = NSString.CreateNative (className);
@@ -775,7 +775,7 @@ namespace QuickBlox {
 			var nsfileFieldName = NSString.CreateNative (fileFieldName);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUploadFileClassNameObjectIDFileFieldNameDelegateContext_Handle, file.Handle, nsclassName, nsobjectID, nsfileFieldName, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUploadFileClassNameObjectIDFileFieldNameDelegateContext_Handle, file.Handle, nsclassName, nsobjectID, nsfileFieldName, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsclassName);
 			NSString.ReleaseNative (nsobjectID);
 			NSString.ReleaseNative (nsfileFieldName);

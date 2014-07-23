@@ -51,6 +51,18 @@ namespace QuickBlox {
 		const string selCreateAndRegisterVideoChatInstanceWithSessionID_ = "createAndRegisterVideoChatInstanceWithSessionID:";
 		static readonly IntPtr selCreateAndRegisterVideoChatInstanceWithSessionID_Handle = Selector.GetHandle ("createAndRegisterVideoChatInstanceWithSessionID:");
 		[CompilerGenerated]
+		const string selCreateDialogDelegate_ = "createDialog:delegate:";
+		static readonly IntPtr selCreateDialogDelegate_Handle = Selector.GetHandle ("createDialog:delegate:");
+		[CompilerGenerated]
+		const string selCreateDialogDelegateContext_ = "createDialog:delegate:context:";
+		static readonly IntPtr selCreateDialogDelegateContext_Handle = Selector.GetHandle ("createDialog:delegate:context:");
+		[CompilerGenerated]
+		const string selCreateOrJoinRoomWithJIDMembersOnlyPersistentHistoryAttribute_ = "createOrJoinRoomWithJID:membersOnly:persistent:historyAttribute:";
+		static readonly IntPtr selCreateOrJoinRoomWithJIDMembersOnlyPersistentHistoryAttribute_Handle = Selector.GetHandle ("createOrJoinRoomWithJID:membersOnly:persistent:historyAttribute:");
+		[CompilerGenerated]
+		const string selCreateOrJoinRoomWithJIDNicknameMembersOnlyPersistentHistoryAttribute_ = "createOrJoinRoomWithJID:nickname:membersOnly:persistent:historyAttribute:";
+		static readonly IntPtr selCreateOrJoinRoomWithJIDNicknameMembersOnlyPersistentHistoryAttribute_Handle = Selector.GetHandle ("createOrJoinRoomWithJID:nickname:membersOnly:persistent:historyAttribute:");
+		[CompilerGenerated]
 		const string selCreateOrJoinRoomWithNameMembersOnlyPersistent_ = "createOrJoinRoomWithName:membersOnly:persistent:";
 		static readonly IntPtr selCreateOrJoinRoomWithNameMembersOnlyPersistent_Handle = Selector.GetHandle ("createOrJoinRoomWithName:membersOnly:persistent:");
 		[CompilerGenerated]
@@ -63,11 +75,29 @@ namespace QuickBlox {
 		const string selDelegate = "delegate";
 		static readonly IntPtr selDelegateHandle = Selector.GetHandle ("delegate");
 		[CompilerGenerated]
+		const string selDeleteMessageWithIDDelegate_ = "deleteMessageWithID:delegate:";
+		static readonly IntPtr selDeleteMessageWithIDDelegate_Handle = Selector.GetHandle ("deleteMessageWithID:delegate:");
+		[CompilerGenerated]
+		const string selDeleteMessageWithIDDelegateContext_ = "deleteMessageWithID:delegate:context:";
+		static readonly IntPtr selDeleteMessageWithIDDelegateContext_Handle = Selector.GetHandle ("deleteMessageWithID:delegate:context:");
+		[CompilerGenerated]
 		const string selDeleteUsersFromRoom_ = "deleteUsers:fromRoom:";
 		static readonly IntPtr selDeleteUsersFromRoom_Handle = Selector.GetHandle ("deleteUsers:fromRoom:");
 		[CompilerGenerated]
 		const string selDestroyRoom_ = "destroyRoom:";
 		static readonly IntPtr selDestroyRoom_Handle = Selector.GetHandle ("destroyRoom:");
+		[CompilerGenerated]
+		const string selDialogsWithDelegate_ = "dialogsWithDelegate:";
+		static readonly IntPtr selDialogsWithDelegate_Handle = Selector.GetHandle ("dialogsWithDelegate:");
+		[CompilerGenerated]
+		const string selDialogsWithDelegateContext_ = "dialogsWithDelegate:context:";
+		static readonly IntPtr selDialogsWithDelegateContext_Handle = Selector.GetHandle ("dialogsWithDelegate:context:");
+		[CompilerGenerated]
+		const string selDialogsWithExtendedRequestDelegate_ = "dialogsWithExtendedRequest:delegate:";
+		static readonly IntPtr selDialogsWithExtendedRequestDelegate_Handle = Selector.GetHandle ("dialogsWithExtendedRequest:delegate:");
+		[CompilerGenerated]
+		const string selDialogsWithExtendedRequestDelegateContext_ = "dialogsWithExtendedRequest:delegate:context:";
+		static readonly IntPtr selDialogsWithExtendedRequestDelegateContext_Handle = Selector.GetHandle ("dialogsWithExtendedRequest:delegate:context:");
 		[CompilerGenerated]
 		const string selInstance = "instance";
 		static readonly IntPtr selInstanceHandle = Selector.GetHandle ("instance");
@@ -78,6 +108,9 @@ namespace QuickBlox {
 		const string selJoinRoom_ = "joinRoom:";
 		static readonly IntPtr selJoinRoom_Handle = Selector.GetHandle ("joinRoom:");
 		[CompilerGenerated]
+		const string selJoinRoomHistoryAttribute_ = "joinRoom:historyAttribute:";
+		static readonly IntPtr selJoinRoomHistoryAttribute_Handle = Selector.GetHandle ("joinRoom:historyAttribute:");
+		[CompilerGenerated]
 		const string selLeaveRoom_ = "leaveRoom:";
 		static readonly IntPtr selLeaveRoom_Handle = Selector.GetHandle ("leaveRoom:");
 		[CompilerGenerated]
@@ -86,6 +119,18 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selLogout = "logout";
 		static readonly IntPtr selLogoutHandle = Selector.GetHandle ("logout");
+		[CompilerGenerated]
+		const string selMessagesWithDialogIDDelegate_ = "messagesWithDialogID:delegate:";
+		static readonly IntPtr selMessagesWithDialogIDDelegate_Handle = Selector.GetHandle ("messagesWithDialogID:delegate:");
+		[CompilerGenerated]
+		const string selMessagesWithDialogIDDelegateContext_ = "messagesWithDialogID:delegate:context:";
+		static readonly IntPtr selMessagesWithDialogIDDelegateContext_Handle = Selector.GetHandle ("messagesWithDialogID:delegate:context:");
+		[CompilerGenerated]
+		const string selMessagesWithDialogIDExtendedRequestDelegate_ = "messagesWithDialogID:extendedRequest:delegate:";
+		static readonly IntPtr selMessagesWithDialogIDExtendedRequestDelegate_Handle = Selector.GetHandle ("messagesWithDialogID:extendedRequest:delegate:");
+		[CompilerGenerated]
+		const string selMessagesWithDialogIDExtendedRequestDelegateContext_ = "messagesWithDialogID:extendedRequest:delegate:context:";
+		static readonly IntPtr selMessagesWithDialogIDExtendedRequestDelegateContext_Handle = Selector.GetHandle ("messagesWithDialogID:extendedRequest:delegate:context:");
 		[CompilerGenerated]
 		const string selRegisteredVideoChatInstances = "registeredVideoChatInstances";
 		static readonly IntPtr selRegisteredVideoChatInstancesHandle = Selector.GetHandle ("registeredVideoChatInstances");
@@ -108,11 +153,11 @@ namespace QuickBlox {
 		const string selRequestRoomUsers_ = "requestRoomUsers:";
 		static readonly IntPtr selRequestRoomUsers_Handle = Selector.GetHandle ("requestRoomUsers:");
 		[CompilerGenerated]
+		const string selSendChatMessageToRoom_ = "sendChatMessage:toRoom:";
+		static readonly IntPtr selSendChatMessageToRoom_Handle = Selector.GetHandle ("sendChatMessage:toRoom:");
+		[CompilerGenerated]
 		const string selSendDirectPresenceWithStatusToUser_ = "sendDirectPresenceWithStatus:toUser:";
 		static readonly IntPtr selSendDirectPresenceWithStatusToUser_Handle = Selector.GetHandle ("sendDirectPresenceWithStatus:toUser:");
-		[CompilerGenerated]
-		const string selSendGetIQWithXmlnsNode_ = "sendGetIQWithXmlns:node:";
-		static readonly IntPtr selSendGetIQWithXmlnsNode_Handle = Selector.GetHandle ("sendGetIQWithXmlns:node:");
 		[CompilerGenerated]
 		const string selSendMessage_ = "sendMessage:";
 		static readonly IntPtr selSendMessage_Handle = Selector.GetHandle ("sendMessage:");
@@ -135,8 +180,26 @@ namespace QuickBlox {
 		const string selSetDelegate_ = "setDelegate:";
 		static readonly IntPtr selSetDelegate_Handle = Selector.GetHandle ("setDelegate:");
 		[CompilerGenerated]
+		const string selSetUseMutualSubscriptionForContactList_ = "setUseMutualSubscriptionForContactList:";
+		static readonly IntPtr selSetUseMutualSubscriptionForContactList_Handle = Selector.GetHandle ("setUseMutualSubscriptionForContactList:");
+		[CompilerGenerated]
 		const string selUnregisterVideoChatInstance_ = "unregisterVideoChatInstance:";
 		static readonly IntPtr selUnregisterVideoChatInstance_Handle = Selector.GetHandle ("unregisterVideoChatInstance:");
+		[CompilerGenerated]
+		const string selUpdateDialogWithIDExtendedRequestDelegate_ = "updateDialogWithID:extendedRequest:delegate:";
+		static readonly IntPtr selUpdateDialogWithIDExtendedRequestDelegate_Handle = Selector.GetHandle ("updateDialogWithID:extendedRequest:delegate:");
+		[CompilerGenerated]
+		const string selUpdateDialogWithIDExtendedRequestDelegateContext_ = "updateDialogWithID:extendedRequest:delegate:context:";
+		static readonly IntPtr selUpdateDialogWithIDExtendedRequestDelegateContext_Handle = Selector.GetHandle ("updateDialogWithID:extendedRequest:delegate:context:");
+		[CompilerGenerated]
+		const string selUpdateMessageDelegate_ = "updateMessage:delegate:";
+		static readonly IntPtr selUpdateMessageDelegate_Handle = Selector.GetHandle ("updateMessage:delegate:");
+		[CompilerGenerated]
+		const string selUpdateMessageDelegateContext_ = "updateMessage:delegate:context:";
+		static readonly IntPtr selUpdateMessageDelegateContext_Handle = Selector.GetHandle ("updateMessage:delegate:context:");
+		[CompilerGenerated]
+		const string selUseMutualSubscriptionForContactList = "useMutualSubscriptionForContactList";
+		static readonly IntPtr selUseMutualSubscriptionForContactListHandle = Selector.GetHandle ("useMutualSubscriptionForContactList");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBChat");
@@ -240,6 +303,76 @@ namespace QuickBlox {
 			return ret;
 		}
 		
+		[Export ("createDialog:delegate:")]
+		[CompilerGenerated]
+		public static NSObject CreateDialog (QBChatDialog dialog, NSObject _delegate)
+		{
+			if (dialog == null)
+				throw new ArgumentNullException ("dialog");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateDialogDelegate_Handle, dialog.Handle, _delegate.Handle));
+		}
+		
+		[Export ("createDialog:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject CreateDialog (QBChatDialog dialog, NSObject _delegate, NSObject context)
+		{
+			if (dialog == null)
+				throw new ArgumentNullException ("dialog");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateDialogDelegateContext_Handle, dialog.Handle, _delegate.Handle, context.Handle));
+		}
+		
+		[Export ("createOrJoinRoomWithJID:membersOnly:persistent:historyAttribute:")]
+		[CompilerGenerated]
+		public virtual bool CreateOrJoinRoomWithJID (string roomJID, bool isMembersOnly, bool isPersistent, NSDictionary historyAttribute)
+		{
+			if (roomJID == null)
+				throw new ArgumentNullException ("roomJID");
+			if (historyAttribute == null)
+				throw new ArgumentNullException ("historyAttribute");
+			var nsroomJID = NSString.CreateNative (roomJID);
+			
+			bool ret;
+			if (IsDirectBinding) {
+				ret = ApiDefinition.Messaging.bool_objc_msgSend_IntPtr_bool_bool_IntPtr (this.Handle, selCreateOrJoinRoomWithJIDMembersOnlyPersistentHistoryAttribute_Handle, nsroomJID, isMembersOnly, isPersistent, historyAttribute.Handle);
+			} else {
+				ret = ApiDefinition.Messaging.bool_objc_msgSendSuper_IntPtr_bool_bool_IntPtr (this.SuperHandle, selCreateOrJoinRoomWithJIDMembersOnlyPersistentHistoryAttribute_Handle, nsroomJID, isMembersOnly, isPersistent, historyAttribute.Handle);
+			}
+			NSString.ReleaseNative (nsroomJID);
+			
+			return ret;
+		}
+		
+		[Export ("createOrJoinRoomWithJID:nickname:membersOnly:persistent:historyAttribute:")]
+		[CompilerGenerated]
+		public virtual bool CreateOrJoinRoomWithJID (string roomJID, string nickname, bool isMembersOnly, bool isPersistent, NSDictionary historyAttribute)
+		{
+			if (roomJID == null)
+				throw new ArgumentNullException ("roomJID");
+			if (nickname == null)
+				throw new ArgumentNullException ("nickname");
+			if (historyAttribute == null)
+				throw new ArgumentNullException ("historyAttribute");
+			var nsroomJID = NSString.CreateNative (roomJID);
+			var nsnickname = NSString.CreateNative (nickname);
+			
+			bool ret;
+			if (IsDirectBinding) {
+				ret = ApiDefinition.Messaging.bool_objc_msgSend_IntPtr_IntPtr_bool_bool_IntPtr (this.Handle, selCreateOrJoinRoomWithJIDNicknameMembersOnlyPersistentHistoryAttribute_Handle, nsroomJID, nsnickname, isMembersOnly, isPersistent, historyAttribute.Handle);
+			} else {
+				ret = ApiDefinition.Messaging.bool_objc_msgSendSuper_IntPtr_IntPtr_bool_bool_IntPtr (this.SuperHandle, selCreateOrJoinRoomWithJIDNicknameMembersOnlyPersistentHistoryAttribute_Handle, nsroomJID, nsnickname, isMembersOnly, isPersistent, historyAttribute.Handle);
+			}
+			NSString.ReleaseNative (nsroomJID);
+			NSString.ReleaseNative (nsnickname);
+			
+			return ret;
+		}
+		
 		[Export ("createOrJoinRoomWithName:membersOnly:persistent:")]
 		[CompilerGenerated]
 		public virtual bool CreateOrJoinRoomWithName (string name, bool isMembersOnly, bool isPersistent)
@@ -282,6 +415,42 @@ namespace QuickBlox {
 			return ret;
 		}
 		
+		[Export ("deleteMessageWithID:delegate:")]
+		[CompilerGenerated]
+		public static NSObject DeleteMessageWithID (string messageID, NSObject _delegate)
+		{
+			if (messageID == null)
+				throw new ArgumentNullException ("messageID");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			var nsmessageID = NSString.CreateNative (messageID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDeleteMessageWithIDDelegate_Handle, nsmessageID, _delegate.Handle));
+			NSString.ReleaseNative (nsmessageID);
+			
+			return ret;
+		}
+		
+		[Export ("deleteMessageWithID:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject DeleteMessageWithID (string messageID, NSObject _delegate, NSObject context)
+		{
+			if (messageID == null)
+				throw new ArgumentNullException ("messageID");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			var nsmessageID = NSString.CreateNative (messageID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteMessageWithIDDelegateContext_Handle, nsmessageID, _delegate.Handle, context.Handle));
+			NSString.ReleaseNative (nsmessageID);
+			
+			return ret;
+		}
+		
 		[Export ("deleteUsers:fromRoom:")]
 		[CompilerGenerated]
 		public virtual bool DeleteUsers (NSObject[] usersIDs, QBChatRoom room)
@@ -316,6 +485,50 @@ namespace QuickBlox {
 			}
 		}
 		
+		[Export ("dialogsWithDelegate:")]
+		[CompilerGenerated]
+		public static NSObject DialogsWithDelegate (NSObject _delegate)
+		{
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selDialogsWithDelegate_Handle, _delegate.Handle));
+		}
+		
+		[Export ("dialogsWithDelegate:context:")]
+		[CompilerGenerated]
+		public static NSObject DialogsWithDelegate (NSObject _delegate, NSObject context)
+		{
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDialogsWithDelegateContext_Handle, _delegate.Handle, context.Handle));
+		}
+		
+		[Export ("dialogsWithExtendedRequest:delegate:")]
+		[CompilerGenerated]
+		public static NSObject DialogsWithExtendedRequest (NSMutableDictionary extendedRequest, NSObject _delegate)
+		{
+			if (extendedRequest == null)
+				throw new ArgumentNullException ("extendedRequest");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDialogsWithExtendedRequestDelegate_Handle, extendedRequest.Handle, _delegate.Handle));
+		}
+		
+		[Export ("dialogsWithExtendedRequest:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject DialogsWithExtendedRequest (NSMutableDictionary extendedRequest, NSObject _delegate, NSObject context)
+		{
+			if (extendedRequest == null)
+				throw new ArgumentNullException ("extendedRequest");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDialogsWithExtendedRequestDelegateContext_Handle, extendedRequest.Handle, _delegate.Handle, context.Handle));
+		}
+		
 		[Export ("joinRoom:")]
 		[CompilerGenerated]
 		public virtual bool JoinRoom (QBChatRoom room)
@@ -326,6 +539,21 @@ namespace QuickBlox {
 				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend_IntPtr (this.Handle, selJoinRoom_Handle, room.Handle);
 			} else {
 				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_IntPtr (this.SuperHandle, selJoinRoom_Handle, room.Handle);
+			}
+		}
+		
+		[Export ("joinRoom:historyAttribute:")]
+		[CompilerGenerated]
+		public virtual bool JoinRoom (QBChatRoom room, NSDictionary historyAttribute)
+		{
+			if (room == null)
+				throw new ArgumentNullException ("room");
+			if (historyAttribute == null)
+				throw new ArgumentNullException ("historyAttribute");
+			if (IsDirectBinding) {
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend_IntPtr_IntPtr (this.Handle, selJoinRoomHistoryAttribute_Handle, room.Handle, historyAttribute.Handle);
+			} else {
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_IntPtr_IntPtr (this.SuperHandle, selJoinRoomHistoryAttribute_Handle, room.Handle, historyAttribute.Handle);
 			}
 		}
 		
@@ -366,6 +594,82 @@ namespace QuickBlox {
 			}
 		}
 		
+		[Export ("messagesWithDialogID:delegate:")]
+		[CompilerGenerated]
+		public static NSObject MessagesWithDialogID (string dialogID, NSObject _delegate)
+		{
+			if (dialogID == null)
+				throw new ArgumentNullException ("dialogID");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			var nsdialogID = NSString.CreateNative (dialogID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDDelegate_Handle, nsdialogID, _delegate.Handle));
+			NSString.ReleaseNative (nsdialogID);
+			
+			return ret;
+		}
+		
+		[Export ("messagesWithDialogID:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject MessagesWithDialogID (string dialogID, NSObject _delegate, NSObject context)
+		{
+			if (dialogID == null)
+				throw new ArgumentNullException ("dialogID");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			var nsdialogID = NSString.CreateNative (dialogID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDDelegateContext_Handle, nsdialogID, _delegate.Handle, context.Handle));
+			NSString.ReleaseNative (nsdialogID);
+			
+			return ret;
+		}
+		
+		[Export ("messagesWithDialogID:extendedRequest:delegate:")]
+		[CompilerGenerated]
+		public static NSObject MessagesWithDialogID (string dialogID, NSMutableDictionary extendedRequest, NSObject _delegate)
+		{
+			if (dialogID == null)
+				throw new ArgumentNullException ("dialogID");
+			if (extendedRequest == null)
+				throw new ArgumentNullException ("extendedRequest");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			var nsdialogID = NSString.CreateNative (dialogID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDExtendedRequestDelegate_Handle, nsdialogID, extendedRequest.Handle, _delegate.Handle));
+			NSString.ReleaseNative (nsdialogID);
+			
+			return ret;
+		}
+		
+		[Export ("messagesWithDialogID:extendedRequest:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject MessagesWithDialogID (string dialogID, NSMutableDictionary extendedRequest, NSObject _delegate, NSObject context)
+		{
+			if (dialogID == null)
+				throw new ArgumentNullException ("dialogID");
+			if (extendedRequest == null)
+				throw new ArgumentNullException ("extendedRequest");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			var nsdialogID = NSString.CreateNative (dialogID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDExtendedRequestDelegateContext_Handle, nsdialogID, extendedRequest.Handle, _delegate.Handle, context.Handle));
+			NSString.ReleaseNative (nsdialogID);
+			
+			return ret;
+		}
+		
 		[Export ("rejectAddContactRequest:")]
 		[CompilerGenerated]
 		public virtual bool RejectAddContactRequest (global::System.UInt32 userID)
@@ -385,6 +689,17 @@ namespace QuickBlox {
 				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend_UInt32 (this.Handle, selRemoveUserFromContactList_Handle, userID);
 			} else {
 				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_UInt32 (this.SuperHandle, selRemoveUserFromContactList_Handle, userID);
+			}
+		}
+		
+		[Export ("requestAllRooms")]
+		[CompilerGenerated]
+		public virtual bool RequestAllRooms ()
+		{
+			if (IsDirectBinding) {
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selRequestAllRoomsHandle);
+			} else {
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selRequestAllRoomsHandle);
 			}
 		}
 		
@@ -427,6 +742,21 @@ namespace QuickBlox {
 			}
 		}
 		
+		[Export ("sendChatMessage:toRoom:")]
+		[CompilerGenerated]
+		public virtual bool SendChatMessage (QBChatMessage message, QBChatRoom room)
+		{
+			if (message == null)
+				throw new ArgumentNullException ("message");
+			if (room == null)
+				throw new ArgumentNullException ("room");
+			if (IsDirectBinding) {
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend_IntPtr_IntPtr (this.Handle, selSendChatMessageToRoom_Handle, message.Handle, room.Handle);
+			} else {
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_IntPtr_IntPtr (this.SuperHandle, selSendChatMessageToRoom_Handle, message.Handle, room.Handle);
+			}
+		}
+		
 		[Export ("sendDirectPresenceWithStatus:toUser:")]
 		[CompilerGenerated]
 		public virtual bool SendDirectPresenceWithStatus (string status, global::System.UInt32 userID)
@@ -444,27 +774,6 @@ namespace QuickBlox {
 			NSString.ReleaseNative (nsstatus);
 			
 			return ret;
-		}
-		
-		[Export ("sendGetIQWithXmlns:node:")]
-		[CompilerGenerated]
-		public virtual void SendGetIQWithXmlns (string xmlns, string node)
-		{
-			if (xmlns == null)
-				throw new ArgumentNullException ("xmlns");
-			if (node == null)
-				throw new ArgumentNullException ("node");
-			var nsxmlns = NSString.CreateNative (xmlns);
-			var nsnode = NSString.CreateNative (node);
-			
-			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr_IntPtr (this.Handle, selSendGetIQWithXmlnsNode_Handle, nsxmlns, nsnode);
-			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr_IntPtr (this.SuperHandle, selSendGetIQWithXmlnsNode_Handle, nsxmlns, nsnode);
-			}
-			NSString.ReleaseNative (nsxmlns);
-			NSString.ReleaseNative (nsnode);
-			
 		}
 		
 		[Export ("sendMessage:")]
@@ -548,7 +857,7 @@ namespace QuickBlox {
 		
 		[Export ("sendPresenceWithStatus:show:priority:customParameters:toRoom:")]
 		[CompilerGenerated]
-		public virtual bool SendPresenceWithStatus (string status, QBPresenseShow show, short priority, NSDictionary customParameters, QBChatRoom room)
+		public virtual bool SendPresenceWithStatus (string status, bool show, short priority, NSDictionary customParameters, QBChatRoom room)
 		{
 			if (status == null)
 				throw new ArgumentNullException ("status");
@@ -560,9 +869,9 @@ namespace QuickBlox {
 			
 			bool ret;
 			if (IsDirectBinding) {
-				ret = ApiDefinition.Messaging.bool_objc_msgSend_IntPtr_int_short_IntPtr_IntPtr (this.Handle, selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle, nsstatus, (int)show, priority, customParameters.Handle, room.Handle);
+				ret = ApiDefinition.Messaging.bool_objc_msgSend_IntPtr_bool_short_IntPtr_IntPtr (this.Handle, selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle, nsstatus, show, priority, customParameters.Handle, room.Handle);
 			} else {
-				ret = ApiDefinition.Messaging.bool_objc_msgSendSuper_IntPtr_int_short_IntPtr_IntPtr (this.SuperHandle, selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle, nsstatus, (int)show, priority, customParameters.Handle, room.Handle);
+				ret = ApiDefinition.Messaging.bool_objc_msgSendSuper_IntPtr_bool_short_IntPtr_IntPtr (this.SuperHandle, selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle, nsstatus, show, priority, customParameters.Handle, room.Handle);
 			}
 			NSString.ReleaseNative (nsstatus);
 			
@@ -580,6 +889,70 @@ namespace QuickBlox {
 			} else {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selUnregisterVideoChatInstance_Handle, videoChat.Handle);
 			}
+		}
+		
+		[Export ("updateDialogWithID:extendedRequest:delegate:")]
+		[CompilerGenerated]
+		public static NSObject UpdateDialogWithID (string dialogID, NSMutableDictionary extendedRequest, NSObject _delegate)
+		{
+			if (dialogID == null)
+				throw new ArgumentNullException ("dialogID");
+			if (extendedRequest == null)
+				throw new ArgumentNullException ("extendedRequest");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			var nsdialogID = NSString.CreateNative (dialogID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateDialogWithIDExtendedRequestDelegate_Handle, nsdialogID, extendedRequest.Handle, _delegate.Handle));
+			NSString.ReleaseNative (nsdialogID);
+			
+			return ret;
+		}
+		
+		[Export ("updateDialogWithID:extendedRequest:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject UpdateDialogWithID (string dialogID, NSMutableDictionary extendedRequest, NSObject _delegate, NSObject context)
+		{
+			if (dialogID == null)
+				throw new ArgumentNullException ("dialogID");
+			if (extendedRequest == null)
+				throw new ArgumentNullException ("extendedRequest");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			var nsdialogID = NSString.CreateNative (dialogID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateDialogWithIDExtendedRequestDelegateContext_Handle, nsdialogID, extendedRequest.Handle, _delegate.Handle, context.Handle));
+			NSString.ReleaseNative (nsdialogID);
+			
+			return ret;
+		}
+		
+		[Export ("updateMessage:delegate:")]
+		[CompilerGenerated]
+		public static NSObject UpdateMessage (QBChatHistoryMessage message, NSObject _delegate)
+		{
+			if (message == null)
+				throw new ArgumentNullException ("message");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selUpdateMessageDelegate_Handle, message.Handle, _delegate.Handle));
+		}
+		
+		[Export ("updateMessage:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject UpdateMessage (QBChatHistoryMessage message, NSObject _delegate, NSObject context)
+		{
+			if (message == null)
+				throw new ArgumentNullException ("message");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateMessageDelegateContext_Handle, message.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[CompilerGenerated]
@@ -718,16 +1091,24 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public virtual bool RequestAllRooms {
-			[Export ("requestAllRooms")]
+		public virtual bool UseMutualSubscriptionForContactList {
+			[Export ("useMutualSubscriptionForContactList")]
 			get {
 				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selRequestAllRoomsHandle);
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selUseMutualSubscriptionForContactListHandle);
 				} else {
-					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selRequestAllRoomsHandle);
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selUseMutualSubscriptionForContactListHandle);
 				}
 			}
 			
+			[Export ("setUseMutualSubscriptionForContactList:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetUseMutualSubscriptionForContactList_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetUseMutualSubscriptionForContactList_Handle, value);
+				}
+			}
 		}
 		
 		[CompilerGenerated]

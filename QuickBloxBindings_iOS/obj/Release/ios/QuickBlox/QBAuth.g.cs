@@ -31,7 +31,7 @@ using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBAuth", true)]
-	public unsafe partial class QBAuth : NSObject {
+	public unsafe partial class QBAuth : QBBaseModule {
 		[CompilerGenerated]
 		const string selCreateSessionWithDelegate_ = "createSessionWithDelegate:";
 		static readonly IntPtr selCreateSessionWithDelegate_Handle = Selector.GetHandle ("createSessionWithDelegate:");
@@ -93,66 +93,66 @@ namespace QuickBlox {
 
 		[Export ("createSessionWithDelegate:")]
 		[CompilerGenerated]
-		public static Cancelable CreateSessionWithDelegate (QBActionStatusDelegate del)
+		public static NSObject CreateSessionWithDelegate (NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<Cancelable> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selCreateSessionWithDelegate_Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selCreateSessionWithDelegate_Handle, _delegate.Handle));
 		}
 		
 		[Export ("createSessionWithDelegate:context:")]
 		[CompilerGenerated]
-		public static Cancelable CreateSessionWithDelegate (QBActionStatusDelegate del, NSObject context)
+		public static NSObject CreateSessionWithDelegate (NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<Cancelable> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateSessionWithDelegateContext_Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateSessionWithDelegateContext_Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("createSessionWithExtendedRequest:delegate:")]
 		[CompilerGenerated]
-		public static NSObject CreateSessionWithExtendedRequest (QBASessionCreationRequest extendedRequest, NSObject del)
+		public static NSObject CreateSessionWithExtendedRequest (QBASessionCreationRequest extendedRequest, NSObject _delegate)
 		{
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateSessionWithExtendedRequestDelegate_Handle, extendedRequest.Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateSessionWithExtendedRequestDelegate_Handle, extendedRequest.Handle, _delegate.Handle));
 		}
 		
 		[Export ("createSessionWithExtendedRequest:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreateSessionWithExtendedRequest (QBASessionCreationRequest extendedRequest, NSObject del, NSObject context)
+		public static NSObject CreateSessionWithExtendedRequest (QBASessionCreationRequest extendedRequest, NSObject _delegate, NSObject context)
 		{
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateSessionWithExtendedRequestDelegateContext_Handle, extendedRequest.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateSessionWithExtendedRequestDelegateContext_Handle, extendedRequest.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("destroySessionWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject DestroySessionWithDelegate (QBActionStatusDelegate del)
+		public static NSObject DestroySessionWithDelegate (NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selDestroySessionWithDelegate_Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selDestroySessionWithDelegate_Handle, _delegate.Handle));
 		}
 		
 		[Export ("destroySessionWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DestroySessionWithDelegate (QBActionStatusDelegate del, NSObject context)
+		public static NSObject DestroySessionWithDelegate (NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDestroySessionWithDelegateContext_Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDestroySessionWithDelegateContext_Handle, _delegate.Handle, context.Handle));
 		}
 		
 	} /* class QBAuth */

@@ -31,7 +31,7 @@ using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBMessages", true)]
-	public unsafe partial class QBMessages : NSObject {
+	public unsafe partial class QBMessages : QBBaseModule {
 		[CompilerGenerated]
 		const string selCreateEventDelegate_ = "createEvent:delegate:";
 		static readonly IntPtr selCreateEventDelegate_Handle = Selector.GetHandle ("createEvent:delegate:");
@@ -111,23 +111,11 @@ namespace QuickBlox {
 		const string selTSendPushToUsersDelegateContext_ = "TSendPush:toUsers:delegate:context:";
 		static readonly IntPtr selTSendPushToUsersDelegateContext_Handle = Selector.GetHandle ("TSendPush:toUsers:delegate:context:");
 		[CompilerGenerated]
-		const string selTSendPushToUsersIsDevelopmentEnvironmentDelegate_ = "TSendPush:toUsers:isDevelopmentEnvironment:delegate:";
-		static readonly IntPtr selTSendPushToUsersIsDevelopmentEnvironmentDelegate_Handle = Selector.GetHandle ("TSendPush:toUsers:isDevelopmentEnvironment:delegate:");
-		[CompilerGenerated]
-		const string selTSendPushToUsersIsDevelopmentEnvironmentDelegateContext_ = "TSendPush:toUsers:isDevelopmentEnvironment:delegate:context:";
-		static readonly IntPtr selTSendPushToUsersIsDevelopmentEnvironmentDelegateContext_Handle = Selector.GetHandle ("TSendPush:toUsers:isDevelopmentEnvironment:delegate:context:");
-		[CompilerGenerated]
 		const string selTSendPushToUsersWithAnyOfTheseTagsDelegate_ = "TSendPush:toUsersWithAnyOfTheseTags:delegate:";
 		static readonly IntPtr selTSendPushToUsersWithAnyOfTheseTagsDelegate_Handle = Selector.GetHandle ("TSendPush:toUsersWithAnyOfTheseTags:delegate:");
 		[CompilerGenerated]
 		const string selTSendPushToUsersWithAnyOfTheseTagsDelegateContext_ = "TSendPush:toUsersWithAnyOfTheseTags:delegate:context:";
 		static readonly IntPtr selTSendPushToUsersWithAnyOfTheseTagsDelegateContext_Handle = Selector.GetHandle ("TSendPush:toUsersWithAnyOfTheseTags:delegate:context:");
-		[CompilerGenerated]
-		const string selTSendPushToUsersWithAnyOfTheseTagsIsDevelopmentEnvironmentDelegate_ = "TSendPush:toUsersWithAnyOfTheseTags:isDevelopmentEnvironment:delegate:";
-		static readonly IntPtr selTSendPushToUsersWithAnyOfTheseTagsIsDevelopmentEnvironmentDelegate_Handle = Selector.GetHandle ("TSendPush:toUsersWithAnyOfTheseTags:isDevelopmentEnvironment:delegate:");
-		[CompilerGenerated]
-		const string selTSendPushToUsersWithAnyOfTheseTagsIsDevelopmentEnvironmentDelegateContext_ = "TSendPush:toUsersWithAnyOfTheseTags:isDevelopmentEnvironment:delegate:context:";
-		static readonly IntPtr selTSendPushToUsersWithAnyOfTheseTagsIsDevelopmentEnvironmentDelegateContext_Handle = Selector.GetHandle ("TSendPush:toUsersWithAnyOfTheseTags:isDevelopmentEnvironment:delegate:context:");
 		[CompilerGenerated]
 		const string selTSendPushWithTextToUsersDelegate_ = "TSendPushWithText:toUsers:delegate:";
 		static readonly IntPtr selTSendPushWithTextToUsersDelegate_Handle = Selector.GetHandle ("TSendPushWithText:toUsers:delegate:");
@@ -195,274 +183,274 @@ namespace QuickBlox {
 
 		[Export ("createEvent:delegate:")]
 		[CompilerGenerated]
-		public static NSObject CreateEvent (QBMEvent evt, QBActionStatusDelegate del)
+		public static NSObject CreateEvent (QBMEvent _event, NSObject _delegate)
 		{
-			if (evt == null)
-				throw new ArgumentNullException ("evt");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateEventDelegate_Handle, evt.Handle, del.Handle));
+			if (_event == null)
+				throw new ArgumentNullException ("_event");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateEventDelegate_Handle, _event.Handle, _delegate.Handle));
 		}
 		
 		[Export ("createEvent:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreateEvent (QBMEvent evt, QBActionStatusDelegate del, NSObject context)
+		public static NSObject CreateEvent (QBMEvent _event, NSObject _delegate, NSObject context)
 		{
-			if (evt == null)
-				throw new ArgumentNullException ("evt");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_event == null)
+				throw new ArgumentNullException ("_event");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateEventDelegateContext_Handle, evt.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateEventDelegateContext_Handle, _event.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("createPushToken:delegate:")]
 		[CompilerGenerated]
-		public static NSObject CreatePushToken (QBMPushToken pushToken, QBActionStatusDelegate del)
+		public static NSObject CreatePushToken (QBMPushToken pushToken, NSObject _delegate)
 		{
 			if (pushToken == null)
 				throw new ArgumentNullException ("pushToken");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreatePushTokenDelegate_Handle, pushToken.Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreatePushTokenDelegate_Handle, pushToken.Handle, _delegate.Handle));
 		}
 		
 		[Export ("createPushToken:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreatePushToken (QBMPushToken pushToken, QBActionStatusDelegate del, NSObject context)
+		public static NSObject CreatePushToken (QBMPushToken pushToken, NSObject _delegate, NSObject context)
 		{
 			if (pushToken == null)
 				throw new ArgumentNullException ("pushToken");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreatePushTokenDelegateContext_Handle, pushToken.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreatePushTokenDelegateContext_Handle, pushToken.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("createSubscription:delegate:")]
 		[CompilerGenerated]
-		public static NSObject CreateSubscription (QBMSubscription subscriber, QBActionStatusDelegate del)
+		public static NSObject CreateSubscription (QBMSubscription subscriber, NSObject _delegate)
 		{
 			if (subscriber == null)
 				throw new ArgumentNullException ("subscriber");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateSubscriptionDelegate_Handle, subscriber.Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateSubscriptionDelegate_Handle, subscriber.Handle, _delegate.Handle));
 		}
 		
 		[Export ("createSubscription:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreateSubscription (QBMSubscription subscriber, QBActionStatusDelegate del, NSObject context)
+		public static NSObject CreateSubscription (QBMSubscription subscriber, NSObject _delegate, NSObject context)
 		{
 			if (subscriber == null)
 				throw new ArgumentNullException ("subscriber");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateSubscriptionDelegateContext_Handle, subscriber.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateSubscriptionDelegateContext_Handle, subscriber.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("deleteEventWithID:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DeleteEventWithID (global::System.UInt32 ID, QBActionStatusDelegate del)
+		public static NSObject DeleteEventWithID (global::System.UInt32 ID, NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr (class_ptr, selDeleteEventWithIDDelegate_Handle, ID, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr (class_ptr, selDeleteEventWithIDDelegate_Handle, ID, _delegate.Handle));
 		}
 		
 		[Export ("deleteEventWithID:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DeleteEventWithID (global::System.UInt32 ID, QBActionStatusDelegate del, NSObject context)
+		public static NSObject DeleteEventWithID (global::System.UInt32 ID, NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr_IntPtr (class_ptr, selDeleteEventWithIDDelegateContext_Handle, ID, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr_IntPtr (class_ptr, selDeleteEventWithIDDelegateContext_Handle, ID, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("deletePushTokenWithID:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DeletePushTokenWithID (global::System.UInt32 ID, NSObject del)
+		public static NSObject DeletePushTokenWithID (global::System.UInt32 ID, NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr (class_ptr, selDeletePushTokenWithIDDelegate_Handle, ID, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr (class_ptr, selDeletePushTokenWithIDDelegate_Handle, ID, _delegate.Handle));
 		}
 		
 		[Export ("deletePushTokenWithID:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DeletePushTokenWithID (global::System.UInt32 ID, QBActionStatusDelegate del, NSObject context)
+		public static NSObject DeletePushTokenWithID (global::System.UInt32 ID, NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr_IntPtr (class_ptr, selDeletePushTokenWithIDDelegateContext_Handle, ID, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr_IntPtr (class_ptr, selDeletePushTokenWithIDDelegateContext_Handle, ID, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("deleteSubscriptionWithID:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DeleteSubscriptionWithID (global::System.UInt32 ID, QBActionStatusDelegate del)
+		public static NSObject DeleteSubscriptionWithID (global::System.UInt32 ID, NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr (class_ptr, selDeleteSubscriptionWithIDDelegate_Handle, ID, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr (class_ptr, selDeleteSubscriptionWithIDDelegate_Handle, ID, _delegate.Handle));
 		}
 		
 		[Export ("deleteSubscriptionWithID:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DeleteSubscriptionWithID (global::System.UInt32 ID, QBActionStatusDelegate del, NSObject context)
+		public static NSObject DeleteSubscriptionWithID (global::System.UInt32 ID, NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr_IntPtr (class_ptr, selDeleteSubscriptionWithIDDelegateContext_Handle, ID, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr_IntPtr (class_ptr, selDeleteSubscriptionWithIDDelegateContext_Handle, ID, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("eventsWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject EventsWithDelegate (QBActionStatusDelegate del)
+		public static NSObject EventsWithDelegate (NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selEventsWithDelegate_Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selEventsWithDelegate_Handle, _delegate.Handle));
 		}
 		
 		[Export ("eventsWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject EventsWithDelegate (QBActionStatusDelegate del, NSObject context)
+		public static NSObject EventsWithDelegate (NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selEventsWithDelegateContext_Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selEventsWithDelegateContext_Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("eventsWithPagedRequest:delegate:")]
 		[CompilerGenerated]
-		public static NSObject EventsWithPagedRequest (PagedRequest pagedRequest, QBActionStatusDelegate del)
+		public static NSObject EventsWithPagedRequest (PagedRequest pagedRequest, NSObject _delegate)
 		{
 			if (pagedRequest == null)
 				throw new ArgumentNullException ("pagedRequest");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selEventsWithPagedRequestDelegate_Handle, pagedRequest.Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selEventsWithPagedRequestDelegate_Handle, pagedRequest.Handle, _delegate.Handle));
 		}
 		
 		[Export ("eventsWithPagedRequest:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject EventsWithPagedRequest (PagedRequest pagedRequest, QBActionStatusDelegate del, NSObject context)
+		public static NSObject EventsWithPagedRequest (PagedRequest pagedRequest, NSObject _delegate, NSObject context)
 		{
 			if (pagedRequest == null)
 				throw new ArgumentNullException ("pagedRequest");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selEventsWithPagedRequestDelegateContext_Handle, pagedRequest.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selEventsWithPagedRequestDelegateContext_Handle, pagedRequest.Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("eventWithID:delegate:")]
 		[CompilerGenerated]
-		public static NSObject EventWithID (global::System.UInt32 ID, QBActionStatusDelegate del)
+		public static NSObject EventWithID (global::System.UInt32 ID, NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr (class_ptr, selEventWithIDDelegate_Handle, ID, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr (class_ptr, selEventWithIDDelegate_Handle, ID, _delegate.Handle));
 		}
 		
 		[Export ("eventWithID:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject EventWithID (global::System.UInt32 ID, QBActionStatusDelegate del, NSObject context)
+		public static NSObject EventWithID (global::System.UInt32 ID, NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr_IntPtr (class_ptr, selEventWithIDDelegateContext_Handle, ID, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_UInt32_IntPtr_IntPtr (class_ptr, selEventWithIDDelegateContext_Handle, ID, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("pullEventsWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject PullEventsWithDelegate (QBActionStatusDelegate del)
+		public static NSObject PullEventsWithDelegate (NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selPullEventsWithDelegate_Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selPullEventsWithDelegate_Handle, _delegate.Handle));
 		}
 		
 		[Export ("pullEventsWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject PullEventsWithDelegate (QBActionStatusDelegate del, NSObject context)
+		public static NSObject PullEventsWithDelegate (NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selPullEventsWithDelegateContext_Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selPullEventsWithDelegateContext_Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("subscriptionsWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject SubscriptionsWithDelegate (QBActionStatusDelegate del)
+		public static NSObject SubscriptionsWithDelegate (NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selSubscriptionsWithDelegate_Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selSubscriptionsWithDelegate_Handle, _delegate.Handle));
 		}
 		
 		[Export ("subscriptionsWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject SubscriptionsWithDelegate (QBActionStatusDelegate del, NSObject context)
+		public static NSObject SubscriptionsWithDelegate (NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selSubscriptionsWithDelegateContext_Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selSubscriptionsWithDelegateContext_Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("TRegisterSubscriptionWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject TRegisterSubscriptionWithDelegate (QBActionStatusDelegate del)
+		public static NSObject TRegisterSubscriptionWithDelegate (NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selTRegisterSubscriptionWithDelegate_Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selTRegisterSubscriptionWithDelegate_Handle, _delegate.Handle));
 		}
 		
 		[Export ("TRegisterSubscriptionWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject TRegisterSubscriptionWithDelegate (QBActionStatusDelegate del, NSObject context)
+		public static NSObject TRegisterSubscriptionWithDelegate (NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selTRegisterSubscriptionWithDelegateContext_Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selTRegisterSubscriptionWithDelegateContext_Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("TSendPush:toUsers:delegate:")]
 		[CompilerGenerated]
-		public static NSObject TSendPush (QBMPushMessage pushMessage, string usersIDs, QBActionStatusDelegate del)
+		public static NSObject TSendPush (QBMPushMessage pushMessage, string usersIDs, NSObject _delegate)
 		{
 			if (pushMessage == null)
 				throw new ArgumentNullException ("pushMessage");
 			if (usersIDs == null)
 				throw new ArgumentNullException ("usersIDs");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsusersIDs = NSString.CreateNative (usersIDs);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushToUsersDelegate_Handle, pushMessage.Handle, nsusersIDs, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushToUsersDelegate_Handle, pushMessage.Handle, nsusersIDs, _delegate.Handle));
 			NSString.ReleaseNative (nsusersIDs);
 			
 			return ret;
@@ -470,119 +458,39 @@ namespace QuickBlox {
 		
 		[Export ("TSendPush:toUsers:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject TSendPush (QBMPushMessage pushMessage, string usersIDs, QBActionStatusDelegate del, NSObject context)
+		public static NSObject TSendPush (QBMPushMessage pushMessage, string usersIDs, NSObject _delegate, NSObject context)
 		{
 			if (pushMessage == null)
 				throw new ArgumentNullException ("pushMessage");
 			if (usersIDs == null)
 				throw new ArgumentNullException ("usersIDs");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsusersIDs = NSString.CreateNative (usersIDs);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushToUsersDelegateContext_Handle, pushMessage.Handle, nsusersIDs, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushToUsersDelegateContext_Handle, pushMessage.Handle, nsusersIDs, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsusersIDs);
-			
-			return ret;
-		}
-		
-		[Export ("TSendPush:toUsers:isDevelopmentEnvironment:delegate:")]
-		[CompilerGenerated]
-		public static NSObject TSendPush (QBMPushMessage pushMessage, string usersIDs, bool isDevelopmentEnvironment, QBActionStatusDelegate del)
-		{
-			if (pushMessage == null)
-				throw new ArgumentNullException ("pushMessage");
-			if (usersIDs == null)
-				throw new ArgumentNullException ("usersIDs");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			var nsusersIDs = NSString.CreateNative (usersIDs);
-			
-			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_bool_IntPtr (class_ptr, selTSendPushToUsersIsDevelopmentEnvironmentDelegate_Handle, pushMessage.Handle, nsusersIDs, isDevelopmentEnvironment, del.Handle));
-			NSString.ReleaseNative (nsusersIDs);
-			
-			return ret;
-		}
-		
-		[Export ("TSendPush:toUsers:isDevelopmentEnvironment:delegate:context:")]
-		[CompilerGenerated]
-		public static NSObject TSendPush (QBMPushMessage pushMessage, string usersIDs, bool isDevelopmentEnvironment, QBActionStatusDelegate del, NSObject context)
-		{
-			if (pushMessage == null)
-				throw new ArgumentNullException ("pushMessage");
-			if (usersIDs == null)
-				throw new ArgumentNullException ("usersIDs");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			if (context == null)
-				throw new ArgumentNullException ("context");
-			var nsusersIDs = NSString.CreateNative (usersIDs);
-			
-			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_bool_IntPtr_IntPtr (class_ptr, selTSendPushToUsersIsDevelopmentEnvironmentDelegateContext_Handle, pushMessage.Handle, nsusersIDs, isDevelopmentEnvironment, del.Handle, context.Handle));
-			NSString.ReleaseNative (nsusersIDs);
-			
-			return ret;
-		}
-		
-		[Export ("TSendPush:toUsersWithAnyOfTheseTags:isDevelopmentEnvironment:delegate:")]
-		[CompilerGenerated]
-		public static NSObject TSendPushWithAnyOfTags (QBMPushMessage pushMessage, string usersTags, bool isDevelopmentEnvironment, QBActionStatusDelegate del)
-		{
-			if (pushMessage == null)
-				throw new ArgumentNullException ("pushMessage");
-			if (usersTags == null)
-				throw new ArgumentNullException ("usersTags");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			var nsusersTags = NSString.CreateNative (usersTags);
-			
-			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_bool_IntPtr (class_ptr, selTSendPushToUsersWithAnyOfTheseTagsIsDevelopmentEnvironmentDelegate_Handle, pushMessage.Handle, nsusersTags, isDevelopmentEnvironment, del.Handle));
-			NSString.ReleaseNative (nsusersTags);
-			
-			return ret;
-		}
-		
-		[Export ("TSendPush:toUsersWithAnyOfTheseTags:isDevelopmentEnvironment:delegate:context:")]
-		[CompilerGenerated]
-		public static NSObject TSendPushWithAnyOfTags (QBMPushMessage pushMessage, string usersTags, bool isDevelopmentEnvironment, QBActionStatusDelegate del, NSObject context)
-		{
-			if (pushMessage == null)
-				throw new ArgumentNullException ("pushMessage");
-			if (usersTags == null)
-				throw new ArgumentNullException ("usersTags");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			if (context == null)
-				throw new ArgumentNullException ("context");
-			var nsusersTags = NSString.CreateNative (usersTags);
-			
-			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (ApiDefinition.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_bool_IntPtr_IntPtr (class_ptr, selTSendPushToUsersWithAnyOfTheseTagsIsDevelopmentEnvironmentDelegateContext_Handle, pushMessage.Handle, nsusersTags, isDevelopmentEnvironment, del.Handle, context.Handle));
-			NSString.ReleaseNative (nsusersTags);
 			
 			return ret;
 		}
 		
 		[Export ("TSendPush:toUsersWithAnyOfTheseTags:delegate:")]
 		[CompilerGenerated]
-		public static NSObject TSendPushWithTags (QBMPushMessage pushMessage, string usersTags, QBActionStatusDelegate del)
+		public static NSObject TSendPushWithTags (QBMPushMessage pushMessage, string usersTags, NSObject _delegate)
 		{
 			if (pushMessage == null)
 				throw new ArgumentNullException ("pushMessage");
 			if (usersTags == null)
 				throw new ArgumentNullException ("usersTags");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nsusersTags = NSString.CreateNative (usersTags);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushToUsersWithAnyOfTheseTagsDelegate_Handle, pushMessage.Handle, nsusersTags, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushToUsersWithAnyOfTheseTagsDelegate_Handle, pushMessage.Handle, nsusersTags, _delegate.Handle));
 			NSString.ReleaseNative (nsusersTags);
 			
 			return ret;
@@ -590,20 +498,20 @@ namespace QuickBlox {
 		
 		[Export ("TSendPush:toUsersWithAnyOfTheseTags:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject TSendPushWithTags (QBMPushMessage pushMessage, string usersTags, QBActionStatusDelegate del, NSObject context)
+		public static NSObject TSendPushWithTagsAndContext (QBMPushMessage pushMessage, string usersTags, NSObject _delegate, NSObject context)
 		{
 			if (pushMessage == null)
 				throw new ArgumentNullException ("pushMessage");
 			if (usersTags == null)
 				throw new ArgumentNullException ("usersTags");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsusersTags = NSString.CreateNative (usersTags);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushToUsersWithAnyOfTheseTagsDelegateContext_Handle, pushMessage.Handle, nsusersTags, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushToUsersWithAnyOfTheseTagsDelegateContext_Handle, pushMessage.Handle, nsusersTags, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nsusersTags);
 			
 			return ret;
@@ -611,19 +519,19 @@ namespace QuickBlox {
 		
 		[Export ("TSendPushWithText:toUsers:delegate:")]
 		[CompilerGenerated]
-		public static NSObject TSendPushWithText (string text, string usersIDs, QBActionStatusDelegate del)
+		public static NSObject TSendPushWithText (string text, string usersIDs, NSObject _delegate)
 		{
 			if (text == null)
 				throw new ArgumentNullException ("text");
 			if (usersIDs == null)
 				throw new ArgumentNullException ("usersIDs");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nstext = NSString.CreateNative (text);
 			var nsusersIDs = NSString.CreateNative (usersIDs);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushWithTextToUsersDelegate_Handle, nstext, nsusersIDs, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushWithTextToUsersDelegate_Handle, nstext, nsusersIDs, _delegate.Handle));
 			NSString.ReleaseNative (nstext);
 			NSString.ReleaseNative (nsusersIDs);
 			
@@ -632,21 +540,21 @@ namespace QuickBlox {
 		
 		[Export ("TSendPushWithText:toUsers:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject TSendPushWithText (string text, string usersIDs, QBActionStatusDelegate del, NSObject context)
+		public static NSObject TSendPushWithText (string text, string usersIDs, NSObject _delegate, NSObject context)
 		{
 			if (text == null)
 				throw new ArgumentNullException ("text");
 			if (usersIDs == null)
 				throw new ArgumentNullException ("usersIDs");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nstext = NSString.CreateNative (text);
 			var nsusersIDs = NSString.CreateNative (usersIDs);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushWithTextToUsersDelegateContext_Handle, nstext, nsusersIDs, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushWithTextToUsersDelegateContext_Handle, nstext, nsusersIDs, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nstext);
 			NSString.ReleaseNative (nsusersIDs);
 			
@@ -655,19 +563,19 @@ namespace QuickBlox {
 		
 		[Export ("TSendPushWithText:toUsersWithAnyOfTheseTags:delegate:")]
 		[CompilerGenerated]
-		public static NSObject TSendPushWithTextWithTags (string text, string usersTags, QBActionStatusDelegate del)
+		public static NSObject TSendPushWithTextAndTags (string text, string usersTags, NSObject _delegate)
 		{
 			if (text == null)
 				throw new ArgumentNullException ("text");
 			if (usersTags == null)
 				throw new ArgumentNullException ("usersTags");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			var nstext = NSString.CreateNative (text);
 			var nsusersTags = NSString.CreateNative (usersTags);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushWithTextToUsersWithAnyOfTheseTagsDelegate_Handle, nstext, nsusersTags, del.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushWithTextToUsersWithAnyOfTheseTagsDelegate_Handle, nstext, nsusersTags, _delegate.Handle));
 			NSString.ReleaseNative (nstext);
 			NSString.ReleaseNative (nsusersTags);
 			
@@ -676,21 +584,21 @@ namespace QuickBlox {
 		
 		[Export ("TSendPushWithText:toUsersWithAnyOfTheseTags:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject TSendPushWithTextWithTags (string text, string usersTags, QBActionStatusDelegate del, NSObject context)
+		public static NSObject TSendPushWithTextWithContext (string text, string usersTags, NSObject _delegate, NSObject context)
 		{
 			if (text == null)
 				throw new ArgumentNullException ("text");
 			if (usersTags == null)
 				throw new ArgumentNullException ("usersTags");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nstext = NSString.CreateNative (text);
 			var nsusersTags = NSString.CreateNative (usersTags);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushWithTextToUsersWithAnyOfTheseTagsDelegateContext_Handle, nstext, nsusersTags, del.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selTSendPushWithTextToUsersWithAnyOfTheseTagsDelegateContext_Handle, nstext, nsusersTags, _delegate.Handle, context.Handle));
 			NSString.ReleaseNative (nstext);
 			NSString.ReleaseNative (nsusersTags);
 			
@@ -699,46 +607,46 @@ namespace QuickBlox {
 		
 		[Export ("TUnregisterSubscriptionWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject TUnregisterSubscriptionWithDelegate (QBActionStatusDelegate del)
+		public static NSObject TUnregisterSubscriptionWithDelegate (NSObject _delegate)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selTUnregisterSubscriptionWithDelegate_Handle, del.Handle));
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selTUnregisterSubscriptionWithDelegate_Handle, _delegate.Handle));
 		}
 		
 		[Export ("TUnregisterSubscriptionWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject TUnregisterSubscriptionWithDelegate (QBActionStatusDelegate del, NSObject context)
+		public static NSObject TUnregisterSubscriptionWithDelegate (NSObject _delegate, NSObject context)
 		{
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selTUnregisterSubscriptionWithDelegateContext_Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selTUnregisterSubscriptionWithDelegateContext_Handle, _delegate.Handle, context.Handle));
 		}
 		
 		[Export ("updateEvent:delegate:")]
 		[CompilerGenerated]
-		public static NSObject UpdateEvent (QBMEvent evt, QBActionStatusDelegate del)
+		public static NSObject UpdateEvent (QBMEvent _event, NSObject _delegate)
 		{
-			if (evt == null)
-				throw new ArgumentNullException ("evt");
-			if (del == null)
-				throw new ArgumentNullException ("del");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selUpdateEventDelegate_Handle, evt.Handle, del.Handle));
+			if (_event == null)
+				throw new ArgumentNullException ("_event");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selUpdateEventDelegate_Handle, _event.Handle, _delegate.Handle));
 		}
 		
 		[Export ("updateEvent:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject UpdateEvent (QBMEvent evt, QBActionStatusDelegate del, NSObject context)
+		public static NSObject UpdateEvent (QBMEvent _event, NSObject _delegate, NSObject context)
 		{
-			if (evt == null)
-				throw new ArgumentNullException ("evt");
-			if (del == null)
-				throw new ArgumentNullException ("del");
+			if (_event == null)
+				throw new ArgumentNullException ("_event");
+			if (_delegate == null)
+				throw new ArgumentNullException ("_delegate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateEventDelegateContext_Handle, evt.Handle, del.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateEventDelegateContext_Handle, _event.Handle, _delegate.Handle, context.Handle));
 		}
 		
 	} /* class QBMessages */

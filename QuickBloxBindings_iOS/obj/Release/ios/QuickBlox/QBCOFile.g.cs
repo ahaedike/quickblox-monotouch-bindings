@@ -94,13 +94,6 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
-		[Export ("file")]
-		[CompilerGenerated]
-		public static QBCOFile File ()
-		{
-			return  Runtime.GetNSObject<QBCOFile> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selFileHandle));
-		}
-		
 		[CompilerGenerated]
 		public virtual string ContentType {
 			[Export ("contentType", ArgumentSemantic.Retain)]
@@ -157,6 +150,21 @@ namespace QuickBlox {
 				if (!IsNewRefcountEnabled ())
 					__mt_Data_var = value;
 			}
+		}
+		
+		[CompilerGenerated]
+		static object __mt_File_var_static;
+		[CompilerGenerated]
+		public static QBCOFile File {
+			[Export ("file")]
+			get {
+				QBCOFile ret;
+				ret =  Runtime.GetNSObject<QBCOFile> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selFileHandle));
+				if (!NSObject.IsNewRefcountEnabled ())
+					__mt_File_var_static = ret;
+				return ret;
+			}
+			
 		}
 		
 		[CompilerGenerated]

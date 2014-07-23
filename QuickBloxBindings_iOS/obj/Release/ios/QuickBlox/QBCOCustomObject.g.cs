@@ -124,13 +124,6 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
-		[Export ("customObject")]
-		[CompilerGenerated]
-		public static QBCOCustomObject CustomObject ()
-		{
-			return  Runtime.GetNSObject<QBCOCustomObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selCustomObjectHandle));
-		}
-		
 		[CompilerGenerated]
 		public virtual string ClassName {
 			[Export ("className", ArgumentSemantic.Retain)]
@@ -187,6 +180,21 @@ namespace QuickBlox {
 				if (!IsNewRefcountEnabled ())
 					__mt_CreatedAt_var = value;
 			}
+		}
+		
+		[CompilerGenerated]
+		static object __mt_CustomObject_var_static;
+		[CompilerGenerated]
+		public static QBCOCustomObject CustomObject {
+			[Export ("customObject")]
+			get {
+				QBCOCustomObject ret;
+				ret =  Runtime.GetNSObject<QBCOCustomObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selCustomObjectHandle));
+				if (!NSObject.IsNewRefcountEnabled ())
+					__mt_CustomObject_var_static = ret;
+				return ret;
+			}
+			
 		}
 		
 		[CompilerGenerated]

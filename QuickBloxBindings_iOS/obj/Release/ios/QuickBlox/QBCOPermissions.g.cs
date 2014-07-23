@@ -39,12 +39,6 @@ namespace QuickBlox {
 		const string selPermissions = "permissions";
 		static readonly IntPtr selPermissionsHandle = Selector.GetHandle ("permissions");
 		[CompilerGenerated]
-		const string selPermissionsAccessFromString_ = "permissionsAccessFromString:";
-		static readonly IntPtr selPermissionsAccessFromString_Handle = Selector.GetHandle ("permissionsAccessFromString:");
-		[CompilerGenerated]
-		const string selPermissionsAccessToString_ = "permissionsAccessToString:";
-		static readonly IntPtr selPermissionsAccessToString_Handle = Selector.GetHandle ("permissionsAccessToString:");
-		[CompilerGenerated]
 		const string selReadAccess = "readAccess";
 		static readonly IntPtr selReadAccessHandle = Selector.GetHandle ("readAccess");
 		[CompilerGenerated]
@@ -142,35 +136,6 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
-		[Export ("permissions")]
-		[CompilerGenerated]
-		public static QBCOPermissions Permissions ()
-		{
-			return  Runtime.GetNSObject<QBCOPermissions> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selPermissionsHandle));
-		}
-		
-		[Export ("permissionsAccessFromString:")]
-		[CompilerGenerated]
-		public static QBCOPermissionsAccess PermissionsAccessFromString (string permissionsAccess)
-		{
-			if (permissionsAccess == null)
-				throw new ArgumentNullException ("permissionsAccess");
-			var nspermissionsAccess = NSString.CreateNative (permissionsAccess);
-			
-			QBCOPermissionsAccess ret;
-			ret = (QBCOPermissionsAccess) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend_IntPtr (class_ptr, selPermissionsAccessFromString_Handle, nspermissionsAccess);
-			NSString.ReleaseNative (nspermissionsAccess);
-			
-			return ret;
-		}
-		
-		[Export ("permissionsAccessToString:")]
-		[CompilerGenerated]
-		public static string PermissionsAccessToString (QBCOPermissionsAccess permissionsAccess)
-		{
-			return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_int (class_ptr, selPermissionsAccessToString_Handle, (int)permissionsAccess));
-		}
-		
 		[CompilerGenerated]
 		public virtual QBCOPermissionsAccess DeleteAccess {
 			[Export ("deleteAccess")]
@@ -190,6 +155,21 @@ namespace QuickBlox {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_int (this.SuperHandle, selSetDeleteAccess_Handle, (int)value);
 				}
 			}
+		}
+		
+		[CompilerGenerated]
+		static object __mt_Permissions_var_static;
+		[CompilerGenerated]
+		public static QBCOPermissions Permissions {
+			[Export ("permissions")]
+			get {
+				QBCOPermissions ret;
+				ret =  Runtime.GetNSObject<QBCOPermissions> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selPermissionsHandle));
+				if (!NSObject.IsNewRefcountEnabled ())
+					__mt_Permissions_var_static = ret;
+				return ret;
+			}
+			
 		}
 		
 		[CompilerGenerated]

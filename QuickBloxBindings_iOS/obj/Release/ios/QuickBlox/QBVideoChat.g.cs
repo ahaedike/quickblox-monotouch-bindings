@@ -78,6 +78,12 @@ namespace QuickBlox {
 		const string selIsUseCustomVideoChatCaptureSession = "isUseCustomVideoChatCaptureSession";
 		static readonly IntPtr selIsUseCustomVideoChatCaptureSessionHandle = Selector.GetHandle ("isUseCustomVideoChatCaptureSession");
 		[CompilerGenerated]
+		const string selProcessVideoChatCaptureAudioBuffer_ = "processVideoChatCaptureAudioBuffer:";
+		static readonly IntPtr selProcessVideoChatCaptureAudioBuffer_Handle = Selector.GetHandle ("processVideoChatCaptureAudioBuffer:");
+		[CompilerGenerated]
+		const string selProcessVideoChatCaptureVideoSample_ = "processVideoChatCaptureVideoSample:";
+		static readonly IntPtr selProcessVideoChatCaptureVideoSample_Handle = Selector.GetHandle ("processVideoChatCaptureVideoSample:");
+		[CompilerGenerated]
 		const string selRejectCallWithOpponentID_ = "rejectCallWithOpponentID:";
 		static readonly IntPtr selRejectCallWithOpponentID_Handle = Selector.GetHandle ("rejectCallWithOpponentID:");
 		[CompilerGenerated]
@@ -177,9 +183,9 @@ namespace QuickBlox {
 		public virtual void AcceptCallWithOpponentID (global::System.UInt32 userID, QBVideoChatConferenceType conferenceType)
 		{
 			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32_int (this.Handle, selAcceptCallWithOpponentIDConferenceType_Handle, userID, (int)conferenceType);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32_UInt32 (this.Handle, selAcceptCallWithOpponentIDConferenceType_Handle, userID, (UInt32)conferenceType);
 			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32_int (this.SuperHandle, selAcceptCallWithOpponentIDConferenceType_Handle, userID, (int)conferenceType);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32_UInt32 (this.SuperHandle, selAcceptCallWithOpponentIDConferenceType_Handle, userID, (UInt32)conferenceType);
 			}
 		}
 		
@@ -190,9 +196,9 @@ namespace QuickBlox {
 			if (customParameters == null)
 				throw new ArgumentNullException ("customParameters");
 			if (IsDirectBinding) {
-				ApiDefinition.Messaging.void_objc_msgSend_UInt32_int_IntPtr (this.Handle, selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle, userID, (int)conferenceType, customParameters.Handle);
+				ApiDefinition.Messaging.void_objc_msgSend_UInt32_UInt32_IntPtr (this.Handle, selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle, userID, (UInt32)conferenceType, customParameters.Handle);
 			} else {
-				ApiDefinition.Messaging.void_objc_msgSendSuper_UInt32_int_IntPtr (this.SuperHandle, selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle, userID, (int)conferenceType, customParameters.Handle);
+				ApiDefinition.Messaging.void_objc_msgSendSuper_UInt32_UInt32_IntPtr (this.SuperHandle, selAcceptCallWithOpponentIDConferenceTypeCustomParameters_Handle, userID, (UInt32)conferenceType, customParameters.Handle);
 			}
 		}
 		
@@ -201,9 +207,9 @@ namespace QuickBlox {
 		public virtual void CallUser (global::System.UInt32 userID, QBVideoChatConferenceType conferenceType)
 		{
 			if (IsDirectBinding) {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32_int (this.Handle, selCallUserConferenceType_Handle, userID, (int)conferenceType);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32_UInt32 (this.Handle, selCallUserConferenceType_Handle, userID, (UInt32)conferenceType);
 			} else {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32_int (this.SuperHandle, selCallUserConferenceType_Handle, userID, (int)conferenceType);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32_UInt32 (this.SuperHandle, selCallUserConferenceType_Handle, userID, (UInt32)conferenceType);
 			}
 		}
 		
@@ -214,9 +220,9 @@ namespace QuickBlox {
 			if (customParameters == null)
 				throw new ArgumentNullException ("customParameters");
 			if (IsDirectBinding) {
-				ApiDefinition.Messaging.void_objc_msgSend_UInt32_int_IntPtr (this.Handle, selCallUserConferenceTypeCustomParameters_Handle, userID, (int)conferenceType, customParameters.Handle);
+				ApiDefinition.Messaging.void_objc_msgSend_UInt32_UInt32_IntPtr (this.Handle, selCallUserConferenceTypeCustomParameters_Handle, userID, (UInt32)conferenceType, customParameters.Handle);
 			} else {
-				ApiDefinition.Messaging.void_objc_msgSendSuper_UInt32_int_IntPtr (this.SuperHandle, selCallUserConferenceTypeCustomParameters_Handle, userID, (int)conferenceType, customParameters.Handle);
+				ApiDefinition.Messaging.void_objc_msgSendSuper_UInt32_UInt32_IntPtr (this.SuperHandle, selCallUserConferenceTypeCustomParameters_Handle, userID, (UInt32)conferenceType, customParameters.Handle);
 			}
 		}
 		
@@ -293,6 +299,28 @@ namespace QuickBlox {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selFinishCallWithCustomParameters_Handle, customParameters.Handle);
 			} else {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selFinishCallWithCustomParameters_Handle, customParameters.Handle);
+			}
+		}
+		
+		[Export ("processVideoChatCaptureAudioBuffer:")]
+		[CompilerGenerated]
+		public virtual void ProcessVideoChatCaptureAudioBuffer (global::MonoTouch.AudioToolbox.AudioBuffer buffer)
+		{
+			if (IsDirectBinding) {
+				ApiDefinition.Messaging.void_objc_msgSend_AudioBuffer (this.Handle, selProcessVideoChatCaptureAudioBuffer_Handle, buffer);
+			} else {
+				ApiDefinition.Messaging.void_objc_msgSendSuper_AudioBuffer (this.SuperHandle, selProcessVideoChatCaptureAudioBuffer_Handle, buffer);
+			}
+		}
+		
+		[Export ("processVideoChatCaptureVideoSample:")]
+		[CompilerGenerated]
+		public virtual void ProcessVideoChatCaptureVideoSample (global::MonoTouch.CoreMedia.CMSampleBuffer sampleBuffer)
+		{
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selProcessVideoChatCaptureVideoSample_Handle, sampleBuffer.Handle);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selProcessVideoChatCaptureVideoSample_Handle, sampleBuffer.Handle);
 			}
 		}
 		
@@ -433,9 +461,9 @@ namespace QuickBlox {
 			[Export ("state")]
 			get {
 				if (IsDirectBinding) {
-					return (QBVideoChatState) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selStateHandle);
+					return (QBVideoChatState) MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selStateHandle);
 				} else {
-					return (QBVideoChatState) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selStateHandle);
+					return (QBVideoChatState) MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selStateHandle);
 				}
 			}
 			

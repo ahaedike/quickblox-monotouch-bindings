@@ -88,15 +88,23 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
-		[Export ("allocResult")]
 		[CompilerGenerated]
-		public virtual Result AllocResult ()
-		{
-			if (IsDirectBinding) {
-				return  Runtime.GetNSObject<Result> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selAllocResultHandle));
-			} else {
-				return  Runtime.GetNSObject<Result> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selAllocResultHandle));
+		object __mt_AllocResult_var;
+		[CompilerGenerated]
+		public virtual Result AllocResult {
+			[Export ("allocResult")]
+			get {
+				Result ret;
+				if (IsDirectBinding) {
+					ret =  Runtime.GetNSObject<Result> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selAllocResultHandle));
+				} else {
+					ret =  Runtime.GetNSObject<Result> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selAllocResultHandle));
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_AllocResult_var = ret;
+				return ret;
 			}
+			
 		}
 		
 		[CompilerGenerated]
@@ -166,6 +174,7 @@ namespace QuickBlox {
 		{
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
+				__mt_AllocResult_var = null;
 				__mt_Errors_var = null;
 				__mt_Query_var = null;
 			}

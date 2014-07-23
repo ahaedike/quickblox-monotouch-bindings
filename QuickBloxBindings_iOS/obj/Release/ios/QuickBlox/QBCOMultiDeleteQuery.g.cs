@@ -31,7 +31,7 @@ using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOMultiDeleteQuery", true)]
-	public unsafe partial class QBCOMultiDeleteQuery : NSObject {
+	public unsafe partial class QBCOMultiDeleteQuery : QBCOCustomObjectQuery {
 		[CompilerGenerated]
 		const string selClassName = "className";
 		static readonly IntPtr selClassNameHandle = Selector.GetHandle ("className");

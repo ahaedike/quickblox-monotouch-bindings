@@ -31,7 +31,7 @@ using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOCustomObjectGetQuery", true)]
-	public unsafe partial class QBCOCustomObjectGetQuery : NSObject {
+	public unsafe partial class QBCOCustomObjectGetQuery : QBCOCustomObjectQuery {
 		[CompilerGenerated]
 		const string selClassName = "className";
 		static readonly IntPtr selClassNameHandle = Selector.GetHandle ("className");

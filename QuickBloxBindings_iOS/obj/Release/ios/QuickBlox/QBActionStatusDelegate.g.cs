@@ -45,7 +45,7 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public static void Context (this IQBActionStatusDelegate This, Result result, NSObject contextInfo)
+		public static void CompletedWithResultInContext (this IQBActionStatusDelegate This, Result result, NSObject contextInfo)
 		{
 			if (result == null)
 				throw new ArgumentNullException ("result");
@@ -138,7 +138,7 @@ namespace QuickBlox {
 		
 		[Export ("completedWithResult:context:")]
 		[CompilerGenerated]
-		public virtual void Context (Result result, NSObject contextInfo)
+		public virtual void CompletedWithResultInContext (Result result, NSObject contextInfo)
 		{
 			throw new You_Should_Not_Call_base_In_This_Method ();
 		}

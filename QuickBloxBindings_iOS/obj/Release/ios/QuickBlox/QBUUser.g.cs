@@ -36,6 +36,9 @@ namespace QuickBlox {
 		const string selBlobID = "blobID";
 		static readonly IntPtr selBlobIDHandle = Selector.GetHandle ("blobID");
 		[CompilerGenerated]
+		const string selCustomData = "customData";
+		static readonly IntPtr selCustomDataHandle = Selector.GetHandle ("customData");
+		[CompilerGenerated]
 		const string selEmail = "email";
 		static readonly IntPtr selEmailHandle = Selector.GetHandle ("email");
 		[CompilerGenerated]
@@ -65,6 +68,9 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selSetBlobID_ = "setBlobID:";
 		static readonly IntPtr selSetBlobID_Handle = Selector.GetHandle ("setBlobID:");
+		[CompilerGenerated]
+		const string selSetCustomData_ = "setCustomData:";
+		static readonly IntPtr selSetCustomData_Handle = Selector.GetHandle ("setCustomData:");
 		[CompilerGenerated]
 		const string selSetEmail_ = "setEmail:";
 		static readonly IntPtr selSetEmail_Handle = Selector.GetHandle ("setEmail:");
@@ -154,31 +160,51 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
-		[Export ("user")]
 		[CompilerGenerated]
-		public static QBUUser User ()
-		{
-			return  Runtime.GetNSObject<QBUUser> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selUserHandle));
-		}
-		
-		[CompilerGenerated]
-		public virtual global::System.UInt32 BlobID {
+		public virtual int BlobID {
 			[Export ("blobID")]
 			get {
 				if (IsDirectBinding) {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selBlobIDHandle);
+					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (this.Handle, selBlobIDHandle);
 				} else {
-					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selBlobIDHandle);
+					return MonoTouch.ObjCRuntime.Messaging.int_objc_msgSendSuper (this.SuperHandle, selBlobIDHandle);
 				}
 			}
 			
 			[Export ("setBlobID:")]
 			set {
 				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetBlobID_Handle, value);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (this.Handle, selSetBlobID_Handle, value);
 				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetBlobID_Handle, value);
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_int (this.SuperHandle, selSetBlobID_Handle, value);
 				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual string CustomData {
+			[Export ("customData", ArgumentSemantic.Retain)]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selCustomDataHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selCustomDataHandle));
+				}
+			}
+			
+			[Export ("setCustomData:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetCustomData_Handle, nsvalue);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetCustomData_Handle, nsvalue);
+				}
+				NSString.ReleaseNative (nsvalue);
+				
 			}
 		}
 		
@@ -479,6 +505,21 @@ namespace QuickBlox {
 				NSString.ReleaseNative (nsvalue);
 				
 			}
+		}
+		
+		[CompilerGenerated]
+		static object __mt_User_var_static;
+		[CompilerGenerated]
+		public static QBUUser User {
+			[Export ("user")]
+			get {
+				QBUUser ret;
+				ret =  Runtime.GetNSObject<QBUUser> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selUserHandle));
+				if (!NSObject.IsNewRefcountEnabled ())
+					__mt_User_var_static = ret;
+				return ret;
+			}
+			
 		}
 		
 		[CompilerGenerated]

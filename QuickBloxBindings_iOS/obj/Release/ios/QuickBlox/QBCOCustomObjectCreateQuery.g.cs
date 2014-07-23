@@ -31,7 +31,7 @@ using MonoTouch.CoreFoundation;
 
 namespace QuickBlox {
 	[Register("QBCOCustomObjectCreateQuery", true)]
-	public unsafe partial class QBCOCustomObjectCreateQuery : NSObject {
+	public unsafe partial class QBCOCustomObjectCreateQuery : QBCOCustomObjectQuery {
 		[CompilerGenerated]
 		const string selInitWithObject_ = "initWithObject:";
 		static readonly IntPtr selInitWithObject_Handle = Selector.GetHandle ("initWithObject:");
@@ -95,9 +95,9 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		object __mt_Object_var;
+		object __mt_NSObject_var;
 		[CompilerGenerated]
-		public virtual QBCOCustomObject Object {
+		public virtual QBCOCustomObject NSObject {
 			[Export ("object")]
 			get {
 				QBCOCustomObject ret;
@@ -107,7 +107,7 @@ namespace QuickBlox {
 					ret =  Runtime.GetNSObject<QBCOCustomObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selObjectHandle));
 				}
 				if (!IsNewRefcountEnabled ())
-					__mt_Object_var = ret;
+					__mt_NSObject_var = ret;
 				return ret;
 			}
 			
@@ -118,7 +118,7 @@ namespace QuickBlox {
 		{
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
-				__mt_Object_var = null;
+				__mt_NSObject_var = null;
 			}
 		}
 	} /* class QBCOCustomObjectCreateQuery */

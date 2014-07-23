@@ -33,6 +33,9 @@ namespace QuickBlox {
 	[Register("QBSettings", true)]
 	public unsafe partial class QBSettings : NSObject {
 		[CompilerGenerated]
+		const string selAccountKey = "accountKey";
+		static readonly IntPtr selAccountKeyHandle = Selector.GetHandle ("accountKey");
+		[CompilerGenerated]
 		const string selApplicationID = "applicationID";
 		static readonly IntPtr selApplicationIDHandle = Selector.GetHandle ("applicationID");
 		[CompilerGenerated]
@@ -41,6 +44,12 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selAuthorizationSecret = "authorizationSecret";
 		static readonly IntPtr selAuthorizationSecretHandle = Selector.GetHandle ("authorizationSecret");
+		[CompilerGenerated]
+		const string selChatSOCKS5ProxyHost = "chatSOCKS5ProxyHost";
+		static readonly IntPtr selChatSOCKS5ProxyHostHandle = Selector.GetHandle ("chatSOCKS5ProxyHost");
+		[CompilerGenerated]
+		const string selChatSOCKS5ProxyPort = "chatSOCKS5ProxyPort";
+		static readonly IntPtr selChatSOCKS5ProxyPortHandle = Selector.GetHandle ("chatSOCKS5ProxyPort");
 		[CompilerGenerated]
 		const string selContentBucket = "contentBucket";
 		static readonly IntPtr selContentBucketHandle = Selector.GetHandle ("contentBucket");
@@ -57,6 +66,9 @@ namespace QuickBlox {
 		const string selIsUseProductionEnvironmentForPushNotifications = "isUseProductionEnvironmentForPushNotifications";
 		static readonly IntPtr selIsUseProductionEnvironmentForPushNotificationsHandle = Selector.GetHandle ("isUseProductionEnvironmentForPushNotifications");
 		[CompilerGenerated]
+		const string selIsUseTLSForChat = "isUseTLSForChat";
+		static readonly IntPtr selIsUseTLSForChatHandle = Selector.GetHandle ("isUseTLSForChat");
+		[CompilerGenerated]
 		const string selLogLevel = "logLevel";
 		static readonly IntPtr selLogLevelHandle = Selector.GetHandle ("logLevel");
 		[CompilerGenerated]
@@ -69,14 +81,8 @@ namespace QuickBlox {
 		const string selServerChatDomain = "serverChatDomain";
 		static readonly IntPtr selServerChatDomainHandle = Selector.GetHandle ("serverChatDomain");
 		[CompilerGenerated]
-		const string selServerDomain = "serverDomain";
-		static readonly IntPtr selServerDomainHandle = Selector.GetHandle ("serverDomain");
-		[CompilerGenerated]
-		const string selServerZone = "serverZone";
-		static readonly IntPtr selServerZoneHandle = Selector.GetHandle ("serverZone");
-		[CompilerGenerated]
-		const string selServerZoneAsString = "serverZoneAsString";
-		static readonly IntPtr selServerZoneAsStringHandle = Selector.GetHandle ("serverZoneAsString");
+		const string selSetAccountKey_ = "setAccountKey:";
+		static readonly IntPtr selSetAccountKey_Handle = Selector.GetHandle ("setAccountKey:");
 		[CompilerGenerated]
 		const string selSetApplicationID_ = "setApplicationID:";
 		static readonly IntPtr selSetApplicationID_Handle = Selector.GetHandle ("setApplicationID:");
@@ -86,6 +92,12 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selSetAuthorizationSecret_ = "setAuthorizationSecret:";
 		static readonly IntPtr selSetAuthorizationSecret_Handle = Selector.GetHandle ("setAuthorizationSecret:");
+		[CompilerGenerated]
+		const string selSetChatSOCKS5ProxyHost_ = "setChatSOCKS5ProxyHost:";
+		static readonly IntPtr selSetChatSOCKS5ProxyHost_Handle = Selector.GetHandle ("setChatSOCKS5ProxyHost:");
+		[CompilerGenerated]
+		const string selSetChatSOCKS5ProxyPort_ = "setChatSOCKS5ProxyPort:";
+		static readonly IntPtr selSetChatSOCKS5ProxyPort_Handle = Selector.GetHandle ("setChatSOCKS5ProxyPort:");
 		[CompilerGenerated]
 		const string selSetContentBucket_ = "setContentBucket:";
 		static readonly IntPtr selSetContentBucket_Handle = Selector.GetHandle ("setContentBucket:");
@@ -102,14 +114,11 @@ namespace QuickBlox {
 		const string selSetServerChatDomain_ = "setServerChatDomain:";
 		static readonly IntPtr selSetServerChatDomain_Handle = Selector.GetHandle ("setServerChatDomain:");
 		[CompilerGenerated]
-		const string selSetServerDomain_ = "setServerDomain:";
-		static readonly IntPtr selSetServerDomain_Handle = Selector.GetHandle ("setServerDomain:");
-		[CompilerGenerated]
-		const string selSetServerZone_ = "setServerZone:";
-		static readonly IntPtr selSetServerZone_Handle = Selector.GetHandle ("setServerZone:");
-		[CompilerGenerated]
 		const string selSetTimeOutSeconds_ = "setTimeOutSeconds:";
 		static readonly IntPtr selSetTimeOutSeconds_Handle = Selector.GetHandle ("setTimeOutSeconds:");
+		[CompilerGenerated]
+		const string selSetTURNServerDomain_ = "setTURNServerDomain:";
+		static readonly IntPtr selSetTURNServerDomain_Handle = Selector.GetHandle ("setTURNServerDomain:");
 		[CompilerGenerated]
 		const string selSetVideoChatConfiguration_ = "setVideoChatConfiguration:";
 		static readonly IntPtr selSetVideoChatConfiguration_Handle = Selector.GetHandle ("setVideoChatConfiguration:");
@@ -117,11 +126,17 @@ namespace QuickBlox {
 		const string selTimeOutSeconds = "timeOutSeconds";
 		static readonly IntPtr selTimeOutSecondsHandle = Selector.GetHandle ("timeOutSeconds");
 		[CompilerGenerated]
+		const string selTURNServerDomain = "tURNServerDomain";
+		static readonly IntPtr selTURNServerDomainHandle = Selector.GetHandle ("tURNServerDomain");
+		[CompilerGenerated]
 		const string selUseHTTPS_ = "useHTTPS:";
 		static readonly IntPtr selUseHTTPS_Handle = Selector.GetHandle ("useHTTPS:");
 		[CompilerGenerated]
 		const string selUseProductionEnvironmentForPushNotifications_ = "useProductionEnvironmentForPushNotifications:";
 		static readonly IntPtr selUseProductionEnvironmentForPushNotifications_Handle = Selector.GetHandle ("useProductionEnvironmentForPushNotifications:");
+		[CompilerGenerated]
+		const string selUseTLSForChat_ = "useTLSForChat:";
+		static readonly IntPtr selUseTLSForChat_Handle = Selector.GetHandle ("useTLSForChat:");
 		[CompilerGenerated]
 		const string selVideoChatConfiguration = "videoChatConfiguration";
 		static readonly IntPtr selVideoChatConfigurationHandle = Selector.GetHandle ("videoChatConfiguration");
@@ -187,6 +202,32 @@ namespace QuickBlox {
 			MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (class_ptr, selUseProductionEnvironmentForPushNotifications_Handle, useProductionEnvironment);
 		}
 		
+		[Export ("useTLSForChat:")]
+		[CompilerGenerated]
+		public static void UseTLSForChat (bool useTLSForChat)
+		{
+			MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (class_ptr, selUseTLSForChat_Handle, useTLSForChat);
+		}
+		
+		[CompilerGenerated]
+		public static string AccountKey {
+			[Export ("accountKey")]
+			get {
+				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selAccountKeyHandle));
+			}
+			
+			[Export ("setAccountKey:")]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (class_ptr, selSetAccountKey_Handle, nsvalue);
+				NSString.ReleaseNative (nsvalue);
+				
+			}
+		}
+		
 		[CompilerGenerated]
 		public static global::System.UInt32 ApplicationID {
 			[Export ("applicationID")]
@@ -239,6 +280,38 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
+		public static string ChatSOCKS5ProxyHost {
+			[Export ("chatSOCKS5ProxyHost")]
+			get {
+				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selChatSOCKS5ProxyHostHandle));
+			}
+			
+			[Export ("setChatSOCKS5ProxyHost:")]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (class_ptr, selSetChatSOCKS5ProxyHost_Handle, nsvalue);
+				NSString.ReleaseNative (nsvalue);
+				
+			}
+		}
+		
+		[CompilerGenerated]
+		public static global::System.UInt32 ChatSOCKS5ProxyPort {
+			[Export ("chatSOCKS5ProxyPort")]
+			get {
+				return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (class_ptr, selChatSOCKS5ProxyPortHandle);
+			}
+			
+			[Export ("setChatSOCKS5ProxyPort:")]
+			set {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (class_ptr, selSetChatSOCKS5ProxyPort_Handle, value);
+			}
+		}
+		
+		[CompilerGenerated]
 		public static string ContentBucket {
 			[Export ("contentBucket")]
 			get {
@@ -285,15 +358,24 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
+		public static bool IsUseTLSForChat {
+			[Export ("isUseTLSForChat")]
+			get {
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (class_ptr, selIsUseTLSForChatHandle);
+			}
+			
+		}
+		
+		[CompilerGenerated]
 		public static QBLogLevel LogLevel {
 			[Export ("logLevel")]
 			get {
-				return (QBLogLevel) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (class_ptr, selLogLevelHandle);
+				return (QBLogLevel) MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (class_ptr, selLogLevelHandle);
 			}
 			
 			[Export ("setLogLevel:")]
 			set {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (class_ptr, selSetLogLevel_Handle, (int)value);
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (class_ptr, selSetLogLevel_Handle, (UInt32)value);
 			}
 		}
 		
@@ -355,47 +437,6 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		public static string ServerDomain {
-			[Export ("serverDomain")]
-			get {
-				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selServerDomainHandle));
-			}
-			
-			[Export ("setServerDomain:")]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				var nsvalue = NSString.CreateNative (value);
-				
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (class_ptr, selSetServerDomain_Handle, nsvalue);
-				NSString.ReleaseNative (nsvalue);
-				
-			}
-		}
-		
-		[CompilerGenerated]
-		public static QBServerZone ServerZone {
-			[Export ("serverZone")]
-			get {
-				return (QBServerZone) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend (class_ptr, selServerZoneHandle);
-			}
-			
-			[Export ("setServerZone:")]
-			set {
-				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (class_ptr, selSetServerZone_Handle, (int)value);
-			}
-		}
-		
-		[CompilerGenerated]
-		public static string ServerZoneAsString {
-			[Export ("serverZoneAsString")]
-			get {
-				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selServerZoneAsStringHandle));
-			}
-			
-		}
-		
-		[CompilerGenerated]
 		public static int TimeOutSeconds {
 			[Export ("timeOutSeconds")]
 			get {
@@ -405,6 +446,25 @@ namespace QuickBlox {
 			[Export ("setTimeOutSeconds:")]
 			set {
 				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_int (class_ptr, selSetTimeOutSeconds_Handle, value);
+			}
+		}
+		
+		[CompilerGenerated]
+		public static string TURNServerDomain {
+			[Export ("tURNServerDomain")]
+			get {
+				return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selTURNServerDomainHandle));
+			}
+			
+			[Export ("setTURNServerDomain:")]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (class_ptr, selSetTURNServerDomain_Handle, nsvalue);
+				NSString.ReleaseNative (nsvalue);
+				
 			}
 		}
 		

@@ -39,8 +39,14 @@ namespace QuickBlox {
 		const string selSetOnline_ = "setOnline:";
 		static readonly IntPtr selSetOnline_Handle = Selector.GetHandle ("setOnline:");
 		[CompilerGenerated]
+		const string selSetSubscriptionState_ = "setSubscriptionState:";
+		static readonly IntPtr selSetSubscriptionState_Handle = Selector.GetHandle ("setSubscriptionState:");
+		[CompilerGenerated]
 		const string selSetUserID_ = "setUserID:";
 		static readonly IntPtr selSetUserID_Handle = Selector.GetHandle ("setUserID:");
+		[CompilerGenerated]
+		const string selSubscriptionState = "subscriptionState";
+		static readonly IntPtr selSubscriptionStateHandle = Selector.GetHandle ("subscriptionState");
 		[CompilerGenerated]
 		const string selUserID = "userID";
 		static readonly IntPtr selUserIDHandle = Selector.GetHandle ("userID");
@@ -102,6 +108,27 @@ namespace QuickBlox {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetOnline_Handle, value);
 				} else {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetOnline_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual QBPresenseSubscriptionState SubscriptionState {
+			[Export ("subscriptionState")]
+			get {
+				if (IsDirectBinding) {
+					return (QBPresenseSubscriptionState) MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selSubscriptionStateHandle);
+				} else {
+					return (QBPresenseSubscriptionState) MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selSubscriptionStateHandle);
+				}
+			}
+			
+			[Export ("setSubscriptionState:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetSubscriptionState_Handle, (UInt32)value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetSubscriptionState_Handle, (UInt32)value);
 				}
 			}
 		}
