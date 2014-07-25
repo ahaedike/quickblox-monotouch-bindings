@@ -35,6 +35,9 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selParameters = "parameters";
 		static readonly IntPtr selParametersHandle = Selector.GetHandle ("parameters");
+		[CompilerGenerated]
+		const string selRequest = "request";
+		static readonly IntPtr selRequestHandle = Selector.GetHandle ("request");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("Request");
@@ -76,6 +79,13 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
+		[Export ("request")]
+		[CompilerGenerated]
+		public static Request CreateRequest ()
+		{
+			return  Runtime.GetNSObject<Request> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selRequestHandle));
+		}
+		
 		[CompilerGenerated]
 		object __mt_Parameters_var;
 		[CompilerGenerated]

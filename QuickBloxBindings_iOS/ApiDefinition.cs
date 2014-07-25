@@ -635,6 +635,9 @@ namespace QuickBlox
 		[Export ("parameters")]
 		NSDictionary Parameters { get; }
 
+		[Static, Export ("request")]
+		Request CreateRequest ();
+
 	}
 
 	[BaseType (typeof (Request))]
@@ -863,28 +866,31 @@ namespace QuickBlox
 
 		[Export ("userPassword", ArgumentSemantic.Retain)]
 		string UserPassword { get; set; }
+
+		[Static, Export ("request")]
+		QBASessionCreationRequest CreateRequest ();
 	}
 
 	[BaseType (typeof (QBBaseModule))]
 	public partial interface QBAuth {
 
 		[Static, Export ("createSessionWithDelegate:")]
-		NSObject CreateSessionWithDelegate (NSObject _delegate);
+		NSObject CreateSessionWithDelegate (QBActionStatusDelegate _delegate);
 
 		[Static, Export ("createSessionWithDelegate:context:")]
-		NSObject CreateSessionWithDelegate (NSObject _delegate, NSObject context);
+		NSObject CreateSessionWithDelegate (QBActionStatusDelegate _delegate, NSObject context);
 
 		[Static, Export ("createSessionWithExtendedRequest:delegate:")]
-		NSObject CreateSessionWithExtendedRequest (QBASessionCreationRequest extendedRequest, NSObject _delegate);
+		NSObject CreateSessionWithExtendedRequest (Request extendedRequest, QBActionStatusDelegate _delegate);
 
 		[Static, Export ("createSessionWithExtendedRequest:delegate:context:")]
-		NSObject CreateSessionWithExtendedRequest (QBASessionCreationRequest extendedRequest, NSObject _delegate, NSObject context);
+		NSObject CreateSessionWithExtendedRequest (Request extendedRequest, QBActionStatusDelegate _delegate, NSObject context);
 
 		[Static, Export ("destroySessionWithDelegate:")]
-		NSObject DestroySessionWithDelegate (NSObject _delegate);
+		NSObject DestroySessionWithDelegate (QBActionStatusDelegate _delegate);
 
 		[Static, Export ("destroySessionWithDelegate:context:")]
-		NSObject DestroySessionWithDelegate (NSObject _delegate, NSObject context);
+		NSObject DestroySessionWithDelegate (QBActionStatusDelegate _delegate, NSObject context);
 	}
 
 	[BaseType (typeof (Entity))]

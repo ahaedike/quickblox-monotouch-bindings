@@ -33,6 +33,9 @@ namespace QuickBlox {
 	[Register("QBASessionCreationRequest", true)]
 	public unsafe partial class QBASessionCreationRequest : Request {
 		[CompilerGenerated]
+		const string selRequest = "request";
+		static readonly IntPtr selRequestHandle = Selector.GetHandle ("request");
+		[CompilerGenerated]
 		const string selScope = "scope";
 		static readonly IntPtr selScopeHandle = Selector.GetHandle ("scope");
 		[CompilerGenerated]
@@ -115,6 +118,13 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
+		[Export ("request")]
+		[CompilerGenerated]
+		public static QBASessionCreationRequest CreateRequest ()
+		{
+			return  Runtime.GetNSObject<QBASessionCreationRequest> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selRequestHandle));
+		}
+		
 		[CompilerGenerated]
 		object __mt_Scope_var;
 		[CompilerGenerated]

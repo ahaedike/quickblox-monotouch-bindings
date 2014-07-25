@@ -93,7 +93,7 @@ namespace QuickBlox {
 
 		[Export ("createSessionWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject CreateSessionWithDelegate (NSObject _delegate)
+		public static NSObject CreateSessionWithDelegate (QBActionStatusDelegate _delegate)
 		{
 			if (_delegate == null)
 				throw new ArgumentNullException ("_delegate");
@@ -102,7 +102,7 @@ namespace QuickBlox {
 		
 		[Export ("createSessionWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreateSessionWithDelegate (NSObject _delegate, NSObject context)
+		public static NSObject CreateSessionWithDelegate (QBActionStatusDelegate _delegate, NSObject context)
 		{
 			if (_delegate == null)
 				throw new ArgumentNullException ("_delegate");
@@ -113,7 +113,7 @@ namespace QuickBlox {
 		
 		[Export ("createSessionWithExtendedRequest:delegate:")]
 		[CompilerGenerated]
-		public static NSObject CreateSessionWithExtendedRequest (QBASessionCreationRequest extendedRequest, NSObject _delegate)
+		public static NSObject CreateSessionWithExtendedRequest (Request extendedRequest, QBActionStatusDelegate _delegate)
 		{
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
@@ -124,7 +124,7 @@ namespace QuickBlox {
 		
 		[Export ("createSessionWithExtendedRequest:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreateSessionWithExtendedRequest (QBASessionCreationRequest extendedRequest, NSObject _delegate, NSObject context)
+		public static NSObject CreateSessionWithExtendedRequest (Request extendedRequest, QBActionStatusDelegate _delegate, NSObject context)
 		{
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
@@ -137,7 +137,7 @@ namespace QuickBlox {
 		
 		[Export ("destroySessionWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject DestroySessionWithDelegate (NSObject _delegate)
+		public static NSObject DestroySessionWithDelegate (QBActionStatusDelegate _delegate)
 		{
 			if (_delegate == null)
 				throw new ArgumentNullException ("_delegate");
@@ -146,7 +146,7 @@ namespace QuickBlox {
 		
 		[Export ("destroySessionWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DestroySessionWithDelegate (NSObject _delegate, NSObject context)
+		public static NSObject DestroySessionWithDelegate (QBActionStatusDelegate _delegate, NSObject context)
 		{
 			if (_delegate == null)
 				throw new ArgumentNullException ("_delegate");
