@@ -3,3 +3,8 @@
 /Users/ahaedike/Dropbox/spokeo/source/QuickBloxBindings_iOS/QuickBloxBindings_iOS/bin/Release/QuickBloxBindings_iOS.dll
 /Users/ahaedike/Dropbox/spokeo/source/QuickBloxBindings_iOS/QuickBloxBindings_iOS/obj/Release/QuickBloxBindings_iOS.dll
 /Users/ahaedike/Dropbox/spokeo/source/QuickBloxBindings_iOS/QuickBloxBindings_iOS/obj/Release/QuickBloxBindings_iOS.dll.mdb
+/Users/ahaedike/spokeo/source/QuickBloxBindings_iOS/QuickBloxBindings_iOS/obj/Release/MonoTouch,Version=v1.0.AssemblyAttribute.cs
+/Users/ahaedike/spokeo/source/QuickBloxBindings_iOS/QuickBloxBindings_iOS/bin/Release/QuickBloxBindings_iOS.dll.mdb
+/Users/ahaedike/spokeo/source/QuickBloxBindings_iOS/QuickBloxBindings_iOS/bin/Release/QuickBloxBindings_iOS.dll
+/Users/ahaedike/spokeo/source/QuickBloxBindings_iOS/QuickBloxBindings_iOS/obj/Release/QuickBloxBindings_iOS.dll
+/Users/ahaedike/spokeo/source/QuickBloxBindings_iOS/QuickBloxBindings_iOS/obj/Release/QuickBloxBindings_iOS.dll.mdb

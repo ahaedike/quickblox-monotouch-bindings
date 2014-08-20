@@ -4,7 +4,6 @@
     <Files>
       <File FileName="QuickBloxBindings_iOS/StructsAndEnums.cs" Line="1" Column="1" />
       <File FileName="QuickBloxBindings_iOS/ApiDefinition.cs" Line="3168" Column="59" />
-      <File FileName="../../../../Downloads/quickblox-bindings/output_1.9.1" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

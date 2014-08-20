@@ -3192,7 +3192,8 @@ namespace QuickBlox
 
 
 
-	[Model, BaseType (typeof (NSObject))]
+	[BaseType (typeof (NSObject))]
+	[Model, Protocol]
 	public partial interface QBChatDelegate {
 
 		[Export ("chatDidLogin")]
