@@ -123,8 +123,8 @@ namespace QuickBlox {
 		const string selLoginWithUser_ = "loginWithUser:";
 		static readonly IntPtr selLoginWithUser_Handle = Selector.GetHandle ("loginWithUser:");
 		[CompilerGenerated]
-		const string selLogout_ = "logout:";
-		static readonly IntPtr selLogout_Handle = Selector.GetHandle ("logout:");
+		const string selLogout = "logout";
+		static readonly IntPtr selLogoutHandle = Selector.GetHandle ("logout");
 		[CompilerGenerated]
 		const string selMarkMessagesAsReadDialogIDDelegate_ = "markMessagesAsRead:dialogID:delegate:";
 		static readonly IntPtr selMarkMessagesAsReadDialogIDDelegate_Handle = Selector.GetHandle ("markMessagesAsRead:dialogID:delegate:");
@@ -156,8 +156,8 @@ namespace QuickBlox {
 		const string selRemoveUserFromContactList_ = "removeUserFromContactList:";
 		static readonly IntPtr selRemoveUserFromContactList_Handle = Selector.GetHandle ("removeUserFromContactList:");
 		[CompilerGenerated]
-		const string selRequestAllRooms_ = "requestAllRooms:";
-		static readonly IntPtr selRequestAllRooms_Handle = Selector.GetHandle ("requestAllRooms:");
+		const string selRequestAllRooms = "requestAllRooms";
+		static readonly IntPtr selRequestAllRoomsHandle = Selector.GetHandle ("requestAllRooms");
 		[CompilerGenerated]
 		const string selRequestRoomInformation_ = "requestRoomInformation:";
 		static readonly IntPtr selRequestRoomInformation_Handle = Selector.GetHandle ("requestRoomInformation:");
@@ -657,14 +657,14 @@ namespace QuickBlox {
 			}
 		}
 		
-		[Export ("logout:")]
+		[Export ("logout")]
 		[CompilerGenerated]
 		public virtual bool Logout ()
 		{
 			if (IsDirectBinding) {
-				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selLogout_Handle);
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selLogoutHandle);
 			} else {
-				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selLogout_Handle);
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selLogoutHandle);
 			}
 		}
 		
@@ -827,14 +827,14 @@ namespace QuickBlox {
 			}
 		}
 		
-		[Export ("requestAllRooms:")]
+		[Export ("requestAllRooms")]
 		[CompilerGenerated]
 		public virtual bool RequestAllRooms ()
 		{
 			if (IsDirectBinding) {
-				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selRequestAllRooms_Handle);
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selRequestAllRoomsHandle);
 			} else {
-				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selRequestAllRooms_Handle);
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selRequestAllRoomsHandle);
 			}
 		}
 		

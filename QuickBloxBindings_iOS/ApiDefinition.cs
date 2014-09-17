@@ -222,7 +222,8 @@ namespace QuickBlox
 
 
 
-	[Model, BaseType (typeof (NSObject))]
+	[BaseType (typeof (NSObject))]
+	[Model, Protocol]
 	public partial interface QBChatDelegate {
 
 		[Export ("chatDidLogin")]
@@ -556,7 +557,7 @@ namespace QuickBlox
 		[Export ("isLoggedIn")]
 		bool IsLoggedIn { get; }
 
-		[Export ("logout:")]
+		[Export ("logout")]
 		bool Logout();
 
 		[Export ("sendMessage:")]
@@ -625,7 +626,7 @@ namespace QuickBlox
 		[Export ("sendPresenceWithStatus:show:priority:customParameters:toRoom:")]
 		bool SendPresenceWithStatus (string status, QBPresenseShow show, short priority, NSDictionary customParameters, QBChatRoom room);
 
-		[Export ("requestAllRooms:")]
+		[Export ("requestAllRooms")]
 		bool RequestAllRooms();
 
 		[Export ("requestRoomInformation:")]
