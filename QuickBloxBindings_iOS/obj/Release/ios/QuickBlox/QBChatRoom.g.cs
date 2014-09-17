@@ -218,7 +218,7 @@ namespace QuickBlox {
 		
 		[Export ("initWithRoomJID:nickname:")]
 		[CompilerGenerated]
-		public virtual global::System.IntPtr InitWithRoomJIDAndNickname (string roomJID, string nickname)
+		public virtual global::System.IntPtr InitWithRoomJIDAndNickName (string roomJID, string nickname)
 		{
 			if (roomJID == null)
 				throw new ArgumentNullException ("roomJID");

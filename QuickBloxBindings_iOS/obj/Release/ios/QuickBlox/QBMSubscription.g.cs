@@ -42,6 +42,12 @@ namespace QuickBlox {
 		const string selNotificationChannel = "notificationChannel";
 		static readonly IntPtr selNotificationChannelHandle = Selector.GetHandle ("notificationChannel");
 		[CompilerGenerated]
+		const string selNotificationChannelFromString_ = "notificationChannelFromString:";
+		static readonly IntPtr selNotificationChannelFromString_Handle = Selector.GetHandle ("notificationChannelFromString:");
+		[CompilerGenerated]
+		const string selNotificationChannelToString_ = "notificationChannelToString:";
+		static readonly IntPtr selNotificationChannelToString_Handle = Selector.GetHandle ("notificationChannelToString:");
+		[CompilerGenerated]
 		const string selSetDevicePlatform_ = "setDevicePlatform:";
 		static readonly IntPtr selSetDevicePlatform_Handle = Selector.GetHandle ("setDevicePlatform:");
 		[CompilerGenerated]
@@ -100,6 +106,35 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
+		[Export ("subscription")]
+		[CompilerGenerated]
+		public static QBMSubscription CreateSubscription ()
+		{
+			return  Runtime.GetNSObject<QBMSubscription> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selSubscriptionHandle));
+		}
+		
+		[Export ("notificationChannelFromString:")]
+		[CompilerGenerated]
+		public static QBMNotificationChannel NotificationChannelFromString (string notificationChannel)
+		{
+			if (notificationChannel == null)
+				throw new ArgumentNullException ("notificationChannel");
+			var nsnotificationChannel = NSString.CreateNative (notificationChannel);
+			
+			QBMNotificationChannel ret;
+			ret = (QBMNotificationChannel) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend_IntPtr (class_ptr, selNotificationChannelFromString_Handle, nsnotificationChannel);
+			NSString.ReleaseNative (nsnotificationChannel);
+			
+			return ret;
+		}
+		
+		[Export ("notificationChannelToString:")]
+		[CompilerGenerated]
+		public static string NotificationChannelToString (QBMNotificationChannel notificationChannel)
+		{
+			return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_int (class_ptr, selNotificationChannelToString_Handle, (int)notificationChannel));
+		}
+		
 		[CompilerGenerated]
 		public virtual string DevicePlatform {
 			[Export ("devicePlatform", ArgumentSemantic.Retain)]
@@ -173,21 +208,6 @@ namespace QuickBlox {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_int (this.SuperHandle, selSetNotificationChannel_Handle, (int)value);
 				}
 			}
-		}
-		
-		[CompilerGenerated]
-		static object __mt_Subscription_var_static;
-		[CompilerGenerated]
-		public static QBMSubscription Subscription {
-			[Export ("subscription")]
-			get {
-				QBMSubscription ret;
-				ret =  Runtime.GetNSObject<QBMSubscription> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selSubscriptionHandle));
-				if (!NSObject.IsNewRefcountEnabled ())
-					__mt_Subscription_var_static = ret;
-				return ret;
-			}
-			
 		}
 		
 		[CompilerGenerated]

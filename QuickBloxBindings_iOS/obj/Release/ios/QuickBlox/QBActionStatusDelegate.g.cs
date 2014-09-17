@@ -151,13 +151,5 @@ namespace QuickBlox {
 			}
 		}
 		
-		[CompilerGenerated]
-		public virtual float UploadActionProgress {
-			[Export ("setUploadProgress:")]
-			set {
-				throw new ModelNotImplementedException ();
-			}
-		}
-		
 	} /* class QBActionStatusDelegate */
 }

@@ -33,23 +33,11 @@ namespace QuickBlox {
 	[Register("Result", true)]
 	public unsafe partial class Result : NSObject {
 		[CompilerGenerated]
-		const string selAnswer = "answer";
-		static readonly IntPtr selAnswerHandle = Selector.GetHandle ("answer");
-		[CompilerGenerated]
 		const string selErrors = "errors";
 		static readonly IntPtr selErrorsHandle = Selector.GetHandle ("errors");
 		[CompilerGenerated]
-		const string selInitWithAnswer_ = "initWithAnswer:";
-		static readonly IntPtr selInitWithAnswer_Handle = Selector.GetHandle ("initWithAnswer:");
-		[CompilerGenerated]
-		const string selInitWithRequestAnswer_ = "initWithRequest:answer:";
-		static readonly IntPtr selInitWithRequestAnswer_Handle = Selector.GetHandle ("initWithRequest:answer:");
-		[CompilerGenerated]
 		const string selRequest = "request";
 		static readonly IntPtr selRequestHandle = Selector.GetHandle ("request");
-		[CompilerGenerated]
-		const string selSetAnswer_ = "setAnswer:";
-		static readonly IntPtr selSetAnswer_Handle = Selector.GetHandle ("setAnswer:");
 		[CompilerGenerated]
 		const string selSetRequest_ = "setRequest:";
 		static readonly IntPtr selSetRequest_Handle = Selector.GetHandle ("setRequest:");
@@ -100,69 +88,6 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
-		[Export ("initWithRequest:answer:")]
-		[CompilerGenerated]
-		public Result (Request req, Answer answ)
-			: base (NSObjectFlag.Empty)
-		{
-			if (req == null)
-				throw new ArgumentNullException ("req");
-			if (answ == null)
-				throw new ArgumentNullException ("answ");
-			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
-			if (IsDirectBinding) {
-				InitializeHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (this.Handle, selInitWithRequestAnswer_Handle, req.Handle, answ.Handle), "initWithRequest:answer:");
-			} else {
-				InitializeHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper_IntPtr_IntPtr (this.SuperHandle, selInitWithRequestAnswer_Handle, req.Handle, answ.Handle), "initWithRequest:answer:");
-			}
-		}
-		
-		[Export ("initWithAnswer:")]
-		[CompilerGenerated]
-		public Result (Answer answ)
-			: base (NSObjectFlag.Empty)
-		{
-			if (answ == null)
-				throw new ArgumentNullException ("answ");
-			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
-			if (IsDirectBinding) {
-				InitializeHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (this.Handle, selInitWithAnswer_Handle, answ.Handle), "initWithAnswer:");
-			} else {
-				InitializeHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper_IntPtr (this.SuperHandle, selInitWithAnswer_Handle, answ.Handle), "initWithAnswer:");
-			}
-		}
-		
-		[CompilerGenerated]
-		object __mt_Answer_var;
-		[CompilerGenerated]
-		public virtual Answer Answer {
-			[Export ("answer", ArgumentSemantic.Retain)]
-			get {
-				Answer ret;
-				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<Answer> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selAnswerHandle));
-				} else {
-					ret =  Runtime.GetNSObject<Answer> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selAnswerHandle));
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Answer_var = ret;
-				return ret;
-			}
-			
-			[Export ("setAnswer:", ArgumentSemantic.Retain)]
-			set {
-				if (value == null)
-					throw new ArgumentNullException ("value");
-				if (IsDirectBinding) {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetAnswer_Handle, value.Handle);
-				} else {
-					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetAnswer_Handle, value.Handle);
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_Answer_var = value;
-			}
-		}
-		
 		[CompilerGenerated]
 		object __mt_Errors_var;
 		[CompilerGenerated]
@@ -244,7 +169,6 @@ namespace QuickBlox {
 		{
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
-				__mt_Answer_var = null;
 				__mt_Errors_var = null;
 				__mt_Request_var = null;
 			}

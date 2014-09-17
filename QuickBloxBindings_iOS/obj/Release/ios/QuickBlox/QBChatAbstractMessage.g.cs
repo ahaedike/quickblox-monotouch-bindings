@@ -119,7 +119,7 @@ namespace QuickBlox {
 		object __mt_Attachments_var;
 		[CompilerGenerated]
 		public virtual NSObject[] Attachments {
-			[Export ("attachments", ArgumentSemantic.Copy)]
+			[Export ("attachments", ArgumentSemantic.Retain)]
 			get {
 				NSObject[] ret;
 				if (IsDirectBinding) {
@@ -132,7 +132,7 @@ namespace QuickBlox {
 				return ret;
 			}
 			
-			[Export ("setAttachments:", ArgumentSemantic.Copy)]
+			[Export ("setAttachments:", ArgumentSemantic.Retain)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");
@@ -154,7 +154,7 @@ namespace QuickBlox {
 		object __mt_CustomParameters_var;
 		[CompilerGenerated]
 		public virtual NSMutableDictionary CustomParameters {
-			[Export ("customParameters", ArgumentSemantic.Copy)]
+			[Export ("customParameters", ArgumentSemantic.Retain)]
 			get {
 				NSMutableDictionary ret;
 				if (IsDirectBinding) {
@@ -167,7 +167,7 @@ namespace QuickBlox {
 				return ret;
 			}
 			
-			[Export ("setCustomParameters:", ArgumentSemantic.Copy)]
+			[Export ("setCustomParameters:", ArgumentSemantic.Retain)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");
@@ -185,7 +185,7 @@ namespace QuickBlox {
 		object __mt_Datetime_var;
 		[CompilerGenerated]
 		public virtual NSDate Datetime {
-			[Export ("datetime", ArgumentSemantic.Copy)]
+			[Export ("datetime", ArgumentSemantic.Retain)]
 			get {
 				NSDate ret;
 				if (IsDirectBinding) {
@@ -198,7 +198,7 @@ namespace QuickBlox {
 				return ret;
 			}
 			
-			[Export ("setDatetime:", ArgumentSemantic.Copy)]
+			[Export ("setDatetime:", ArgumentSemantic.Retain)]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");

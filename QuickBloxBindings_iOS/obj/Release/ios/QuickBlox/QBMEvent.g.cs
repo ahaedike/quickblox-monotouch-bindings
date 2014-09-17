@@ -45,6 +45,12 @@ namespace QuickBlox {
 		const string selEvent = "event";
 		static readonly IntPtr selEventHandle = Selector.GetHandle ("event");
 		[CompilerGenerated]
+		const string selEventTypeFromString_ = "eventTypeFromString:";
+		static readonly IntPtr selEventTypeFromString_Handle = Selector.GetHandle ("eventTypeFromString:");
+		[CompilerGenerated]
+		const string selEventTypeToString_ = "eventTypeToString:";
+		static readonly IntPtr selEventTypeToString_Handle = Selector.GetHandle ("eventTypeToString:");
+		[CompilerGenerated]
 		const string selIsDevelopmentEnvironment = "isDevelopmentEnvironment";
 		static readonly IntPtr selIsDevelopmentEnvironmentHandle = Selector.GetHandle ("isDevelopmentEnvironment");
 		[CompilerGenerated]
@@ -199,6 +205,35 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
+		[Export ("event")]
+		[CompilerGenerated]
+		public static QBMEvent CreateEvent ()
+		{
+			return  Runtime.GetNSObject<QBMEvent> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selEventHandle));
+		}
+		
+		[Export ("eventTypeFromString:")]
+		[CompilerGenerated]
+		public static QBMEventType EventTypeFromString (string eventType)
+		{
+			if (eventType == null)
+				throw new ArgumentNullException ("eventType");
+			var nseventType = NSString.CreateNative (eventType);
+			
+			QBMEventType ret;
+			ret = (QBMEventType) MonoTouch.ObjCRuntime.Messaging.int_objc_msgSend_IntPtr (class_ptr, selEventTypeFromString_Handle, nseventType);
+			NSString.ReleaseNative (nseventType);
+			
+			return ret;
+		}
+		
+		[Export ("eventTypeToString:")]
+		[CompilerGenerated]
+		public static string EventTypeToString (QBMEventType eventType)
+		{
+			return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_int (class_ptr, selEventTypeToString_Handle, (int)eventType));
+		}
+		
 		[Export ("messageFromString:")]
 		[CompilerGenerated]
 		public static NSDictionary MessageFromString (string message)
@@ -359,21 +394,6 @@ namespace QuickBlox {
 				if (!IsNewRefcountEnabled ())
 					__mt_EndDate_var = value;
 			}
-		}
-		
-		[CompilerGenerated]
-		static object __mt_Event_var_static;
-		[CompilerGenerated]
-		public static QBMEvent Event {
-			[Export ("event")]
-			get {
-				QBMEvent ret;
-				ret =  Runtime.GetNSObject<QBMEvent> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selEventHandle));
-				if (!NSObject.IsNewRefcountEnabled ())
-					__mt_Event_var_static = ret;
-				return ret;
-			}
-			
 		}
 		
 		[CompilerGenerated]

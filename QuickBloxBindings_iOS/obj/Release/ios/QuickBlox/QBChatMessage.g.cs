@@ -42,6 +42,12 @@ namespace QuickBlox {
 		const string selDelayed = "delayed";
 		static readonly IntPtr selDelayedHandle = Selector.GetHandle ("delayed");
 		[CompilerGenerated]
+		const string selMarkable = "markable";
+		static readonly IntPtr selMarkableHandle = Selector.GetHandle ("markable");
+		[CompilerGenerated]
+		const string selMarkableMessage = "markableMessage";
+		static readonly IntPtr selMarkableMessageHandle = Selector.GetHandle ("markableMessage");
+		[CompilerGenerated]
 		const string selMessage = "message";
 		static readonly IntPtr selMessageHandle = Selector.GetHandle ("message");
 		[CompilerGenerated]
@@ -59,6 +65,9 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selSetDelayed_ = "setDelayed:";
 		static readonly IntPtr selSetDelayed_Handle = Selector.GetHandle ("setDelayed:");
+		[CompilerGenerated]
+		const string selSetMarkable_ = "setMarkable:";
+		static readonly IntPtr selSetMarkable_Handle = Selector.GetHandle ("setMarkable:");
 		[CompilerGenerated]
 		const string selSetSenderNick_ = "setSenderNick:";
 		static readonly IntPtr selSetSenderNick_Handle = Selector.GetHandle ("setSenderNick:");
@@ -103,6 +112,20 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
+		[Export ("markableMessage")]
+		[CompilerGenerated]
+		public static QBChatMessage CreateMarkableMessage ()
+		{
+			return  Runtime.GetNSObject<QBChatMessage> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selMarkableMessageHandle));
+		}
+		
+		[Export ("message")]
+		[CompilerGenerated]
+		public static QBChatMessage CreateMessage ()
+		{
+			return  Runtime.GetNSObject<QBChatMessage> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selMessageHandle));
+		}
+		
 		[Export ("saveWhenDeliveredToCustomObjectsWithClassName:additionalParameters:")]
 		[CompilerGenerated]
 		public virtual void SaveWhenDeliveredToCustomObjectsWithClassName (string classname, NSDictionary additionalParameters)
@@ -202,18 +225,24 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		static object __mt_Message_var_static;
-		[CompilerGenerated]
-		public static QBChatMessage Message {
-			[Export ("message")]
+		public virtual bool Markable {
+			[Export ("markable")]
 			get {
-				QBChatMessage ret;
-				ret =  Runtime.GetNSObject<QBChatMessage> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selMessageHandle));
-				if (!NSObject.IsNewRefcountEnabled ())
-					__mt_Message_var_static = ret;
-				return ret;
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selMarkableHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selMarkableHandle);
+				}
 			}
 			
+			[Export ("setMarkable:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_bool (this.Handle, selSetMarkable_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetMarkable_Handle, value);
+				}
+			}
 		}
 		
 		[CompilerGenerated]

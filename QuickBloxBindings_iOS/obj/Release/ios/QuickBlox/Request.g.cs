@@ -81,7 +81,7 @@ namespace QuickBlox {
 
 		[Export ("request")]
 		[CompilerGenerated]
-		public static Request CreateRequest ()
+		public static Request Create ()
 		{
 			return  Runtime.GetNSObject<Request> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selRequestHandle));
 		}

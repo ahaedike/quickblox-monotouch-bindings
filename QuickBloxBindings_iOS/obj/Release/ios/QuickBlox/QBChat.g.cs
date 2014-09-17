@@ -57,6 +57,12 @@ namespace QuickBlox {
 		const string selCreateDialogDelegateContext_ = "createDialog:delegate:context:";
 		static readonly IntPtr selCreateDialogDelegateContext_Handle = Selector.GetHandle ("createDialog:delegate:context:");
 		[CompilerGenerated]
+		const string selCreateMessageDelegate_ = "createMessage:delegate:";
+		static readonly IntPtr selCreateMessageDelegate_Handle = Selector.GetHandle ("createMessage:delegate:");
+		[CompilerGenerated]
+		const string selCreateMessageDelegateContext_ = "createMessage:delegate:context:";
+		static readonly IntPtr selCreateMessageDelegateContext_Handle = Selector.GetHandle ("createMessage:delegate:context:");
+		[CompilerGenerated]
 		const string selCreateOrJoinRoomWithJIDMembersOnlyPersistentHistoryAttribute_ = "createOrJoinRoomWithJID:membersOnly:persistent:historyAttribute:";
 		static readonly IntPtr selCreateOrJoinRoomWithJIDMembersOnlyPersistentHistoryAttribute_Handle = Selector.GetHandle ("createOrJoinRoomWithJID:membersOnly:persistent:historyAttribute:");
 		[CompilerGenerated]
@@ -117,8 +123,14 @@ namespace QuickBlox {
 		const string selLoginWithUser_ = "loginWithUser:";
 		static readonly IntPtr selLoginWithUser_Handle = Selector.GetHandle ("loginWithUser:");
 		[CompilerGenerated]
-		const string selLogout = "logout";
-		static readonly IntPtr selLogoutHandle = Selector.GetHandle ("logout");
+		const string selLogout_ = "logout:";
+		static readonly IntPtr selLogout_Handle = Selector.GetHandle ("logout:");
+		[CompilerGenerated]
+		const string selMarkMessagesAsReadDialogIDDelegate_ = "markMessagesAsRead:dialogID:delegate:";
+		static readonly IntPtr selMarkMessagesAsReadDialogIDDelegate_Handle = Selector.GetHandle ("markMessagesAsRead:dialogID:delegate:");
+		[CompilerGenerated]
+		const string selMarkMessagesAsReadDialogIDDelegateContext_ = "markMessagesAsRead:dialogID:delegate:context:";
+		static readonly IntPtr selMarkMessagesAsReadDialogIDDelegateContext_Handle = Selector.GetHandle ("markMessagesAsRead:dialogID:delegate:context:");
 		[CompilerGenerated]
 		const string selMessagesWithDialogIDDelegate_ = "messagesWithDialogID:delegate:";
 		static readonly IntPtr selMessagesWithDialogIDDelegate_Handle = Selector.GetHandle ("messagesWithDialogID:delegate:");
@@ -138,11 +150,14 @@ namespace QuickBlox {
 		const string selRejectAddContactRequest_ = "rejectAddContactRequest:";
 		static readonly IntPtr selRejectAddContactRequest_Handle = Selector.GetHandle ("rejectAddContactRequest:");
 		[CompilerGenerated]
+		const string selRemovePrivacyListWithName_ = "removePrivacyListWithName:";
+		static readonly IntPtr selRemovePrivacyListWithName_Handle = Selector.GetHandle ("removePrivacyListWithName:");
+		[CompilerGenerated]
 		const string selRemoveUserFromContactList_ = "removeUserFromContactList:";
 		static readonly IntPtr selRemoveUserFromContactList_Handle = Selector.GetHandle ("removeUserFromContactList:");
 		[CompilerGenerated]
-		const string selRequestAllRooms = "requestAllRooms";
-		static readonly IntPtr selRequestAllRoomsHandle = Selector.GetHandle ("requestAllRooms");
+		const string selRequestAllRooms_ = "requestAllRooms:";
+		static readonly IntPtr selRequestAllRooms_Handle = Selector.GetHandle ("requestAllRooms:");
 		[CompilerGenerated]
 		const string selRequestRoomInformation_ = "requestRoomInformation:";
 		static readonly IntPtr selRequestRoomInformation_Handle = Selector.GetHandle ("requestRoomInformation:");
@@ -153,6 +168,12 @@ namespace QuickBlox {
 		const string selRequestRoomUsers_ = "requestRoomUsers:";
 		static readonly IntPtr selRequestRoomUsers_Handle = Selector.GetHandle ("requestRoomUsers:");
 		[CompilerGenerated]
+		const string selRetrievePrivacyListNames = "retrievePrivacyListNames";
+		static readonly IntPtr selRetrievePrivacyListNamesHandle = Selector.GetHandle ("retrievePrivacyListNames");
+		[CompilerGenerated]
+		const string selRetrievePrivacyListWithName_ = "retrievePrivacyListWithName:";
+		static readonly IntPtr selRetrievePrivacyListWithName_Handle = Selector.GetHandle ("retrievePrivacyListWithName:");
+		[CompilerGenerated]
 		const string selSendChatMessageToRoom_ = "sendChatMessage:toRoom:";
 		static readonly IntPtr selSendChatMessageToRoom_Handle = Selector.GetHandle ("sendChatMessage:toRoom:");
 		[CompilerGenerated]
@@ -161,6 +182,9 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		const string selSendMessage_ = "sendMessage:";
 		static readonly IntPtr selSendMessage_Handle = Selector.GetHandle ("sendMessage:");
+		[CompilerGenerated]
+		const string selSendMessageSentBlock_ = "sendMessage:sentBlock:";
+		static readonly IntPtr selSendMessageSentBlock_Handle = Selector.GetHandle ("sendMessage:sentBlock:");
 		[CompilerGenerated]
 		const string selSendMessageToRoom_ = "sendMessage:toRoom:";
 		static readonly IntPtr selSendMessageToRoom_Handle = Selector.GetHandle ("sendMessage:toRoom:");
@@ -177,8 +201,23 @@ namespace QuickBlox {
 		const string selSendPresenceWithStatusShowPriorityCustomParametersToRoom_ = "sendPresenceWithStatus:show:priority:customParameters:toRoom:";
 		static readonly IntPtr selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle = Selector.GetHandle ("sendPresenceWithStatus:show:priority:customParameters:toRoom:");
 		[CompilerGenerated]
+		const string selSendUserIsTypingToUserWithID_ = "sendUserIsTypingToUserWithID:";
+		static readonly IntPtr selSendUserIsTypingToUserWithID_Handle = Selector.GetHandle ("sendUserIsTypingToUserWithID:");
+		[CompilerGenerated]
+		const string selSendUserStopTypingToUserWithID_ = "sendUserStopTypingToUserWithID:";
+		static readonly IntPtr selSendUserStopTypingToUserWithID_Handle = Selector.GetHandle ("sendUserStopTypingToUserWithID:");
+		[CompilerGenerated]
+		const string selSetActivePrivacyListWithName_ = "setActivePrivacyListWithName:";
+		static readonly IntPtr selSetActivePrivacyListWithName_Handle = Selector.GetHandle ("setActivePrivacyListWithName:");
+		[CompilerGenerated]
+		const string selSetDefaultPrivacyListWithName_ = "setDefaultPrivacyListWithName:";
+		static readonly IntPtr selSetDefaultPrivacyListWithName_Handle = Selector.GetHandle ("setDefaultPrivacyListWithName:");
+		[CompilerGenerated]
 		const string selSetDelegate_ = "setDelegate:";
 		static readonly IntPtr selSetDelegate_Handle = Selector.GetHandle ("setDelegate:");
+		[CompilerGenerated]
+		const string selSetPrivacyList_ = "setPrivacyList:";
+		static readonly IntPtr selSetPrivacyList_Handle = Selector.GetHandle ("setPrivacyList:");
 		[CompilerGenerated]
 		const string selSetUseMutualSubscriptionForContactList_ = "setUseMutualSubscriptionForContactList:";
 		static readonly IntPtr selSetUseMutualSubscriptionForContactList_Handle = Selector.GetHandle ("setUseMutualSubscriptionForContactList:");
@@ -284,6 +323,17 @@ namespace QuickBlox {
 			}
 		}
 		
+		[Export ("createAndRegisterVideoChatInstance")]
+		[CompilerGenerated]
+		public virtual QBVideoChat CreateAndRegisterVideoChatInstance ()
+		{
+			if (IsDirectBinding) {
+				return  Runtime.GetNSObject<QBVideoChat> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selCreateAndRegisterVideoChatInstanceHandle));
+			} else {
+				return  Runtime.GetNSObject<QBVideoChat> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selCreateAndRegisterVideoChatInstanceHandle));
+			}
+		}
+		
 		[Export ("createAndRegisterVideoChatInstanceWithSessionID:")]
 		[CompilerGenerated]
 		public virtual QBVideoChat CreateAndRegisterVideoChatInstanceWithSessionID (string sessionID)
@@ -305,26 +355,50 @@ namespace QuickBlox {
 		
 		[Export ("createDialog:delegate:")]
 		[CompilerGenerated]
-		public static NSObject CreateDialog (QBChatDialog dialog, NSObject _delegate)
+		public static NSObject CreateDialog (QBChatDialog dialog, NSObject delgate)
 		{
 			if (dialog == null)
 				throw new ArgumentNullException ("dialog");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateDialogDelegate_Handle, dialog.Handle, _delegate.Handle));
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateDialogDelegate_Handle, dialog.Handle, delgate.Handle));
 		}
 		
 		[Export ("createDialog:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject CreateDialog (QBChatDialog dialog, NSObject _delegate, NSObject context)
+		public static NSObject CreateDialog (QBChatDialog dialog, NSObject delgate, NSObject context)
 		{
 			if (dialog == null)
 				throw new ArgumentNullException ("dialog");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateDialogDelegateContext_Handle, dialog.Handle, _delegate.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateDialogDelegateContext_Handle, dialog.Handle, delgate.Handle, context.Handle));
+		}
+		
+		[Export ("createMessage:delegate:")]
+		[CompilerGenerated]
+		public static NSObject CreateMessage (QBChatHistoryMessage message, NSObject delgate)
+		{
+			if (message == null)
+				throw new ArgumentNullException ("message");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selCreateMessageDelegate_Handle, message.Handle, delgate.Handle));
+		}
+		
+		[Export ("createMessage:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject CreateMessage (QBChatHistoryMessage message, NSObject delgate, NSObject context)
+		{
+			if (message == null)
+				throw new ArgumentNullException ("message");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selCreateMessageDelegateContext_Handle, message.Handle, delgate.Handle, context.Handle));
 		}
 		
 		[Export ("createOrJoinRoomWithJID:membersOnly:persistent:historyAttribute:")]
@@ -417,16 +491,16 @@ namespace QuickBlox {
 		
 		[Export ("deleteMessageWithID:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DeleteMessageWithID (string messageID, NSObject _delegate)
+		public static NSObject DeleteMessageWithID (string messageID, NSObject delgate)
 		{
 			if (messageID == null)
 				throw new ArgumentNullException ("messageID");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			var nsmessageID = NSString.CreateNative (messageID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDeleteMessageWithIDDelegate_Handle, nsmessageID, _delegate.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDeleteMessageWithIDDelegate_Handle, nsmessageID, delgate.Handle));
 			NSString.ReleaseNative (nsmessageID);
 			
 			return ret;
@@ -434,18 +508,18 @@ namespace QuickBlox {
 		
 		[Export ("deleteMessageWithID:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DeleteMessageWithID (string messageID, NSObject _delegate, NSObject context)
+		public static NSObject DeleteMessageWithID (string messageID, NSObject delgate, NSObject context)
 		{
 			if (messageID == null)
 				throw new ArgumentNullException ("messageID");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsmessageID = NSString.CreateNative (messageID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteMessageWithIDDelegateContext_Handle, nsmessageID, _delegate.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDeleteMessageWithIDDelegateContext_Handle, nsmessageID, delgate.Handle, context.Handle));
 			NSString.ReleaseNative (nsmessageID);
 			
 			return ret;
@@ -487,46 +561,46 @@ namespace QuickBlox {
 		
 		[Export ("dialogsWithDelegate:")]
 		[CompilerGenerated]
-		public static NSObject DialogsWithDelegate (NSObject _delegate)
+		public static NSObject DialogsWithDelegate (NSObject delgate)
 		{
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selDialogsWithDelegate_Handle, _delegate.Handle));
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr (class_ptr, selDialogsWithDelegate_Handle, delgate.Handle));
 		}
 		
 		[Export ("dialogsWithDelegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DialogsWithDelegate (NSObject _delegate, NSObject context)
+		public static NSObject DialogsWithDelegate (NSObject delgate, NSObject context)
 		{
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDialogsWithDelegateContext_Handle, _delegate.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDialogsWithDelegateContext_Handle, delgate.Handle, context.Handle));
 		}
 		
 		[Export ("dialogsWithExtendedRequest:delegate:")]
 		[CompilerGenerated]
-		public static NSObject DialogsWithExtendedRequest (NSMutableDictionary extendedRequest, NSObject _delegate)
+		public static NSObject DialogsWithExtendedRequest (NSMutableDictionary extendedRequest, NSObject delgate)
 		{
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDialogsWithExtendedRequestDelegate_Handle, extendedRequest.Handle, _delegate.Handle));
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selDialogsWithExtendedRequestDelegate_Handle, extendedRequest.Handle, delgate.Handle));
 		}
 		
 		[Export ("dialogsWithExtendedRequest:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject DialogsWithExtendedRequest (NSMutableDictionary extendedRequest, NSObject _delegate, NSObject context)
+		public static NSObject DialogsWithExtendedRequest (NSMutableDictionary extendedRequest, NSObject delgate, NSObject context)
 		{
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDialogsWithExtendedRequestDelegateContext_Handle, extendedRequest.Handle, _delegate.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selDialogsWithExtendedRequestDelegateContext_Handle, extendedRequest.Handle, delgate.Handle, context.Handle));
 		}
 		
 		[Export ("joinRoom:")]
@@ -583,29 +657,73 @@ namespace QuickBlox {
 			}
 		}
 		
-		[Export ("logout")]
+		[Export ("logout:")]
 		[CompilerGenerated]
 		public virtual bool Logout ()
 		{
 			if (IsDirectBinding) {
-				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selLogoutHandle);
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selLogout_Handle);
 			} else {
-				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selLogoutHandle);
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selLogout_Handle);
 			}
+		}
+		
+		[Export ("markMessagesAsRead:dialogID:delegate:")]
+		[CompilerGenerated]
+		public static NSObject MarkMessagesAsRead (NSObject[] messagesIDs, string dialogID, NSObject delgate)
+		{
+			if (messagesIDs == null)
+				throw new ArgumentNullException ("messagesIDs");
+			if (dialogID == null)
+				throw new ArgumentNullException ("dialogID");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
+			var nsa_messagesIDs = NSArray.FromNSObjects (messagesIDs);
+			var nsdialogID = NSString.CreateNative (dialogID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selMarkMessagesAsReadDialogIDDelegate_Handle, nsa_messagesIDs.Handle, nsdialogID, delgate.Handle));
+			nsa_messagesIDs.Dispose ();
+			NSString.ReleaseNative (nsdialogID);
+			
+			return ret;
+		}
+		
+		[Export ("markMessagesAsRead:dialogID:delegate:context:")]
+		[CompilerGenerated]
+		public static NSObject MarkMessagesAsRead (NSObject[] messagesIDs, string dialogID, NSObject delgate, NSObject context)
+		{
+			if (messagesIDs == null)
+				throw new ArgumentNullException ("messagesIDs");
+			if (dialogID == null)
+				throw new ArgumentNullException ("dialogID");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
+			if (context == null)
+				throw new ArgumentNullException ("context");
+			var nsa_messagesIDs = NSArray.FromNSObjects (messagesIDs);
+			var nsdialogID = NSString.CreateNative (dialogID);
+			
+			NSObject ret;
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selMarkMessagesAsReadDialogIDDelegateContext_Handle, nsa_messagesIDs.Handle, nsdialogID, delgate.Handle, context.Handle));
+			nsa_messagesIDs.Dispose ();
+			NSString.ReleaseNative (nsdialogID);
+			
+			return ret;
 		}
 		
 		[Export ("messagesWithDialogID:delegate:")]
 		[CompilerGenerated]
-		public static NSObject MessagesWithDialogID (string dialogID, NSObject _delegate)
+		public static NSObject MessagesWithDialogID (string dialogID, NSObject delgate)
 		{
 			if (dialogID == null)
 				throw new ArgumentNullException ("dialogID");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			var nsdialogID = NSString.CreateNative (dialogID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDDelegate_Handle, nsdialogID, _delegate.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDDelegate_Handle, nsdialogID, delgate.Handle));
 			NSString.ReleaseNative (nsdialogID);
 			
 			return ret;
@@ -613,18 +731,18 @@ namespace QuickBlox {
 		
 		[Export ("messagesWithDialogID:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject MessagesWithDialogID (string dialogID, NSObject _delegate, NSObject context)
+		public static NSObject MessagesWithDialogID (string dialogID, NSObject delgate, NSObject context)
 		{
 			if (dialogID == null)
 				throw new ArgumentNullException ("dialogID");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsdialogID = NSString.CreateNative (dialogID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDDelegateContext_Handle, nsdialogID, _delegate.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDDelegateContext_Handle, nsdialogID, delgate.Handle, context.Handle));
 			NSString.ReleaseNative (nsdialogID);
 			
 			return ret;
@@ -632,18 +750,18 @@ namespace QuickBlox {
 		
 		[Export ("messagesWithDialogID:extendedRequest:delegate:")]
 		[CompilerGenerated]
-		public static NSObject MessagesWithDialogID (string dialogID, NSMutableDictionary extendedRequest, NSObject _delegate)
+		public static NSObject MessagesWithDialogID (string dialogID, NSMutableDictionary extendedRequest, NSObject delgate)
 		{
 			if (dialogID == null)
 				throw new ArgumentNullException ("dialogID");
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			var nsdialogID = NSString.CreateNative (dialogID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDExtendedRequestDelegate_Handle, nsdialogID, extendedRequest.Handle, _delegate.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDExtendedRequestDelegate_Handle, nsdialogID, extendedRequest.Handle, delgate.Handle));
 			NSString.ReleaseNative (nsdialogID);
 			
 			return ret;
@@ -651,20 +769,20 @@ namespace QuickBlox {
 		
 		[Export ("messagesWithDialogID:extendedRequest:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject MessagesWithDialogID (string dialogID, NSMutableDictionary extendedRequest, NSObject _delegate, NSObject context)
+		public static NSObject MessagesWithDialogID (string dialogID, NSMutableDictionary extendedRequest, NSObject delgate, NSObject context)
 		{
 			if (dialogID == null)
 				throw new ArgumentNullException ("dialogID");
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsdialogID = NSString.CreateNative (dialogID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDExtendedRequestDelegateContext_Handle, nsdialogID, extendedRequest.Handle, _delegate.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selMessagesWithDialogIDExtendedRequestDelegateContext_Handle, nsdialogID, extendedRequest.Handle, delgate.Handle, context.Handle));
 			NSString.ReleaseNative (nsdialogID);
 			
 			return ret;
@@ -681,6 +799,23 @@ namespace QuickBlox {
 			}
 		}
 		
+		[Export ("removePrivacyListWithName:")]
+		[CompilerGenerated]
+		public virtual void RemovePrivacyListWithName (string privacyListName)
+		{
+			if (privacyListName == null)
+				throw new ArgumentNullException ("privacyListName");
+			var nsprivacyListName = NSString.CreateNative (privacyListName);
+			
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selRemovePrivacyListWithName_Handle, nsprivacyListName);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selRemovePrivacyListWithName_Handle, nsprivacyListName);
+			}
+			NSString.ReleaseNative (nsprivacyListName);
+			
+		}
+		
 		[Export ("removeUserFromContactList:")]
 		[CompilerGenerated]
 		public virtual bool RemoveUserFromContactList (global::System.UInt32 userID)
@@ -692,14 +827,14 @@ namespace QuickBlox {
 			}
 		}
 		
-		[Export ("requestAllRooms")]
+		[Export ("requestAllRooms:")]
 		[CompilerGenerated]
 		public virtual bool RequestAllRooms ()
 		{
 			if (IsDirectBinding) {
-				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selRequestAllRoomsHandle);
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend (this.Handle, selRequestAllRooms_Handle);
 			} else {
-				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selRequestAllRoomsHandle);
+				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper (this.SuperHandle, selRequestAllRooms_Handle);
 			}
 		}
 		
@@ -740,6 +875,34 @@ namespace QuickBlox {
 			} else {
 				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_IntPtr (this.SuperHandle, selRequestRoomUsers_Handle, room.Handle);
 			}
+		}
+		
+		[Export ("retrievePrivacyListNames")]
+		[CompilerGenerated]
+		public virtual void RetrievePrivacyListNames ()
+		{
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend (this.Handle, selRetrievePrivacyListNamesHandle);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper (this.SuperHandle, selRetrievePrivacyListNamesHandle);
+			}
+		}
+		
+		[Export ("retrievePrivacyListWithName:")]
+		[CompilerGenerated]
+		public virtual void RetrievePrivacyListWithName (string privacyListName)
+		{
+			if (privacyListName == null)
+				throw new ArgumentNullException ("privacyListName");
+			var nsprivacyListName = NSString.CreateNative (privacyListName);
+			
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selRetrievePrivacyListWithName_Handle, nsprivacyListName);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selRetrievePrivacyListWithName_Handle, nsprivacyListName);
+			}
+			NSString.ReleaseNative (nsprivacyListName);
+			
 		}
 		
 		[Export ("sendChatMessage:toRoom:")]
@@ -787,6 +950,31 @@ namespace QuickBlox {
 			} else {
 				return MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_IntPtr (this.SuperHandle, selSendMessage_Handle, message.Handle);
 			}
+		}
+		
+		[Export ("sendMessage:sentBlock:")]
+		[CompilerGenerated]
+		public unsafe virtual bool SendMessage (QBChatMessage message, [BlockProxy (typeof (MonoTouch.ObjCRuntime.Trampolines.NIDErrorCallback))]ErrorCallback sentBlock)
+		{
+			if (message == null)
+				throw new ArgumentNullException ("message");
+			if (sentBlock == null)
+				throw new ArgumentNullException ("sentBlock");
+			BlockLiteral *block_ptr_sentBlock;
+			BlockLiteral block_sentBlock;
+			block_sentBlock = new BlockLiteral ();
+			block_ptr_sentBlock = &block_sentBlock;
+			block_sentBlock.SetupBlock (Trampolines.SDErrorCallback.Handler, sentBlock);
+			
+			bool ret;
+			if (IsDirectBinding) {
+				ret = MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSend_IntPtr_IntPtr (this.Handle, selSendMessageSentBlock_Handle, message.Handle, (IntPtr) block_ptr_sentBlock);
+			} else {
+				ret = MonoTouch.ObjCRuntime.Messaging.bool_objc_msgSendSuper_IntPtr_IntPtr (this.SuperHandle, selSendMessageSentBlock_Handle, message.Handle, (IntPtr) block_ptr_sentBlock);
+			}
+			block_ptr_sentBlock->CleanupBlock ();
+			
+			return ret;
 		}
 		
 		[Export ("sendMessage:toRoom:")]
@@ -857,7 +1045,7 @@ namespace QuickBlox {
 		
 		[Export ("sendPresenceWithStatus:show:priority:customParameters:toRoom:")]
 		[CompilerGenerated]
-		public virtual bool SendPresenceWithStatus (string status, bool show, short priority, NSDictionary customParameters, QBChatRoom room)
+		public virtual bool SendPresenceWithStatus (string status, QBPresenseShow show, short priority, NSDictionary customParameters, QBChatRoom room)
 		{
 			if (status == null)
 				throw new ArgumentNullException ("status");
@@ -869,13 +1057,35 @@ namespace QuickBlox {
 			
 			bool ret;
 			if (IsDirectBinding) {
-				ret = ApiDefinition.Messaging.bool_objc_msgSend_IntPtr_bool_short_IntPtr_IntPtr (this.Handle, selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle, nsstatus, show, priority, customParameters.Handle, room.Handle);
+				ret = ApiDefinition.Messaging.bool_objc_msgSend_IntPtr_UInt32_short_IntPtr_IntPtr (this.Handle, selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle, nsstatus, (UInt32)show, priority, customParameters.Handle, room.Handle);
 			} else {
-				ret = ApiDefinition.Messaging.bool_objc_msgSendSuper_IntPtr_bool_short_IntPtr_IntPtr (this.SuperHandle, selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle, nsstatus, show, priority, customParameters.Handle, room.Handle);
+				ret = ApiDefinition.Messaging.bool_objc_msgSendSuper_IntPtr_UInt32_short_IntPtr_IntPtr (this.SuperHandle, selSendPresenceWithStatusShowPriorityCustomParametersToRoom_Handle, nsstatus, (UInt32)show, priority, customParameters.Handle, room.Handle);
 			}
 			NSString.ReleaseNative (nsstatus);
 			
 			return ret;
+		}
+		
+		[Export ("sendUserIsTypingToUserWithID:")]
+		[CompilerGenerated]
+		public virtual void SendUserIsTypingToUserWithID (global::System.UInt32 userID)
+		{
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSendUserIsTypingToUserWithID_Handle, userID);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSendUserIsTypingToUserWithID_Handle, userID);
+			}
+		}
+		
+		[Export ("sendUserStopTypingToUserWithID:")]
+		[CompilerGenerated]
+		public virtual void SendUserStopTypingToUserWithID (global::System.UInt32 userID)
+		{
+			if (IsDirectBinding) {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSendUserStopTypingToUserWithID_Handle, userID);
+			} else {
+				MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSendUserStopTypingToUserWithID_Handle, userID);
+			}
 		}
 		
 		[Export ("unregisterVideoChatInstance:")]
@@ -893,18 +1103,18 @@ namespace QuickBlox {
 		
 		[Export ("updateDialogWithID:extendedRequest:delegate:")]
 		[CompilerGenerated]
-		public static NSObject UpdateDialogWithID (string dialogID, NSMutableDictionary extendedRequest, NSObject _delegate)
+		public static NSObject UpdateDialogWithID (string dialogID, NSMutableDictionary extendedRequest, NSObject delgate)
 		{
 			if (dialogID == null)
 				throw new ArgumentNullException ("dialogID");
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			var nsdialogID = NSString.CreateNative (dialogID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateDialogWithIDExtendedRequestDelegate_Handle, nsdialogID, extendedRequest.Handle, _delegate.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateDialogWithIDExtendedRequestDelegate_Handle, nsdialogID, extendedRequest.Handle, delgate.Handle));
 			NSString.ReleaseNative (nsdialogID);
 			
 			return ret;
@@ -912,20 +1122,20 @@ namespace QuickBlox {
 		
 		[Export ("updateDialogWithID:extendedRequest:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject UpdateDialogWithID (string dialogID, NSMutableDictionary extendedRequest, NSObject _delegate, NSObject context)
+		public static NSObject UpdateDialogWithID (string dialogID, NSMutableDictionary extendedRequest, NSObject delgate, NSObject context)
 		{
 			if (dialogID == null)
 				throw new ArgumentNullException ("dialogID");
 			if (extendedRequest == null)
 				throw new ArgumentNullException ("extendedRequest");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
 			var nsdialogID = NSString.CreateNative (dialogID);
 			
 			NSObject ret;
-			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateDialogWithIDExtendedRequestDelegateContext_Handle, nsdialogID, extendedRequest.Handle, _delegate.Handle, context.Handle));
+			ret =  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateDialogWithIDExtendedRequestDelegateContext_Handle, nsdialogID, extendedRequest.Handle, delgate.Handle, context.Handle));
 			NSString.ReleaseNative (nsdialogID);
 			
 			return ret;
@@ -933,26 +1143,44 @@ namespace QuickBlox {
 		
 		[Export ("updateMessage:delegate:")]
 		[CompilerGenerated]
-		public static NSObject UpdateMessage (QBChatHistoryMessage message, NSObject _delegate)
+		public static NSObject UpdateMessage (QBChatHistoryMessage message, NSObject delgate)
 		{
 			if (message == null)
 				throw new ArgumentNullException ("message");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selUpdateMessageDelegate_Handle, message.Handle, _delegate.Handle));
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr (class_ptr, selUpdateMessageDelegate_Handle, message.Handle, delgate.Handle));
 		}
 		
 		[Export ("updateMessage:delegate:context:")]
 		[CompilerGenerated]
-		public static NSObject UpdateMessage (QBChatHistoryMessage message, NSObject _delegate, NSObject context)
+		public static NSObject UpdateMessage (QBChatHistoryMessage message, NSObject delgate, NSObject context)
 		{
 			if (message == null)
 				throw new ArgumentNullException ("message");
-			if (_delegate == null)
-				throw new ArgumentNullException ("_delegate");
+			if (delgate == null)
+				throw new ArgumentNullException ("delgate");
 			if (context == null)
 				throw new ArgumentNullException ("context");
-			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateMessageDelegateContext_Handle, message.Handle, _delegate.Handle, context.Handle));
+			return  Runtime.GetNSObject<NSObject> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend_IntPtr_IntPtr_IntPtr (class_ptr, selUpdateMessageDelegateContext_Handle, message.Handle, delgate.Handle, context.Handle));
+		}
+		
+		[CompilerGenerated]
+		public virtual string ActivePrivacyListWithName {
+			[Export ("setActivePrivacyListWithName:")]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetActivePrivacyListWithName_Handle, nsvalue);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetActivePrivacyListWithName_Handle, nsvalue);
+				}
+				NSString.ReleaseNative (nsvalue);
+				
+			}
 		}
 		
 		[CompilerGenerated]
@@ -975,25 +1203,6 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
-		object __mt_CreateAndRegisterVideoChatInstance_var;
-		[CompilerGenerated]
-		public virtual QBVideoChat CreateAndRegisterVideoChatInstance {
-			[Export ("createAndRegisterVideoChatInstance")]
-			get {
-				QBVideoChat ret;
-				if (IsDirectBinding) {
-					ret =  Runtime.GetNSObject<QBVideoChat> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selCreateAndRegisterVideoChatInstanceHandle));
-				} else {
-					ret =  Runtime.GetNSObject<QBVideoChat> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selCreateAndRegisterVideoChatInstanceHandle));
-				}
-				if (!IsNewRefcountEnabled ())
-					__mt_CreateAndRegisterVideoChatInstance_var = ret;
-				return ret;
-			}
-			
-		}
-		
-		[CompilerGenerated]
 		object __mt_CurrentUser_var;
 		[CompilerGenerated]
 		public virtual QBUUser CurrentUser {
@@ -1010,6 +1219,24 @@ namespace QuickBlox {
 				return ret;
 			}
 			
+		}
+		
+		[CompilerGenerated]
+		public virtual string DefaultPrivacyListWithName {
+			[Export ("setDefaultPrivacyListWithName:")]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetDefaultPrivacyListWithName_Handle, nsvalue);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetDefaultPrivacyListWithName_Handle, nsvalue);
+				}
+				NSString.ReleaseNative (nsvalue);
+				
+			}
 		}
 		
 		[CompilerGenerated]
@@ -1072,6 +1299,24 @@ namespace QuickBlox {
 		}
 		
 		[CompilerGenerated]
+		object __mt_PrivacyList_var;
+		[CompilerGenerated]
+		public virtual QBPrivacyList PrivacyList {
+			[Export ("setPrivacyList:")]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetPrivacyList_Handle, value.Handle);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetPrivacyList_Handle, value.Handle);
+				}
+				if (!IsNewRefcountEnabled ())
+					__mt_PrivacyList_var = value;
+			}
+		}
+		
+		[CompilerGenerated]
 		object __mt_RegisteredVideoChatInstances_var;
 		[CompilerGenerated]
 		public virtual NSMutableArray RegisteredVideoChatInstances {
@@ -1117,11 +1362,12 @@ namespace QuickBlox {
 			base.Dispose (disposing);
 			if (Handle == IntPtr.Zero) {
 				__mt_ContactList_var = null;
-				__mt_CreateAndRegisterVideoChatInstance_var = null;
 				__mt_CurrentUser_var = null;
 				__mt_Delegate_var = null;
+				__mt_PrivacyList_var = null;
 				__mt_RegisteredVideoChatInstances_var = null;
 			}
 		}
 	} /* class QBChat */
+	public delegate void ErrorCallback (NSError response);
 }

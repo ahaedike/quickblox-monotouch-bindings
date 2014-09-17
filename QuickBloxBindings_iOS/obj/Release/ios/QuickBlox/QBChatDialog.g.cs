@@ -54,6 +54,9 @@ namespace QuickBlox {
 		const string selOccupantIDs = "occupantIDs";
 		static readonly IntPtr selOccupantIDsHandle = Selector.GetHandle ("occupantIDs");
 		[CompilerGenerated]
+		const string selPhoto = "photo";
+		static readonly IntPtr selPhotoHandle = Selector.GetHandle ("photo");
+		[CompilerGenerated]
 		const string selRecipientID = "recipientID";
 		static readonly IntPtr selRecipientIDHandle = Selector.GetHandle ("recipientID");
 		[CompilerGenerated]
@@ -78,6 +81,9 @@ namespace QuickBlox {
 		const string selSetOccupantIDs_ = "setOccupantIDs:";
 		static readonly IntPtr selSetOccupantIDs_Handle = Selector.GetHandle ("setOccupantIDs:");
 		[CompilerGenerated]
+		const string selSetPhoto_ = "setPhoto:";
+		static readonly IntPtr selSetPhoto_Handle = Selector.GetHandle ("setPhoto:");
+		[CompilerGenerated]
 		const string selSetRoomJID_ = "setRoomJID:";
 		static readonly IntPtr selSetRoomJID_Handle = Selector.GetHandle ("setRoomJID:");
 		[CompilerGenerated]
@@ -87,11 +93,17 @@ namespace QuickBlox {
 		const string selSetUnreadMessagesCount_ = "setUnreadMessagesCount:";
 		static readonly IntPtr selSetUnreadMessagesCount_Handle = Selector.GetHandle ("setUnreadMessagesCount:");
 		[CompilerGenerated]
+		const string selSetUserID_ = "setUserID:";
+		static readonly IntPtr selSetUserID_Handle = Selector.GetHandle ("setUserID:");
+		[CompilerGenerated]
 		const string selType = "type";
 		static readonly IntPtr selTypeHandle = Selector.GetHandle ("type");
 		[CompilerGenerated]
 		const string selUnreadMessagesCount = "unreadMessagesCount";
 		static readonly IntPtr selUnreadMessagesCountHandle = Selector.GetHandle ("unreadMessagesCount");
+		[CompilerGenerated]
+		const string selUserID = "userID";
+		static readonly IntPtr selUserIDHandle = Selector.GetHandle ("userID");
 		
 		[CompilerGenerated]
 		static readonly IntPtr class_ptr = Class.GetHandle ("QBChatDialog");
@@ -288,21 +300,21 @@ namespace QuickBlox {
 		[CompilerGenerated]
 		object __mt_OccupantIDs_var;
 		[CompilerGenerated]
-		public virtual NSNumber[] OccupantIDs {
-			[Export ("occupantIDs", ArgumentSemantic.Retain)]
+		public virtual NSObject[] OccupantIDs {
+			[Export ("occupantIDs")]
 			get {
-				NSNumber[] ret;
+				NSObject[] ret;
 				if (IsDirectBinding) {
-					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSNumber>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selOccupantIDsHandle));
+					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selOccupantIDsHandle));
 				} else {
-					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSNumber>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selOccupantIDsHandle));
+					ret = NSArray.ArrayFromHandle<MonoTouch.Foundation.NSObject>(MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selOccupantIDsHandle));
 				}
 				if (!IsNewRefcountEnabled ())
 					__mt_OccupantIDs_var = ret;
 				return ret;
 			}
 			
-			[Export ("setOccupantIDs:", ArgumentSemantic.Retain)]
+			[Export ("setOccupantIDs:")]
 			set {
 				if (value == null)
 					throw new ArgumentNullException ("value");
@@ -317,6 +329,33 @@ namespace QuickBlox {
 				
 				if (!IsNewRefcountEnabled ())
 					__mt_OccupantIDs_var = value;
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual string Photo {
+			[Export ("photo", ArgumentSemantic.Retain)]
+			get {
+				if (IsDirectBinding) {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (this.Handle, selPhotoHandle));
+				} else {
+					return NSString.FromHandle (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSendSuper (this.SuperHandle, selPhotoHandle));
+				}
+			}
+			
+			[Export ("setPhoto:", ArgumentSemantic.Retain)]
+			set {
+				if (value == null)
+					throw new ArgumentNullException ("value");
+				var nsvalue = NSString.CreateNative (value);
+				
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_IntPtr (this.Handle, selSetPhoto_Handle, nsvalue);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_IntPtr (this.SuperHandle, selSetPhoto_Handle, nsvalue);
+				}
+				NSString.ReleaseNative (nsvalue);
+				
 			}
 		}
 		
@@ -398,6 +437,27 @@ namespace QuickBlox {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetUnreadMessagesCount_Handle, value);
 				} else {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetUnreadMessagesCount_Handle, value);
+				}
+			}
+		}
+		
+		[CompilerGenerated]
+		public virtual global::System.UInt32 UserID {
+			[Export ("userID")]
+			get {
+				if (IsDirectBinding) {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSend (this.Handle, selUserIDHandle);
+				} else {
+					return MonoTouch.ObjCRuntime.Messaging.UInt32_objc_msgSendSuper (this.SuperHandle, selUserIDHandle);
+				}
+			}
+			
+			[Export ("setUserID:")]
+			set {
+				if (IsDirectBinding) {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSend_UInt32 (this.Handle, selSetUserID_Handle, value);
+				} else {
+					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_UInt32 (this.SuperHandle, selSetUserID_Handle, value);
 				}
 			}
 		}

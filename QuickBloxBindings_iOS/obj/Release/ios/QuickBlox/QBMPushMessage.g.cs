@@ -118,6 +118,13 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
+		[Export ("pushMessage")]
+		[CompilerGenerated]
+		public static QBMPushMessage CreatePushMessage ()
+		{
+			return  Runtime.GetNSObject<QBMPushMessage> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selPushMessageHandle));
+		}
+		
 		[CompilerGenerated]
 		object __mt_AdditionalInfo_var;
 		[CompilerGenerated]
@@ -294,21 +301,6 @@ namespace QuickBlox {
 				NSString.ReleaseNative (nsvalue);
 				
 			}
-		}
-		
-		[CompilerGenerated]
-		static object __mt_PushMessage_var_static;
-		[CompilerGenerated]
-		public static QBMPushMessage PushMessage {
-			[Export ("pushMessage")]
-			get {
-				QBMPushMessage ret;
-				ret =  Runtime.GetNSObject<QBMPushMessage> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selPushMessageHandle));
-				if (!NSObject.IsNewRefcountEnabled ())
-					__mt_PushMessage_var_static = ret;
-				return ret;
-			}
-			
 		}
 		
 		[CompilerGenerated]

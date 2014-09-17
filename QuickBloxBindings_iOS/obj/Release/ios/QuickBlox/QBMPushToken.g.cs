@@ -88,6 +88,13 @@ namespace QuickBlox {
 			IsDirectBinding = GetType ().Assembly == global::ApiDefinition.Messaging.this_assembly;
 		}
 
+		[Export ("pushToken")]
+		[CompilerGenerated]
+		public static QBMPushToken CreatePushToken ()
+		{
+			return  Runtime.GetNSObject<QBMPushToken> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selPushTokenHandle));
+		}
+		
 		[CompilerGenerated]
 		public virtual string ClientIdentificationSequence {
 			[Export ("clientIdentificationSequence", ArgumentSemantic.Retain)]
@@ -134,21 +141,6 @@ namespace QuickBlox {
 					MonoTouch.ObjCRuntime.Messaging.void_objc_msgSendSuper_bool (this.SuperHandle, selSetIsEnvironmentDevelopment_Handle, value);
 				}
 			}
-		}
-		
-		[CompilerGenerated]
-		static object __mt_PushToken_var_static;
-		[CompilerGenerated]
-		public static QBMPushToken PushToken {
-			[Export ("pushToken")]
-			get {
-				QBMPushToken ret;
-				ret =  Runtime.GetNSObject<QBMPushToken> (MonoTouch.ObjCRuntime.Messaging.IntPtr_objc_msgSend (class_ptr, selPushTokenHandle));
-				if (!NSObject.IsNewRefcountEnabled ())
-					__mt_PushToken_var_static = ret;
-				return ret;
-			}
-			
 		}
 		
 	} /* class QBMPushToken */
